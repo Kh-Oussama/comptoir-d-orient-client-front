@@ -150,11 +150,15 @@
   }
 }
 .content__scrolling-indicators {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4rem;
   margin-left: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 13rem 0;
+  height: 20rem;
 
   .indic {
     background-color: black ;
