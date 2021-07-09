@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import IcomoonReact, {iconList} from "icomoon-react";
 import iconSet from "../../selection.json";
+import Typical from "react-typical";
 
 
 const NavigationBar = () => {
@@ -11,7 +12,12 @@ const NavigationBar = () => {
                 <div className="nav-left">
                     <div className="name-block">
                         <Link to='/'>
-                            Comptoir d'orient
+                            <Typical
+                                steps={['  Comptoir d\'orient', 1000]}
+                                loop={1}
+                                wrapper="span"
+                            />
+
                         </Link>
                     </div>
 

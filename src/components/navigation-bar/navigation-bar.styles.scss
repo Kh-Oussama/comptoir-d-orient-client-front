@@ -1,7 +1,7 @@
 .navigation-container {
   height: 10rem;
   border-bottom: var(--line);
-
+background-color: white;
 
 
   display: grid;
@@ -68,11 +68,13 @@
   }
 
   .nav-right {
+    z-index: 9999;
+    background-color: white;
     grid-column: 3/4 ;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 4rem;
+    padding: 0 4rem;
     svg {
       font-size: 1.9rem;
       cursor: pointer;
