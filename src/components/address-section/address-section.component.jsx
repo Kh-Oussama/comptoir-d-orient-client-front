@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import Zoom from 'react-reveal/Zoom';
 
 const AddressSection = () => {
     return (
@@ -7,10 +8,15 @@ const AddressSection = () => {
             <div className="section-header">
                 <p className="p-before-title">
                     How do we Work
+
                 </p>
+                <Zoom left >
+
                 <h2 className="title">
                     Address Social
                 </h2>
+                </Zoom>
+
 
                 <p className="title-description">
                     21 Avenue Lefèvre, 69120 Vaulx-en-Velin

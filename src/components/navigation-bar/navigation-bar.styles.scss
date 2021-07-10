@@ -43,15 +43,6 @@ background-color: white;
         display: flex;
         justify-content: flex-start;
         //align-items: center;
-
-
-        svg {
-          height: 1.8rem;
-          margin-left: -.7rem;
-
-
-        }
-
         &:after {
           content: '';
           position: absolute;
@@ -62,8 +53,29 @@ background-color: white;
           width: 60%;
           border-radius: 8rem;
         }
+
+        svg {
+          height: 1.8rem;
+          margin-left: -.7rem;
+
+
+        }
+
+
       }
     }
+    //.link-block-active {
+    //  &:after {
+    //    content: '';
+    //    position: absolute;
+    //    background-color: var(--color-primary);
+    //    height: .5rem;
+    //    left: 0;
+    //    bottom: -.7rem;
+    //    width: 60%;
+    //    border-radius: 8rem;
+    //  }
+    //}
 
   }
 

@@ -23,7 +23,7 @@ const NavigationBar = () => {
 
                 </div>
                 <div className="nav-center">
-                    <div className="link-block">
+                    <div className="link-block link-block-active">
                         <Link to='/'>
                             <IcomoonReact iconSet={iconSet} size={33} icon="home"/>home
                         </Link>

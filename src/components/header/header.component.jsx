@@ -25,7 +25,7 @@ const Header = () => {
                     speed={1000}
                     // loop
                     autoplay={{
-                        delay: 250000,
+                        delay: 4000,
                         disableOnInteraction: false
                     }}
                     effect="fade"
@@ -39,18 +39,31 @@ const Header = () => {
                 >
 
                     <SwiperSlide>
-                        <div className="header__item" >
+                        <div className="header__item" style={{
+                            backgroundImage: `url(/images/h1.jpg)` ,
+                        }}>
+                            <div className="layer"/>
 
-                         >
                         </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <div className="header__item" style={{
                             backgroundImage: `url(/images/h4.jpg)` ,
                         }}>
+                            <div className="layer"/>
 
                         </div>
                     </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="header__item" style={{
+                            backgroundImage: `url(/images/h5.jpg)` ,
+                        }}>
+                            <div className="layer"/>
+
+                        </div>
+                    </SwiperSlide>
+
 
                 </Swiper>
                 <div className="content__text">
@@ -62,7 +75,7 @@ const Header = () => {
                     <Fade left >
                         <h1 className="title_1">
 
-                            We Are the best <br/>
+                            We <span>Are</span> the best <br/>
                             website agency in <br/>
                             the world
 
