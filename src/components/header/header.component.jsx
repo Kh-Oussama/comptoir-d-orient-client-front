@@ -12,11 +12,16 @@ import Bounce from 'react-reveal/Bounce';
 import Roll from 'react-reveal/Roll';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
+import IcomoonReact from "icomoon-react";
+import iconSet from "../../selection.json";
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = () => {
     return (
         <header className="header-container">
+            <div className="contact-button">
+                <IcomoonReact iconSet={iconSet} size={55} icon="typing"/>
+            </div>
 
             <div className="content">
                 <Swiper

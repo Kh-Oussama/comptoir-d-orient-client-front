@@ -5,7 +5,7 @@ import Header from "../../components/header/header.component";
 import Download from "../../components/dwnload-section/dwnload-section-for-phone.component";
 import StoriesSection from "../../components/stories-section/stories-section.component";
 import SubscribeFooterSection from "../../components/subscribe-footer-section/subscribe-footer-section.component";
-// import Gallery from "../../components/gallery/gallery.component";
+import Gallery from "../../components/gallery/gallery.component";
 
 const HomePage = () => {
     return (
@@ -15,7 +15,7 @@ const HomePage = () => {
            <AddressSection/>
            <Download/>
            <StoriesSection/>
-           {/*<Gallery/>*/}
+           <Gallery/>
            <SubscribeFooterSection/>
         </div>
     )

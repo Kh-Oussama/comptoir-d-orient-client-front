@@ -34,41 +34,63 @@ const SubscribeFooterSection = () => {
                 <img src="/images/h3.jpg" alt="image" className="image"/>
                 <div className="footer-section"></div>
                 <div className="footer-links">
-                <div className="link">
+                    <div className="links-left">
+                        <div className="link">
+                            <Link to=''>
+                                <span><i className="fas fa-phone-volume"/> +213 54-06-37-874</span>
+                            </Link>
+                        </div>
+
+                        <div className="link">
+                            <Link to=''>
+                                <span><i className="fas fa-fax"/>+1 323 555 1234  </span>
+                            </Link>
+                        </div>
+                        <div className="link link-email">
+                            <Link to=''>
+                                <span><i className="far fa-envelope-open"/> comptoir-dorient@gmail.com</span>
+                            </Link>
+                        </div>
+                    </div>
+                <div className="links-center">
+                    <div className="link">
                         <Link to=''>
                             <span>Delivery</span>
-                         </Link>
-                </div>
-                <div className="link">
+                        </Link>
+                    </div>
+                    <div className="link">
                         <Link to=''>
-                        <span>About Us</span>
-                    </Link>
-                </div>
-                <div className="link">
+                            <span>About Us</span>
+                        </Link>
+                    </div>
+                    <div className="link">
                         <Link to=''>
-                        <span>Returns</span>
-                    </Link>
+                            <span>Returns</span>
+                        </Link>
+                    </div>
                 </div>
-                <div className="link">
-                        <Link to=''>
-                        <span>Careers</span>
-                    </Link>
-                </div>
-                <div className="link">
-                        <Link to=''>
-                            <span>Payment</span>
-                    </Link>
-                </div>
-                <div className="link">
-                        <Link to=''>
-                        <span>Gift Card</span>
-                    </Link>
-                </div>
+                    <div className="links-Right">
+                        <div className="link">
+                            <Link to=''>
+                                <span>Careers</span>
+                            </Link>
+                        </div>
+                        <div className="link">
+                            <Link to=''>
+                                <span>Payment</span>
+                            </Link>
+                        </div>
+                        <div className="link">
+                            <Link to=''>
+                                <span>Gift Card</span>
+                            </Link>
+                        </div>
+                    </div>
             </div>
                 <div className="footer-bottom">
 
                 <div className="left">
-                    &copy; Copyright 2021 by Khirat Oussama.
+                    &copy; Copyright 2021 by <span className="dev-name">Khirat Oussama.</span>
                 </div>
                     <div className="right">
                         <div className="link">

@@ -38,23 +38,42 @@
 
   .footer-links {
     grid-row: 13/16;
-    grid-column: 3/12;
+    grid-column: 3/16;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
+
+    .links-left {
+
+      .link-email a {
+          width: 30rem !important;
+        padding: 1rem 1.5rem;
+
+      }
+
+      .link  a {
+
+        width: fit-content;
+        text-align: left;
+
+        svg {
+          margin-right: 1rem;
+        }
+      }
+    }
 
     .link {
       font-size: 1.6rem;
       a {
         text-decoration: none;
-        padding: 1rem 1.5rem;
+        padding: 1rem 2rem;
         color: white;
         position: relative;
         display: inline-block;
         width: 19rem;
         overflow: hidden;
         z-index: 1;
-        margin-right: 3rem;
+        //margin-right: 3rem;
         text-align: center;
         transition: all 0.5S;
 
@@ -94,11 +113,16 @@
 
   .footer-bottom {
     grid-row: 17/18;
-    grid-column: 4/22;
+    grid-column: 3/22;
     display: grid;
     grid-template-columns: repeat(18,1fr);
     grid-template-rows: 1fr;
     color: white;
+
+    .dev-name {
+      margin-left: 1rem;
+      color: var(--color-primary);
+    }
 
     .left {
      grid-column: 1/7;
