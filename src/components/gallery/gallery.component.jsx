@@ -20,7 +20,7 @@ import G_17 from "../../assets/img/g17.jpg";
 
 const Gallery = () => {
     return (
-        <div className="gallery-block">
+        <div className="gallery-block" id={"gallery"}>
                 <div className="partners-section-header">
                         <h1 className="title_2 title_2_download">Galllery</h1>
                         <h1 className="title_1 title_1_download">

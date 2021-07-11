@@ -4,7 +4,7 @@ import Zoom from 'react-reveal/Zoom';
 
 const AddressSection = () => {
     return (
-        <div className="address-section">
+        <div className="address-section" id="address">
             <div className="section-header">
                 <p className="p-before-title">
                     How do we Work

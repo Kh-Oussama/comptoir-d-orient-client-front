@@ -7,7 +7,7 @@ const StoriesSection = () => {
     return (
         <React.Fragment>
 
-            <section className="section-stories">
+            <section className="section-stories" id={"stories"}>
                 <div className="bg-video">
                     <video className="bg-video__content" autoPlay muted loop>
                         <source src="/images/v2.mp4" type="video/mp4"/>

@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const Download = () => {
     return (
-        <section className="partners-section download-section">
+        <section className="partners-section download-section" id="offre">
             <div className="partners-section-header">
                 <h1 className="title_2 title_2_download">offre de service</h1>
                 <h1 className="title_1 title_1_download">

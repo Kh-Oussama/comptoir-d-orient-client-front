@@ -9,7 +9,7 @@ import SideBar from "../sidebar/sidebar.compoenent";
 const NavigationBar = () => {
     return (
         <React.Fragment>
-            <div className="navigation-container">
+            <div className="navigation-container" id='header'>
                 <div className="nav-left">
                     <div className="name-block">
                         <Link to='/'>

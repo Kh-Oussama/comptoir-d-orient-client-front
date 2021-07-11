@@ -18,7 +18,7 @@ import iconSet from "../../selection.json";
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = () => {
     return (
-        <header className="header-container">
+        <header className="header-container" >
             {/*<div className="contact-button">*/}
             {/*    <IcomoonReact iconSet={iconSet} size={55} icon="typing"/>*/}
             {/*</div>*/}
