@@ -19,9 +19,9 @@ SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = () => {
     return (
         <header className="header-container">
-            <div className="contact-button">
-                <IcomoonReact iconSet={iconSet} size={55} icon="typing"/>
-            </div>
+            {/*<div className="contact-button">*/}
+            {/*    <IcomoonReact iconSet={iconSet} size={55} icon="typing"/>*/}
+            {/*</div>*/}
 
             <div className="content">
                 <Swiper
@@ -139,13 +139,6 @@ const Header = () => {
                 </Zoom>
 
                 <div className="content__scrolling-indicators">
-                    <div className="indicatorsBlock">
-                        <div className="indic indic-active"/>
-                        <div className="indic"/>
-                        <div className="indic"/>
-                        <div className="indic"/>
-                    </div>
-
 
                 </div>
             </div>

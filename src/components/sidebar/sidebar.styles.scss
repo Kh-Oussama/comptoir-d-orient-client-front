@@ -1,0 +1,254 @@
+.sidebar-block {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.button {
+  background-color: white;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 1rem;
+  margin: 0.5rem 0 0 0.5rem;
+  cursor: pointer;
+  box-shadow: -3px -3px 7px rgba(94,104,121, .288), 5px 3px 5px rgba(94,104,121, .288);
+
+
+  top: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+
+  &::before, &::after {
+    content: "";
+    background: black;
+    height: .2rem;
+    width: 2rem;
+    position: absolute;
+    transition: all .3s;
+  }
+
+}
+.sidebar-content {
+  flex: 0 0 calc(100vh - 10rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar-container {
+  background-color: white;
+  box-shadow: -3px -3px 7px rgba(94,104,121, .288), 5px 3px 5px rgba(94,104,121, .288);
+
+  width: 7rem;
+  height: 77vh;
+  border-radius: 3rem 0 0 3rem;
+  padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+
+  .logo {
+    width: 4.5rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .slickBar {
+     color: white;
+    list-style: none;
+    background-color: #61dafb;
+
+
+
+    padding: 3rem 0;
+    padding-right: 2rem;
+    background-color: white;
+
+
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+
+    transition: all .5s ease;
+    border-radius: 30px 0 0 30px;
+
+    svg {
+      fill: var(--color-grey-light-4);
+
+    }
+
+
+    .item {
+
+      padding: 1.6rem 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: var(--color-grey-light-4);
+      min-width: 7rem;
+      width: 100% ;
+      padding-left: 2rem;
+      border-left: 5px solid transparent;
+
+      &:hover {
+        color: black;
+
+        svg {
+          fill: black;
+        }
+      }
+
+      .text {
+        overflow: hidden;
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        margin-top: .3rem;
+
+
+      }
+
+
+      &:hover {
+        border-left: 5px solid;
+        border-image-source: linear-gradient(to  bottom, var(--color-primary), var(--color-primary-dark));
+        border-image-slice: 1;
+      }
+      svg {
+        font-size: 1.6rem !important;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+
+      }
+    }
+  }
+
+  .profile {
+    height: 4.8rem;
+
+
+    padding: 0.8rem 1.6rem;
+    border-radius: 2rem 0 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+
+    transition: width,margin .3s ease;
+
+
+
+    img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        border: 2px solid var(--color-primary);
+
+        padding: 2px;
+      }
+    }
+
+    .details {
+
+
+      justify-content: space-between;
+      align-items: center;
+
+
+      .name {
+        padding: 0 2.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+          display: inline-block;
+        }
+
+        a{
+          font-size: 1.28rem;
+          text-decoration: none;
+          color: var(--color-grey-light-4) ;
+
+          &:hover {text-decoration: underline}
+        }
+
+      }
+
+      .logout {
+        border: none;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: transparent;
+
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: var(--color-primary);
+        }
+
+      }
+    }
+  }
+
+
+}
+
+.item-active {
+  border-left: 5px solid;
+  border-image-source: linear-gradient(to  bottom, var(--color-primary), var(--color-primary-dark));
+  border-image-slice: 1;
+  color: black;
+  .text {
+    color: black;
+  }
+
+  svg {
+    fill: black !important;
+  }
+}
+
+
+.btn-block {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+.btn {
+  padding: 1.2rem;
+  border-radius: .5rem;
+  background-color: white;
+  //box-shadow: -1px -1px 4px rgba(94,104,121, .288), 3px 1px 3px rgba(94,104,121, .288);
+
+}
+}

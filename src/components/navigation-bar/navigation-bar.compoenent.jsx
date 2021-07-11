@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import IcomoonReact, {iconList} from "icomoon-react";
 import iconSet from "../../selection.json";
 import Typical from "react-typical";
+import SideBar from "../sidebar/sidebar.compoenent";
 
 
 const NavigationBar = () => {
@@ -51,7 +52,7 @@ const NavigationBar = () => {
 
                 </div>
                 <div className="nav-right">
-                    <IcomoonReact iconSet={iconSet} size={33} icon="list"/>
+                    <SideBar/>
                 </div>
             </div>
         </React.Fragment>
