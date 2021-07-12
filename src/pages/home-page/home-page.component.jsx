@@ -6,12 +6,14 @@ import Download from "../../components/dwnload-section/dwnload-section-for-phone
 import StoriesSection from "../../components/stories-section/stories-section.component";
 import SubscribeFooterSection from "../../components/subscribe-footer-section/subscribe-footer-section.component";
 import Gallery from "../../components/gallery/gallery.component";
+import ProductRelated from "../../components/products-related/products-related.component";
 
 const HomePage = () => {
     return (
         <div className="home-page">
            <NavigationBar/>
            <Header/>
+            <ProductRelated/>
            <AddressSection/>
            <Download/>
            <StoriesSection/>

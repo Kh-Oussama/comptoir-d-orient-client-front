@@ -48,7 +48,8 @@
 }
 
 .sidebar-container {
-  background-color: white;
+  background-color: rgba(#000, 0.7);
+
   box-shadow: -3px -3px 7px rgba(94,104,121, .288), 5px 3px 5px rgba(94,104,121, .288);
 
   width: 7rem;
@@ -75,13 +76,11 @@
   .slickBar {
      color: white;
     list-style: none;
-    background-color: #61dafb;
 
 
 
     padding: 3rem 0;
     padding-right: 2rem;
-    background-color: white;
 
 
     position: absolute;
@@ -97,7 +96,7 @@
     border-radius: 30px 0 0 30px;
 
     svg {
-      fill: var(--color-grey-light-4);
+      fill: var(--color-grey-light-2);
 
     }
 
@@ -111,20 +110,21 @@
 
     .item {
 
+
       padding: 1.6rem 0;
       cursor: pointer;
       display: flex;
       align-items: center;
-      color: var(--color-grey-light-4);
+      color: var(--color-grey-light-1);
 
       width: 100% ;
       border-left: 5px solid transparent;
 
       &:hover {
-        color: black;
+        color: white;
 
         svg {
-          fill: black;
+          fill: white;
         }
       }
 
@@ -164,7 +164,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: white;
+
 
     transition: width,margin .3s ease;
 
@@ -234,13 +234,14 @@
   border-left: 5px solid;
   border-image-source: linear-gradient(to  bottom, var(--color-primary), var(--color-primary-dark));
   border-image-slice: 1;
-  color: black;
+  color: white;
+
   .text {
-    color: black;
+    color: white;
   }
 
   svg {
-    fill: black !important;
+    fill: white !important;
   }
 }
 
@@ -251,11 +252,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 .btn {
   padding: 1.2rem;
   border-radius: .5rem;
-  background-color: white;
+  background-color: transparent;
   //box-shadow: -1px -1px 4px rgba(94,104,121, .288), 3px 1px 3px rgba(94,104,121, .288);
 
+  svg {
+    fill: white;
+  }
 }
 }

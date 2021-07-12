@@ -16,11 +16,26 @@ import G_14 from "../../assets/img/g14.jpg";
 import G_15 from "../../assets/img/g16.jpg";
 import G_16 from "../../assets/img/g15.jpg";
 import G_17 from "../../assets/img/g17.jpg";
+import VisibilitySensor from "react-visibility-sensor";
+import {createStructuredSelector} from "reselect";
+import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
+import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 
-const Gallery = () => {
+const Gallery = ({setCurrentSection, current_section}) => {
     return (
+
         <div className="gallery-block" id={"gallery"}>
+            <VisibilitySensor
+                active={!(current_section === "gallery")}
+                onChange={isVisible => {
+                    if (isVisible) {
+                        setCurrentSection("gallery");
+                    }
+                }}
+                delayedCall>
                 <div className="partners-section-header">
                         <h1 className="title_2 title_2_download">Galllery</h1>
                         <h1 className="title_1 title_1_download">
@@ -32,6 +47,7 @@ const Gallery = () => {
                                 service <br/> while offering out employees the best training
                         </p>
                 </div>
+            </VisibilitySensor>
                 <section className="gallery">
                         <figure className="gallery__item gallery__item--1"><img src={G_1} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
@@ -66,7 +82,16 @@ const Gallery = () => {
         </div>
 
 
+
     )
 }
 
-export default Gallery;
+const mapStateToProps = createStructuredSelector({
+    current_section: selectCurrentSection,
+});
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentSection: current_section => dispatch(setCurrentSection(current_section)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Gallery));

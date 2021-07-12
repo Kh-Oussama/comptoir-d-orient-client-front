@@ -1,14 +1,28 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import IcomoonReact, {iconList} from "icomoon-react";
 import iconSet from "../../selection.json";
 import Typical from "react-typical";
 import SideBar from "../sidebar/sidebar.compoenent";
+import VisibilitySensor from "react-visibility-sensor";
+import {createStructuredSelector} from "reselect";
+import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
+import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
 
 
-const NavigationBar = () => {
+const NavigationBar = ({setCurrentSection, current_section}) => {
+
     return (
         <React.Fragment>
+            <VisibilitySensor
+                active={!(current_section === "header")}
+                onChange={isVisible => {
+                    if (isVisible) {
+                        setCurrentSection("header");
+                    }
+                }}
+                delayedCall>
             <div className="navigation-container" id='header'>
                 <div className="nav-left">
                     <div className="name-block">
@@ -55,8 +69,17 @@ const NavigationBar = () => {
                     <SideBar/>
                 </div>
             </div>
+            </VisibilitySensor>
         </React.Fragment>
     )
 }
 
-export default NavigationBar;
+const mapStateToProps = createStructuredSelector({
+    current_section: selectCurrentSection,
+});
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentSection: current_section => dispatch(setCurrentSection(current_section)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NavigationBar));

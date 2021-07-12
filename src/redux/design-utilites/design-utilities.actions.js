@@ -9,4 +9,8 @@ export const setCurrentPage = current_page => ({
    payload: current_page
 });
 
+export const setCurrentSection = current_section => ({
+   type: DesignActionTypes.SET_CURRENT_SECTION,
+   payload: current_section
+});
 

@@ -1,13 +1,19 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import Bounce from "react-reveal/Bounce";
 import Zoom from "react-reveal/Zoom";
+import VisibilitySensor from "react-visibility-sensor";
+import {createStructuredSelector} from "reselect";
+import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
+import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
 
-const StoriesSection = () => {
+const StoriesSection = ({setCurrentSection, current_section}) => {
     return (
-        <React.Fragment>
+
 
             <section className="section-stories" id={"stories"}>
+
                 <div className="bg-video">
                     <video className="bg-video__content" autoPlay muted loop>
                         <source src="/images/v2.mp4" type="video/mp4"/>
@@ -16,6 +22,13 @@ const StoriesSection = () => {
                     </video>
                 </div>
 
+    <VisibilitySensor
+        onChange={isVisible => {
+            if (isVisible) {
+                setCurrentSection("stories");
+            }
+        }}
+        delayedCall>
                 <div className="section-header section-header-stories">
                     <p className="p-before-title">
                         How do we Work
@@ -34,7 +47,7 @@ const StoriesSection = () => {
                     </p>
                     <div className="red-divider red-divider-stories"/>
                 </div>
-
+    </VisibilitySensor>
                 <div className="row">
                     <div className="story">
                         <figure className="story__shape">
@@ -81,9 +94,18 @@ const StoriesSection = () => {
                     </Link>
                 </div>
             </section>
-        </React.Fragment>
+
+
 
     )
 }
 
-export default StoriesSection;
+const mapStateToProps = createStructuredSelector({
+    current_section: selectCurrentSection,
+});
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentSection: current_section => dispatch(setCurrentSection(current_section)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(StoriesSection));
