@@ -9,26 +9,41 @@ import P_3 from "../../assets/img/pr.jpg";
 import P_4 from "../../assets/img/pr.jpg";
 import P_5 from "../../assets/img/pr.jpg";
 import P_6 from "../../assets/img/pr.jpg";
-import P_7 from "../../assets/img/pr.jpg";
-import P_8 from "../../assets/img/pr.jpg";
-import P_9 from "../../assets/img/pr.jpg";
-import P_10 from "../../assets/img/pr.jpg";
-import P_11 from "../../assets/img/pr.jpg";
-import P_12 from "../../assets/img/pr.jpg";
+import P_7 from "../../assets/img/pr3.jpg";
+import P_8 from "../../assets/img/pr3.jpg";
+import P_9 from "../../assets/img/pr2.jpg";
+import P_10 from "../../assets/img/pr2.jpg";
+import P_11 from "../../assets/img/pr1.jpg";
+import P_12 from "../../assets/img/pr1.jpg";
 import P_13 from "../../assets/img/pr.jpg";
 import P_14 from "../../assets/img/pr.jpg";
+import VisibilitySensor from "react-visibility-sensor";
+import {createStructuredSelector} from "reselect";
+import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
+import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 
 SwiperCore.use([Pagination]);
-const ProductRelated = () => {
+const ProductRelated = ({setCurrentSection, current_section}) => {
     const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
         window.addEventListener("resize", () => setWidth(window.innerWidth));
     });
     return (
-        <div className="product-related">
+
+        <div className="product-related" id={'rProducts'}>
+            <VisibilitySensor
+                active={!(current_section === "rProducts")}
+                onChange={isVisible => {
+                    if (isVisible) {
+                        setCurrentSection("rProducts");
+                    }
+                }}
+                delayedCall>
             <div className="partners-section-header">
-                <h1 className="title_2 title_2_download">offre de service</h1>
+                <h1 className="title_2 title_2_download">pour vous</h1>
                 <h1 className="title_1 ">
                     Nos RECOMMANDATIONS pour vous
                 </h1>
@@ -38,6 +53,7 @@ const ProductRelated = () => {
                     service <br/> while offering out employees the best training
                 </p>
             </div>
+            </VisibilitySensor>
             <div className="product-related--swiper">
                 <Swiper
                     spaceBetween={50}
@@ -48,15 +64,16 @@ const ProductRelated = () => {
 
                 >
 
+
                     <SwiperSlide>
                         <div className="product-container">
-                            <ProductItem imageUrl1={P_13} imageUrl2={P_14} title={"Aged Pine Scented Candle"}
+                            <ProductItem imageUrl1={P_9} imageUrl2={P_10} title={"Aged Pine Scented Candle"}
                                          lastPrice={"$17.00"} currentPrice={"$13.60"}/>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="product-container">
-                            <ProductItem imageUrl1={P_3} imageUrl2={P_4} title={"Aged Pine Scented Candle"}
+                            <ProductItem imageUrl1={P_11} imageUrl2={P_12} title={"Aged Pine Scented Candle"}
                                          lastPrice={"$17.00"} currentPrice={"$13.60"}/>
                         </div>
                     </SwiperSlide>
@@ -74,22 +91,30 @@ const ProductRelated = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="product-container">
-                            <ProductItem imageUrl1={P_9} imageUrl2={P_10} title={"Aged Pine Scented Candle"}
+                            <ProductItem imageUrl1={P_13} imageUrl2={P_14} title={"Aged Pine Scented Candle"}
                                          lastPrice={"$17.00"} currentPrice={"$13.60"}/>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="product-container">
-                            <ProductItem imageUrl1={P_11} imageUrl2={P_12} title={"Aged Pine Scented Candle"}
+                            <ProductItem imageUrl1={P_3} imageUrl2={P_4} title={"Aged Pine Scented Candle"}
                                          lastPrice={"$17.00"} currentPrice={"$13.60"}/>
                         </div>
                     </SwiperSlide>
-
                 </Swiper>
             </div>
 
         </div>
+
     )
 }
 
-export default ProductRelated;
+const mapStateToProps = createStructuredSelector({
+    current_section: selectCurrentSection,
+});
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentSection: current_section => dispatch(setCurrentSection(current_section)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ProductRelated));

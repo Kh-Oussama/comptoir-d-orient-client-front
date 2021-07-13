@@ -89,7 +89,6 @@ const SideBar = ({current_section}) => {
                         <div className="btn-block">
                             <div className="btn">
                                 <IcomoonReact iconSet={iconSet} size={33} icon="list" onClick={() => handleClick()}/>
-
                             </div>
                         </div>
                     </Logo>
@@ -105,6 +104,15 @@ const SideBar = ({current_section}) => {
                                 </div>
 
 
+                            </Item>
+                        </Link>
+                        <Link to={'rProducts'} smooth={true} duration={1000}>
+
+                            <Item className={`item ${current_section === 'rProducts' ? 'item-active': null}`}>
+                                <Text clicked={click} className="text">address</Text>
+                                <div>
+                                    <IcomoonReact iconSet={iconSet} size={16} icon="price-tag"/>
+                                </div>
                             </Item>
                         </Link>
                         <Link to={'address'} smooth={true} duration={1000}>
