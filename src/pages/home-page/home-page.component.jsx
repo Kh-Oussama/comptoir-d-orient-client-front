@@ -8,6 +8,7 @@ import SubscribeFooterSection from "../../components/subscribe-footer-section/su
 import Gallery from "../../components/gallery/gallery.component";
 import ProductRelated from "../../components/products-related/products-related.component";
 
+
 const HomePage = () => {
     return (
         <div className="home-page">

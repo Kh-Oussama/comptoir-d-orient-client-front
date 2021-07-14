@@ -31,9 +31,9 @@ const Logo = styled.div`
 `;
 
 const SlickBar = styled.ul`
-    width: ${props => props.clicked ? "25rem" : "5rem"};
+    width: ${props => props.clicked ? "30rem" : "5rem"};
     box-shadow: ${props => props.clicked ? "-3px -3px 7px rgba(94,104,121, .288), 5px 3px 5px rgba(94,104,121, .288)" : "none"};
-       background-color: ${props => props.clicked ? "rgba(0, 0, 0, 0.7)" : "transparent"};
+    background-color: ${props => props.clicked ? "rgba(0, 0, 0, 0.7)" : "transparent"};
 
 
 `;
@@ -109,7 +109,7 @@ const SideBar = ({current_section}) => {
                         <Link to={'rProducts'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'rProducts' ? 'item-active': null}`}>
-                                <Text clicked={click} className="text">address</Text>
+                                <Text clicked={click} className="text">RECOMMANDATIONS</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="price-tag"/>
                                 </div>
