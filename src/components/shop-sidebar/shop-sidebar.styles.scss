@@ -1,13 +1,27 @@
-
-.shop-sidebar-container {
-  background-color: white;
-  width: 30rem !important;
+.pro-sidebar .pro-menu>ul>.pro-sub-menu>.pro-inner-list-item {
+  background-color: hsla(0,0%,100%,.05) !important;
 }
 
-.sidebar-btn {
-  width: 27rem;
-    svg {
-    margin-left: 1.5rem;
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+
+  svg {
+    fill: white;
+
+    &:hover {
+      fill: var(--color-primary);
       cursor: pointer;
+    }
   }
+}
+
+.sidebarFooter {
+  text-align: center;
+}
+
+.pro-sidebar {
+  height: calc(100vh - 10rem) !important;
 }

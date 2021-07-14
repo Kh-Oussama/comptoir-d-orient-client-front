@@ -10,8 +10,8 @@ function App() {
       <React.Fragment>
         <Switch>
           <Route exact path="/" component={HomePage}/>
-          <Route exact path="/shop" component={ShopPage}/>
-          <Route exact path="/test" component={testPage}/>
+            <Route  path="/shop" component={ShopPage}/>
+            <Route exact path="/test" component={testPage}/>
         </Switch>
       </React.Fragment>
   );
