@@ -4,14 +4,17 @@ import 'semantic-ui-css/components/sidebar.min.css';
 import 'semantic-ui-css/components/button.min.css';
 import {Header} from "../../components/shop-content/Header";
 import {CardList} from "../../components/shop-content/CardList";
-import { ProSidebar, Menu, MenuItem, SubMenu,SidebarHeader, SidebarFooter, SidebarContent  } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import ShopSidebar from "../../components/shop-sidebar/shop-sidebar.component";
+import {createStructuredSelector} from "reselect";
+import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
+import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 
-
-const ShopPage = () => {
- const [x,setX] = useState(false);
+const ShopPage = ({toggles_shop_sidebar,current_sidebar_state}) => {
+    const [x, setX] = useState(false);
 
     console.log(x);
     return (
@@ -20,15 +23,22 @@ const ShopPage = () => {
             <div className="shop-page-content">
                 <ShopSidebar/>
                 <div className="container">
-                    <input type="checkbox" name="" onChange={() => setX(!x)}/>
+                    <input type="checkbox" checked={current_sidebar_state} onChange={toggles_shop_sidebar}/>
                     <Header title={'les catégories disponibles'}/>
-                    <CardList />
+                    <CardList/>
                 </div>
-
             </div>
 
         </div>
     )
 }
 
-export default ShopPage;
+const mapStateToProps = createStructuredSelector({
+    current_sidebar_state: selectShopSidebarHidden,
+});
+
+const mapDispatchToProps = dispatch => ({
+    toggles_shop_sidebar: current_section => dispatch(togglesShopSidebar(current_section)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ShopPage));

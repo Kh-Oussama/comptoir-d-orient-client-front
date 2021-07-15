@@ -13,7 +13,7 @@ export const Image = ({
     return (
         <motion.div
             className="card-image-container"
-            style={{ ...inverted, backgroundColor, originX: 0, originY: 0,backgroundImage: 'url(/images/'+id+'.jpg)', }}
+            style={{ ...inverted, backgroundColor, originX: 0, originY: 0,backgroundImage: 'url(/images/categories/'+id+'.jpg)', }}
         >
             {/*<motion.img*/}
             {/*    className="card-image"*/}

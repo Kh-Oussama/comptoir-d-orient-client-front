@@ -12,6 +12,11 @@ export const selectCurrentSection = createSelector(
     design_utilities => design_utilities.current_section,
 );
 
+export const selectShopSidebarHidden = createSelector(
+    [selectDesignUtilities],
+    design_utilities => design_utilities.shop_sidebar_hidden,
+);
+
 export const selectSearchHidden = createSelector(
     [selectDesignUtilities],
     design_utilities => design_utilities.search_hidden,
