@@ -16,7 +16,7 @@ export const ContentPlaceholder = React.memo(({title}) => {
                     <Link to={``}>
                         <h1 className="title">{title}</h1>
                     </Link>
-                    <i className="fas fa-palette"/>
+                    <i className="fas fa-shopping-basket"/>
                 </div>
 
                 <h2 className="subtitle"> brush1,brush2 ....</h2>

@@ -19,14 +19,44 @@ const ShopSidebar = ({current_sidebar_state}) => {
                 </SidebarHeader>
                 <SidebarContent>
                     <Menu iconShape="square">
-                        <MenuItem icon={<i className="far fa-dot-circle"/>}>Dashboard</MenuItem>
-                        <SubMenu title="Components" icon={<i className="far fa-dot-circle"/>}>
-                            <SubMenu title="Components" icon={<i className="far fa-dot-circle"/>}>
-                                <MenuItem>Component 1</MenuItem>
-                                <MenuItem>Component 2</MenuItem>
-                            </SubMenu>
-                            <MenuItem>Component 2</MenuItem>
+                        <SubMenu title="Legumes sec" icon={<i className="far fa-dot-circle"/>}>
+                                <MenuItem>Dari</MenuItem>
+                                <MenuItem>Tersol</MenuItem>
+                                <MenuItem>Riz</MenuItem>
+                                <MenuItem>Cister</MenuItem>
                         </SubMenu>
+                        <SubMenu title="Fruits Sec" icon={<i className="far fa-dot-circle"/>}>
+                                <MenuItem>Noix de coco</MenuItem>
+                                <MenuItem>Noix</MenuItem>
+                                <MenuItem>Amande</MenuItem>
+                                <MenuItem>Pistache</MenuItem>
+
+                        </SubMenu>
+                        {/*<SubMenu title="Poduits laitiers" icon={<i className="far fa-dot-circle"/>}>*/}
+                        {/*    <SubMenu title="Components" icon={<i className="far fa-dot-circle"/>}>*/}
+                        {/*        <MenuItem>Valmartin</MenuItem>*/}
+                        {/*        <MenuItem>peynoos</MenuItem>*/}
+                        {/*        <MenuItem>Tuba</MenuItem>*/}
+                        {/*    </SubMenu>*/}
+                        {/*    <MenuItem>Component 2</MenuItem>*/}
+                        {/*</SubMenu>*/}
+                        <SubMenu title="Poduits laitiers" icon={<i className="far fa-dot-circle"/>}>
+                                <MenuItem>Valmartin</MenuItem>
+                                <MenuItem>peynoos</MenuItem>
+                                <MenuItem>Tuba</MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Conserves" icon={<i className="far fa-dot-circle"/>}>
+                            <MenuItem>Les Thon</MenuItem>
+                            <MenuItem>Harissa</MenuItem>
+                            <MenuItem>Oncu</MenuItem>
+                            <MenuItem>Slalta</MenuItem>
+                        </SubMenu>
+                        <SubMenu title="Boissons" icon={<i className="far fa-dot-circle"/>}>
+                            <MenuItem>Coca Cola</MenuItem>
+                            <MenuItem>Fanta</MenuItem>
+                        </SubMenu>
+
+
                     </Menu>
                 </SidebarContent>
                 <SidebarFooter>
