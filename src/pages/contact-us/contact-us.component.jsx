@@ -1,0 +1,234 @@
+import React, {useEffect, useState} from 'react';
+import {Link, useLocation, withRouter} from "react-router-dom";
+import Footer from "../../components/footer/footer.component";
+import NavigationBar from "../../components/navigation/navigation.component";
+import {setCurrentPage} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
+import {createStructuredSelector} from "reselect";
+import {selectSendMsgError, selectSendMsgLoading, selectSendMsgStatus} from "../../redux/clients/clients.selectors";
+import {sendMessageStart} from "../../redux/clients/cleints.actions";
+import {toast} from "react-toastify";
+import Loader from "../../components/loader-content/loader.compoenent";
+
+
+const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, sendErrors, history}) => {
+
+    const [messageCredentials, setCredentials] = useState({
+        firstName: '',
+        lastName: '',
+        subject: '',
+        email: '',
+        phoneNumber: '',
+        description: ''
+    });
+    const {firstName, lastName, subject, email, phoneNumber, description} = messageCredentials;
+    const [notifState, setNotifState] = useState(false);
+
+
+
+    const handleChange = event => {
+        const {value, name} = event.target;
+        setCredentials({...messageCredentials, [name]: value});
+    };
+
+    useEffect(() => {
+        setCurrentPage(window.location.pathname)
+    }, [setCurrentPage]);
+
+    const {pathname} = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+
+    const sendMsgHandler = async () => {
+        const formData = new FormData();
+        formData.append('firstName', firstName);
+        formData.append('lastName', lastName);
+        formData.append('email', email);
+        formData.append('phoneNumber', phoneNumber);
+        formData.append('subject', subject);
+        formData.append('description', description);
+        sendMsgStart({formData});
+        setNotifState(true);
+        setCredentials({
+            ...messageCredentials,
+            email: '',
+            firstName: '',
+            lastName: '',
+            phoneNumber: '',
+            subject: '',
+            description: ''
+        });
+    }
+
+    const afterSubmitting = async () => {
+    if (sendStatus && notifState) {
+        toast.dark(
+            <div><i className="fas fa-check-circle"/> your message has been sent !</div>,
+            {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 3000,
+                draggable: true,
+            })
+        await sleep(4000).then( () => {
+
+            setNotifState(false);
+            history.push('/');
+        });
+
+         }
+    }
+    afterSubmitting();
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+        if (sendErrors && notifState) {
+            toast.error(
+                <div><i className="fas fa-exclamation-circle"/> Message could not be sent ! check your information and and
+                    try again !</div>,
+                {
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    autoClose: 5000,
+                    draggable: true,
+                })
+            setNotifState(false)
+
+        }
+
+
+
+    return (
+        <React.Fragment>
+            <NavigationBar/>
+            <div className="contactUs">
+                <div className="content">
+                    <div className="home">
+                        <Link to="/">
+                            <i className="fas fa-home"/>
+                        </Link>
+                    </div>
+                    <div className="content-contactInfo">
+                        <h1>Contact Info</h1>
+                        <div className="info">
+                            <i className="fas fa-map-marked-alt"/>
+                            <span>CITÉ CAMPS N° 06 ILOT E LOCAL 02, DAR EL BEIDA-ALGER</span>
+                        </div>
+                        <div className="info">
+                            <i className="far fa-envelope"/>
+                            <span>commercial@aqua-vim.com</span>
+                        </div>
+                        <div className="info">
+                            <i className="fas fa-phone"/>
+                            <span>05 61 99 43 81 - 05 60 13 88 38 - 05 60 02 67 89 - 05 51 15 45 28 - 05 60 04 82 43</span>
+                        </div>
+                        <div className="info">
+                            <i className="fas fa-fax"/>
+                            <span>023 80 06 43</span>
+                        </div>
+                        <div className="social-Media">
+                            <Link to="/">
+                                <span><i className="fab fa-instagram-square"/></span>
+                            </Link>
+                            <Link to="/">
+                                <span><i className="fab fa-facebook-square"/></span>
+                            </Link>
+                            <Link to="/">
+                                <span><i className="fab fa-twitter-square"/></span>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className="content-contactForm">
+
+                        <h1>Send a Message</h1>
+                        <div className="formBlock">
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    value={firstName}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <div className="in-label">First Name <span className="etoile">*</span>:</div>
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    value={lastName}
+                                    onChange={handleChange}
+                                    required/>
+                                <div className="in-label">Last Name <span className="etoile">*</span>:</div>
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    value={email}
+                                    onChange={handleChange}
+                                    required/>
+                                <div className="in-label">Email Address <span className="etoile">*</span>:</div>
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    name="phoneNumber"
+                                    value={phoneNumber}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <div className="in-label">Phone Number <span className="etoile">*</span>:</div>
+                            </div>
+                            <div className="form-group textarea">
+                                <input
+                                    name="subject"
+                                    value={subject}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <div className="in-label">Subject <span className="etoile">*</span>:</div>
+                            </div>
+                            <div className="form-group textarea">
+                                <textarea
+                                    name="description"
+                                    value={description}
+                                    onChange={handleChange}
+                                    required
+                                    rows={3}
+                                />
+                                <div className="in-label">write your message here <span className="etoile">*</span>:
+                                </div>
+                            </div>
+                            {
+                                sendLoading
+                                    ? <div style={{width: '10rem'}}><Loader/></div>
+                                    : <button onClick={sendMsgHandler}><i className="fas fa-paper-plane"/> Send</button>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Footer/>
+        </React.Fragment>
+    )
+}
+
+
+const mapStateToProps = createStructuredSelector({
+    sendLoading: selectSendMsgLoading,
+    sendStatus: selectSendMsgStatus,
+    sendErrors: selectSendMsgError,
+});
+
+
+const mapDispatchToProps = dispatch => ({
+    setCurrentPage: current_page => dispatch(setCurrentPage(current_page)),
+    sendMsgStart: msgData => dispatch(sendMessageStart(msgData)),
+
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ContactUsPage));

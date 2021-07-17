@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
 import 'semantic-ui-css/components/sidebar.min.css';
 import 'semantic-ui-css/components/button.min.css';
@@ -8,12 +8,16 @@ import 'react-pro-sidebar/dist/css/styles.css';
 import ShopSidebar from "../../components/shop-sidebar/shop-sidebar.component";
 import {createStructuredSelector} from "reselect";
 import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
-import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
+import {setCurrentPage, togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 
 
-const ShopPage = ({toggles_shop_sidebar,current_sidebar_state}) => {
+const ShopPage = ({toggles_shop_sidebar,current_sidebar_state,setCurrentPage}) => {
+
+    useEffect(() => {
+        setCurrentPage(window.location.pathname)
+    }, [setCurrentPage]);
 
     return (
         <div className="sidebar-shop">
@@ -37,6 +41,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
     toggles_shop_sidebar: current_section => dispatch(togglesShopSidebar(current_section)),
+    setCurrentPage: current_page => dispatch(setCurrentPage(current_page)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ShopPage));
