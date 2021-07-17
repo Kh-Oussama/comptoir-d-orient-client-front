@@ -6,7 +6,7 @@ const ProductItem = ({title, history, lastPrice, currentPrice, imageUrl1, imageU
 
     return (
         <div className="product-grid">
-            {/*<Link to="/view">*/}
+            <Link to="/shop/product/view">
             <span className="product-trend-label">
                         TRENDING
                     </span>
@@ -45,7 +45,7 @@ const ProductItem = ({title, history, lastPrice, currentPrice, imageUrl1, imageU
                 <h3 className="title"><Link to=""> {title}</Link></h3>
                 <div className="price discount"><span>{lastPrice}</span> {currentPrice}</div>
             </div>
-            {/*</Link>*/}
+            </Link>
         </div>
     );
 };
