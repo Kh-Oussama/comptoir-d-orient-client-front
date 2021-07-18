@@ -21,7 +21,7 @@ const ShopPage = ({toggles_shop_sidebar,current_sidebar_state,setCurrentPage}) =
 
     return (
         <div className="sidebar-shop">
-            <NavigationBar/>
+            {/*<NavigationBar/>*/}
             <div className="shop-page-content">
                 <ShopSidebar/>
                 <div className="container">
