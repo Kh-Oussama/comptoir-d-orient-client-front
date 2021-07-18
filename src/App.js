@@ -12,9 +12,9 @@ function App() {
       <React.Fragment>
         <Switch>
           <Route exact path="/" component={HomePage}/>
-            <Route  path="/shop/products" component={ProductsPage}/>
-            <Route  path="/shop/product/view" component={ViewProductPage}/>
-            <Route  path="/shop" component={ShopPage}/>
+            <Route  exact path="/shop/products" component={ProductsPage}/>
+            <Route  exact path="/shop/product/view" component={ViewProductPage}/>
+            <Route  exact path="/shop" component={ShopPage}/>
             <Route exact path="/test" component={testPage}/>
         </Switch>
       </React.Fragment>

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
 import ShopSidebar from "../../components/shop-sidebar/shop-sidebar.component";
-import {Header} from "../../components/shop-content/Header";
+import {Header} from "../../components/shop-header/Header";
 import {createStructuredSelector} from "reselect";
 import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
 import {setCurrentPage, togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
