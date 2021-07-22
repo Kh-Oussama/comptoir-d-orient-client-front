@@ -1,4 +1,4 @@
-.loader-page {
+.big-loader-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,12 +7,12 @@
   min-height: 100vh;
 }
 
-.loader {
+.big-loader {
   display: flex;
   flex-direction: row;
 }
 
-.loader div {
+.big-loader div {
   position: relative;
   width: 30px;
   height: 100px;
@@ -24,7 +24,7 @@
   box-shadow: 15px 15px 20px rgba(0,0,0,0.1), -15px -15px 20px #fff,inset -5px -5px 5px rgba(255,255,255,.5), inset 5px 5px 5px rgba(0,0,0,0.05);
 }
 
-.loader div:before {
+.big-loader div:before {
   content: "";
   position: absolute;
   top: 0;
@@ -37,7 +37,7 @@
 
 }
 
-.loader div:after {
+.big-loader div:after {
   content: "";
   position: absolute;
   top: 0;
@@ -50,16 +50,16 @@
   transform: translateY(70px);
 
 }
-.loader div:nth-child(1):after {
+.big-loader div:nth-child(1):after {
   animation-delay: calc(-0.5s * 1);
 }
-.loader div:nth-child(2):after {
+.big-loader div:nth-child(2):after {
   animation-delay: calc(-0.5s * 2);
 }
-.loader div:nth-child(3):after {
+.big-loader div:nth-child(3):after {
   animation-delay: calc(-0.5s * 3);
 }
-.loader div:nth-child(4):after {
+.big-loader div:nth-child(4):after {
   animation-delay: calc(-0.5s * 4);
 }
 

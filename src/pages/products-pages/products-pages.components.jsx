@@ -21,7 +21,6 @@ const ProductsPage = ({toggles_shop_sidebar, current_sidebar_state, setCurrentPa
                 <ShopSidebar/>
                 <div className="container">
                     <input type="checkbox" checked={current_sidebar_state} onChange={toggles_shop_sidebar}/>
-                    <Header title={'legumes sec'}/>
                     <Products/>
                 </div>
             </div>

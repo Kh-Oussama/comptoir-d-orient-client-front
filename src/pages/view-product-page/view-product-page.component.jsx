@@ -23,7 +23,6 @@ const ViewProductPage = ({toggles_shop_sidebar,setCurrentPage,current_sidebar_st
                 <ShopSidebar/>
                 <div className="container">
                     <input type="checkbox" checked={current_sidebar_state} onChange={toggles_shop_sidebar}/>
-                    <Header title={'legumes sec'}/>
                     <ViewProduct/>
                 </div>
             </div>

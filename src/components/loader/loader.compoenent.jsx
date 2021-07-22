@@ -4,11 +4,11 @@ import './loader.style.scss'
 
 const Loader = () => {
     return (
-        <div className="loader-page">
+        <div className="big-loader-page">
             <div>
                 <img src="/images/logo-l.png" alt="Logo"/>
             </div>
-            <div className="loader">
+            <div className="big-loader">
                 <div ></div>
                 <div ></div>
                 <div ></div>

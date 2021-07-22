@@ -67,6 +67,7 @@
       }
 
       &-description-header {
+        margin-top: 5rem;
         padding-right: 20rem;
         display: flex;
         align-items: center;
@@ -89,7 +90,6 @@
       &-description {
         font-size: 1.5rem;
         color: var(--best-color-grey);
-        margin-bottom: 4rem;
         height: 9rem;
 
 
@@ -194,4 +194,10 @@
 .view-product-content .imageBlock .item .img {
   height: 40rem;
   width: 83%;
+}
+
+.imageBlock-loading, .detail-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -117,3 +117,9 @@ $offset: $lat - $thickness;
     margin-bottom: 5.5rem;
 
 }
+.loader-header {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

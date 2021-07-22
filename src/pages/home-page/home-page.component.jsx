@@ -14,9 +14,11 @@ import {withRouter} from "react-router-dom";
 import Loader from "../../components/loader/loader.compoenent";
 import {selectIsFetching} from "../../redux/slliders/slider.selectors";
 import {fetchSlidersStart} from "../../redux/slliders/slider.actions";
+import {fetchAllProductsStart} from "../../redux/products/products.actions";
+import {selectAllProducts, selectIsFetchingAllPro} from "../../redux/products/product.selectors";
 
 
-const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides}) => {
+const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides, fetchALLProducts, isFetchingAllPro}) => {
 
     useEffect(() => {
         setCurrentPage(window.location.pathname)
@@ -26,10 +28,14 @@ const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides}) => {
         fetchSlidersStart();
     }, [fetchSlidersStart]);
 
+    useEffect(() => {
+        fetchALLProducts();
+    }, [fetchALLProducts]);
+
     return (
         <React.Fragment>
             {
-                isFetchingSlides
+                isFetchingSlides || isFetchingAllPro
                     ? <Loader/>
                     : <div className="home-page">
                         <NavigationBar/>
@@ -50,11 +56,18 @@ const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides}) => {
 
 const mapStateToProps = createStructuredSelector({
     isFetchingSlides: selectIsFetching,
+
+    //products
+    allProducts : selectAllProducts,
+    isFetchingAllPro: selectIsFetchingAllPro,
 });
 
 const mapDispatchToProps = dispatch => ({
     setCurrentPage: current_page => dispatch(setCurrentPage(current_page)),
     fetchSlidersStart: () => dispatch(fetchSlidersStart()),
+
+    fetchALLProducts: () => dispatch(fetchAllProductsStart()),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomePage));

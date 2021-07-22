@@ -11,11 +11,13 @@ import {createStructuredSelector} from "reselect";
 import {connect} from "react-redux";
 import {selectCurrentProduct, selectUpdateLoading} from "../../redux/products/product.selectors";
 import {getProductStart} from "../../redux/products/products.actions";
+import Loader from "../loader-content/loader.compoenent";
+import {Header} from "../shop-header/Header";
 
 
 SwiperCore.use([Pagination, Navigation]);
 
-const ViewProduct = ({current_sidebar_state,getProductStart,currentProduct,match,updateLoading,history }) => {
+const ViewProduct = ({current_sidebar_state, getProductStart, currentProduct, match, updateLoading, history}) => {
     const [isPhone, setIsPhone] = useState(window.innerWidth > 600);
     const [active, setActive] = useState("FirstCard");
 
@@ -25,91 +27,109 @@ const ViewProduct = ({current_sidebar_state,getProductStart,currentProduct,match
     }, [getProductStart]);
 
     return (
-        <div className="view-product">
-            <div className="view-product-content">
-                <div className="imageBlock">
 
-                    <Swiper
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        navigation={isPhone}
-                        loop
-                        pagination={{
-                            clickable: true,
-                        }}
-                        onSlideChange={() => {
+        <>
+            {
+                updateLoading
+                    ? <div className="shop-header loader-header"><Loader/></div>
+                    : <Header title={currentProduct[0] ? currentProduct[0].title : 'le produit n\'est plus disponible'}/>
 
-                        }}
-                        // onSwiper={(swiper) => console.log(swiper)}
-
-                    >
-
-                        <SwiperSlide>
-                            <div className="item">
-                                <img src={P_3} alt="" className="img"
-                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
-
+            }
+            <div className="view-product">
+                <div className="view-product-content">
+                    {
+                        updateLoading
+                            ? <div className="imageBlock imageBlock-loading">
+                                <Loader/>
                             </div>
-                        </SwiperSlide>
+                            : <React.Fragment>
+                                <div className="imageBlock">
+
+                                    <Swiper
+                                        spaceBetween={50}
+                                        slidesPerView={1}
+                                        navigation={isPhone}
+                                        loop
+                                        pagination={{
+                                            clickable: true,
+                                        }}
+                                        onSlideChange={() => {
+
+                                        }}
+                                        // onSwiper={(swiper) => console.log(swiper)}
+
+                                    >
 
 
-                    </Swiper>
+                                        <SwiperSlide>
+                                            <div className="item">
+                                                <img src={`http://comptoir-d-orient.com/${currentProduct[0].first_image_path}`} alt="" className="img"
+                                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
 
-                </div>
-                <div className="detail">
-                    <h1 className="detail-title">
-                        EVERMORE LONDON
-                    </h1>
-                    <p className="detail-p">
-                        Grove Earth & Aged Pine Scented Candle - 300g
-                    </p>
-                    <div className="detail-product-number">Product Number : 15885</div>
-                    <div className="detail-stars">
-                        <i className="fas fa-star"/>
-                        <i className="fas fa-star"/>
-                        <i className="fas fa-star"/>
-                        <i className="fas fa-star"/>
-                        <i className="far fa-star"/>
-                    </div>
-                    <div className="detail-description-header">
+                                            </div>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                            <div className="item">
+                                                <img src={`http://comptoir-d-orient.com/${currentProduct[0].second_image_path}`} alt="" className="img"
+                                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
+
+                                            </div>
+                                        </SwiperSlide>
+
+
+                                    </Swiper>
+
+                                </div>
+                            </React.Fragment>
+                    }
+                    {
+                        updateLoading
+                            ? <div className="detail detail-loading">
+                                <Loader/>
+                            </div>
+                            :  <div className="detail">
+                                <h1 className="detail-title">
+                                    {currentProduct[0].title}
+                                </h1>
+                                <p className="detail-p">
+                                    {currentProduct[0].subtitle}
+                                </p>
+                                <div className="detail-product-number">Product Number :  {currentProduct[0].id}</div>
+                                <div className="detail-stars">
+                                    <i className="fas fa-star"/>
+                                    <i className="fas fa-star"/>
+                                    <i className="fas fa-star"/>
+                                    <i className="fas fa-star"/>
+                                    <i className="far fa-star"/>
+                                </div>
+                                <div className="detail-description-header">
                         <span className={active === "FirstCard" ? "active" : null}
                               onClick={() => setActive("FirstCard")}>Description</span>
-                        <span className={active === "SecondCard" ? "active" : null}
-                              onClick={() => setActive("SecondCard")}>Basic Info</span>
-                        <span className={active === "ThirdCard" ? "active" : null}
-                              onClick={() => setActive("ThirdCard")}>Caliber</span>
-                    </div>
+                                </div>
 
-                    {
-                        active === "FirstCard" && <DescriptionCard content="1111111Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet asperiores blanditiis
-                        consequuntur doloribus error excepturi exercitationem iusto labore laborum, laudantium maxime
-                        nisi omnis quibusdam quos ratione sapiente unde venia?"/>
-                    }
-                    {
-                        active === "SecondCard" && <DescriptionCard content="2222222Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet asperiores blanditiis
-                        consequuntur doloribus error excepturi exercitationem iusto labore laborum, laudantium maxime
-                        nisi omnis quibusdam quos ratione sapiente unde venia?"/>
-                    }
-                    {
-                        active === "ThirdCard" && <DescriptionCard content="3333333Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet asperiores blanditiis
-                        consequuntur doloribus error excepturi exercitationem iusto labore laborum, laudantium maxime
-                        nisi omnis quibusdam quos ratione sapiente unde venia?"/>
+                                {
+                                    active === "FirstCard" && <DescriptionCard content= {currentProduct[0].description} />
+                                }
+
+
+                                <div className="detail-priceBlock">
+                                    <div className="price"></div>
+                                    <div className="qnt">10+ in stock</div>
+                                </div>
+                                <div className="detail-actions">
+                                    {/*<button className="add">Add to Carte</button>*/}
+                                    {/*<div className="heart">*/}
+                                    {/*    <i className="far fa-heart"/>*/}
+                                    {/*</div>*/}
+                                </div>
+                            </div>
                     }
 
-                    <div className="detail-priceBlock">
-                        <div className="price">22$</div>
-                        <div className="qnt">10+ in stock</div>
-                    </div>
-                    <div className="detail-actions">
-                        {/*<button className="add">Add to Carte</button>*/}
-                        {/*<div className="heart">*/}
-                        {/*    <i className="far fa-heart"/>*/}
-                        {/*</div>*/}
-                    </div>
+
                 </div>
-
             </div>
-        </div>
+            </>
+
     )
 }
 

@@ -1,12 +1,25 @@
 import * as React from "react";
-import { Avatar } from "react-lorem-ipsum";
+import {Avatar} from "react-lorem-ipsum";
+import {useState} from "react";
 
-export const Header = ({title}) => (
-    <header className="shop-header">
-        <span className="date">Tuesday, August 13th</span>
-        <h1 className="h1">{title}</h1>
-        <div className="avatar">
-            <Avatar />
-        </div>
-    </header>
-);
+export const Header = ({title}) => {
+    const date = new Date();
+    var options = {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+    };
+    const [currentDateTime, setCurrentDateTime] = useState(date.toLocaleString('fr-FR', options))
+
+    return (
+        <header className="shop-header">
+            <span className="date">{currentDateTime}</span>
+            <h1 className="h1">{title}</h1>
+            <div className="avatar">
+                <Avatar/>
+            </div>
+        </header>
+    )
+        ;
+}
