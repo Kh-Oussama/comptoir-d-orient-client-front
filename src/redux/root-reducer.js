@@ -3,6 +3,9 @@ import { persistReducer } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 
 import designUtilitiesReducer from "./design-utilites/design-utilities.reducer";
+import sliderReducer from "./slliders/slider.reducer";
+import categoriesReducer from "./categories/categories.reducer";
+import productReducer from "./products/product.reducer";
 
 
 
@@ -14,6 +17,9 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     design_utilities: designUtilitiesReducer,
+    slider : sliderReducer,
+    category : categoriesReducer,
+    product : productReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

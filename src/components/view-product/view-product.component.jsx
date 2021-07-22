@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Navigation, Pagination} from 'swiper';
 import P_3 from "../../assets/img/pr.jpg";
@@ -8,16 +8,21 @@ import 'swiper/components/pagination/pagination.scss';
 import {withRouter} from "react-router-dom";
 import DescriptionCard from "../description-product-card/description-product-card.component";
 import {createStructuredSelector} from "reselect";
-import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
 import {connect} from "react-redux";
+import {selectCurrentProduct, selectUpdateLoading} from "../../redux/products/product.selectors";
+import {getProductStart} from "../../redux/products/products.actions";
 
 
 SwiperCore.use([Pagination, Navigation]);
 
-const ViewProduct = ({current_sidebar_state}) => {
+const ViewProduct = ({current_sidebar_state,getProductStart,currentProduct,match,updateLoading,history }) => {
     const [isPhone, setIsPhone] = useState(window.innerWidth > 600);
     const [active, setActive] = useState("FirstCard");
 
+
+    useEffect(() => {
+        getProductStart({id: match.params.id});
+    }, [getProductStart]);
 
     return (
         <div className="view-product">
@@ -40,8 +45,9 @@ const ViewProduct = ({current_sidebar_state}) => {
                     >
 
                         <SwiperSlide>
-                            <div className="item" >
-                                <img src={P_3} alt="" className="img" style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
+                            <div className="item">
+                                <img src={P_3} alt="" className="img"
+                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
 
                             </div>
                         </SwiperSlide>
@@ -108,10 +114,13 @@ const ViewProduct = ({current_sidebar_state}) => {
 }
 
 const mapStateToProps = createStructuredSelector({
-    current_sidebar_state: selectShopSidebarHidden,
+    updateLoading: selectUpdateLoading,
+    currentProduct: selectCurrentProduct,
 });
 
+const mapDispatchToProps = dispatch => ({
+    getProductStart: pro => dispatch(getProductStart(pro)),
+});
 
-export default connect(mapStateToProps, null)(withRouter(ViewProduct));
-
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ViewProduct));
 

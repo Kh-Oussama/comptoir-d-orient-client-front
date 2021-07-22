@@ -11,32 +11,50 @@ import {createStructuredSelector} from "reselect";
 import {setCurrentPage} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
+import Loader from "../../components/loader/loader.compoenent";
+import {selectIsFetching} from "../../redux/slliders/slider.selectors";
+import {fetchSlidersStart} from "../../redux/slliders/slider.actions";
 
 
-const HomePage = ({setCurrentPage}) => {
+const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides}) => {
 
     useEffect(() => {
         setCurrentPage(window.location.pathname)
     }, [setCurrentPage]);
 
+    useEffect(() => {
+        fetchSlidersStart();
+    }, [fetchSlidersStart]);
+
     return (
-        <div className="home-page">
-            <NavigationBar/>
-            <Header/>
-            <ProductRelated/>
-            <AddressSection/>
-            <Download/>
-            <StoriesSection/>
-            <Gallery/>
-            <SubscribeFooterSection/>
-        </div>
+        <React.Fragment>
+            {
+                isFetchingSlides
+                    ? <Loader/>
+                    : <div className="home-page">
+                        <NavigationBar/>
+                        <Header/>
+                        <ProductRelated/>
+                        <AddressSection/>
+                        <Download/>
+                        <StoriesSection/>
+                        <Gallery/>
+                        <SubscribeFooterSection/>
+                    </div>
+            }
+
+
+        </React.Fragment>
     )
 }
 
-const mapStateToProps = createStructuredSelector({});
+const mapStateToProps = createStructuredSelector({
+    isFetchingSlides: selectIsFetching,
+});
 
 const mapDispatchToProps = dispatch => ({
     setCurrentPage: current_page => dispatch(setCurrentPage(current_page)),
+    fetchSlidersStart: () => dispatch(fetchSlidersStart()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomePage));

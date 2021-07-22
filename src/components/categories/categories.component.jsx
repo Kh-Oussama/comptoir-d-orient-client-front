@@ -1,20 +1,59 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import CategoriesCard from "../categories-card/categories-card.component";
-import {motion} from "framer-motion";
+import {createStructuredSelector} from "reselect";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
+import {selectCategories, selectIsFetchingCat} from "../../redux/categories/categories.selectors";
+import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
+import Loader from "../loader-content/loader.compoenent";
 
-const Categories = () => {
+const Categories = ({ fetchCategories, isFetching, categories }) => {
+    useEffect(() => {
+        fetchCategories();
+    },[fetchCategories]);
+
     return (
         <ul className="card-list">
+            {
+                isFetching
+                    ? <React.Fragment>
+                        <div className="card loader-container"><Loader/></div>
+                        <div className="card loader-container"><Loader/></div>
+                        <div className="card loader-container"><Loader/></div>
+                        <div className="card loader-container"><Loader/></div>
 
 
-                <CategoriesCard backgroundColor={"#814A0E"} backgroundImage={"g1.jpg"} title={'legumes Sec'} subtitle={'5 food Apps Delivering the bes of your city'}/>
-               <CategoriesCard backgroundColor={"#959684"} backgroundImage={"g2.jpg"} title={'FRUITS SEC'} subtitle={'Arrange Your Apple Devices for the Gram'}/>
-               <CategoriesCard backgroundColor={"#5DBCD2"} backgroundImage={"g5.jpg"} title={'PRODUIT LAITIERS'} subtitle={'Map Apps for the Superior Mode of Transport'}/>
-               <CategoriesCard backgroundColor={"#8F986D"} backgroundImage={"g6.jpg"} title={'CONSERVES'} subtitle={'Our Pick of Apps to Help You Escape From Apps'}/>
-               <CategoriesCard backgroundColor={"#FA6779"} backgroundImage={"g8.jpg"} title={'SEmoul'} subtitle={'The Latest Ultra-Specific Photography Editing Apps'}/>
-               <CategoriesCard backgroundColor={"#282F49"} backgroundImage={"g7.jpg"} title={'BOISSONS'} subtitle={'100 Cupcake Apps for the Cupcake Connoisseur'}/>
+                    </React.Fragment>
+                    :
+                    categories.length > 0
+                        ? <React.Fragment>
+                            {
+                                categories.map(cat => {
+                                    return (
+                                        <CategoriesCard key={cat.id} categoryRef={cat.id} backgroundColor={"#814A0E"} backgroundImage={cat.image_path} title={cat.title}
+                                                        subtitle={cat.subtitle}/>
+                                    )
+                                })
+                            }
+                        </React.Fragment>
+                        : <img src="/images/empty.png" className="empty-img" alt=""/>
+            }
+
+
+
+
         </ul>
     )
 }
 
-export default Categories;
+const mapStateToProps = createStructuredSelector({
+    isFetching: selectIsFetchingCat,
+    categories: selectCategories,
+});
+
+const mapDispatchToProps = dispatch => ({
+    fetchCategories : () => dispatch(fetchCategoriesStart()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Categories));
+
