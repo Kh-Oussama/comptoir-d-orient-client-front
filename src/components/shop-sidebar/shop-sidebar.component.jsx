@@ -1,13 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader, SubMenu} from "react-pro-sidebar";
 import IcomoonReact from "icomoon-react";
 import iconSet from "../../selection.json";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import {createStructuredSelector} from "reselect";
 import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
 import {connect} from "react-redux";
+import Loader from "../loader-content/loader.compoenent";
+import CategoriesCard from "../categories-card/categories-card.component";
+import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
+import {selectCategories, selectIsFetchingCat} from "../../redux/categories/categories.selectors";
+import uuid from 'react-uuid';
 
-const ShopSidebar = ({current_sidebar_state}) => {
+const ShopSidebar = ({ current_sidebar_state, categories,isFetching,fetchCategories,history}) => {
+
+    useEffect(() => {
+        fetchCategories();
+    },[fetchCategories]);
+
     return (
         <>
             <ProSidebar collapsed={!current_sidebar_state} image={"/images/side2.jpg"}>
@@ -17,47 +27,48 @@ const ShopSidebar = ({current_sidebar_state}) => {
                     </div>
 
                 </SidebarHeader>
+
                 <SidebarContent>
-                    <Menu iconShape="square">
-                        <SubMenu title="Legumes sec" icon={<i className="far fa-dot-circle"/>}>
-                                <MenuItem>Dari</MenuItem>
-                                <MenuItem>Tersol</MenuItem>
-                                <MenuItem>Riz</MenuItem>
-                                <MenuItem>Cister</MenuItem>
-                        </SubMenu>
-                        <SubMenu title="Fruits Sec" icon={<i className="far fa-dot-circle"/>}>
-                                <MenuItem>Noix de coco</MenuItem>
-                                <MenuItem>Noix</MenuItem>
-                                <MenuItem>Amande</MenuItem>
-                                <MenuItem>Pistache</MenuItem>
 
-                        </SubMenu>
-                        {/*<SubMenu title="Poduits laitiers" icon={<i className="far fa-dot-circle"/>}>*/}
-                        {/*    <SubMenu title="Components" icon={<i className="far fa-dot-circle"/>}>*/}
-                        {/*        <MenuItem>Valmartin</MenuItem>*/}
-                        {/*        <MenuItem>peynoos</MenuItem>*/}
-                        {/*        <MenuItem>Tuba</MenuItem>*/}
-                        {/*    </SubMenu>*/}
-                        {/*    <MenuItem>Component 2</MenuItem>*/}
-                        {/*</SubMenu>*/}
-                        <SubMenu title="Poduits laitiers" icon={<i className="far fa-dot-circle"/>}>
-                                <MenuItem>Valmartin</MenuItem>
-                                <MenuItem>peynoos</MenuItem>
-                                <MenuItem>Tuba</MenuItem>
-                        </SubMenu>
-                        <SubMenu title="Conserves" icon={<i className="far fa-dot-circle"/>}>
-                            <MenuItem>Les Thon</MenuItem>
-                            <MenuItem>Harissa</MenuItem>
-                            <MenuItem>Oncu</MenuItem>
-                            <MenuItem>Slalta</MenuItem>
-                        </SubMenu>
-                        <SubMenu title="Boissons" icon={<i className="far fa-dot-circle"/>}>
-                            <MenuItem>Coca Cola</MenuItem>
-                            <MenuItem>Fanta</MenuItem>
-                        </SubMenu>
+                    {
+                        isFetching
+                            ? null
+                            :
+                            categories.length > 0
+                                ? <React.Fragment>
+
+                                    {
+                                        categories.map(cat => {
+                                            return (
+                                                <>
+
+                                                <Menu iconShape="square">
+                                                {
+                                                        cat.products_subcategories.length > 0
+                                                        ?    <SubMenu key={uuid()} title={cat.title} icon={<i className="far fa-dot-circle" />} onClick={() => history.push(`/shop/products/${cat.id}`)}  >
+
+                                                                {
+                                                                    cat.products_subcategories.map(subCat => {
+                                                                        return (
+                                                                            <MenuItem key={uuid()}>{subCat.title} </MenuItem>
+                                                                        )
+                                                                    })
+                                                                }
+
+                                                            </SubMenu>
+                                                        :   <MenuItem key={uuid()} icon={<i className="far fa-dot-circle"/>}>{cat.title} <Link to={`/shop/products/${cat.id}`} /></MenuItem>
+
+                                                    }
+                                                </Menu>
+                                                </>
+                                            )
+                                        })
+                                    }
+                                </React.Fragment>
+                                : null
+                    }
 
 
-                    </Menu>
                 </SidebarContent>
                 <SidebarFooter>
                     <div className="sidebarFooter">
@@ -74,8 +85,16 @@ const ShopSidebar = ({current_sidebar_state}) => {
 
 const mapStateToProps = createStructuredSelector({
     current_sidebar_state: selectShopSidebarHidden,
+
+    //categories
+    isFetching: selectIsFetchingCat,
+    categories: selectCategories,
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    //categories
+    fetchCategories : () => dispatch(fetchCategoriesStart()),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ShopSidebar));
+

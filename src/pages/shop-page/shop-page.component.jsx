@@ -11,6 +11,7 @@ import {setCurrentPage, togglesShopSidebar} from "../../redux/design-utilites/de
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import Categories from "../../components/categories/categories.component";
+import ContentRoutes from "../../components/content-routing/content-routing.routes";
 
 
 const ShopPage = ({toggles_shop_sidebar, current_sidebar_state, setCurrentPage}) => {
@@ -26,8 +27,7 @@ const ShopPage = ({toggles_shop_sidebar, current_sidebar_state, setCurrentPage})
                 <ShopSidebar/>
                 <div className="container">
                     <input type="checkbox" checked={current_sidebar_state} onChange={toggles_shop_sidebar}/>
-                    <Header title={'les catégories disponibles'}/>
-                    <Categories/>
+                    <ContentRoutes/>
                 </div>
             </div>
 

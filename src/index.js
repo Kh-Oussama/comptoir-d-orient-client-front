@@ -11,14 +11,16 @@ import { store } from "./redux/store";
 import {Provider} from "react-redux";
 
 ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <PersistGate persistor={persistor}>
-          <App />
-            </PersistGate>
-        </BrowserRouter>
-    </Provider>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <BrowserRouter>
+                <PersistGate persistor={persistor}>
+                        <App/>
+                </PersistGate>
+            </BrowserRouter>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -18,12 +18,12 @@ const Products = ({fetchProducts, isFetching, products, currentCategory, updateL
     //fetch products from backend
     useEffect(() => {
         fetchProducts({id: match.params.id});
-    }, [fetchProducts]);
+    },[fetchProducts,match.params.id]);
 
     //gt the current category
     useEffect(() => {
         getCategoryStart({id: match.params.id});
-    }, [getCategoryStart]);
+    }, [getCategoryStart,match.params.id]);
 
     const [currentPage, setCurrentPage] = useState(1);
     const [elementsPerPage] = useState(1);
