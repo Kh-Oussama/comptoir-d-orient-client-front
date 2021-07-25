@@ -263,3 +263,36 @@
 
 
 }
+
+.btn-loading {
+  grid-column: 11/14;
+  background-color: var(--color-black);
+  flex: 1;
+  height: 5.5rem;
+  text-transform: uppercase;
+  font-family: inherit;
+  transition: all .3s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 199;
+  border: none;
+
+}
+
+.Toastify__toast-container--bottom-right {
+  margin-bottom: 10rem !important;
+}
+
+.Toastify__progress-bar--dark {
+  background-image: var(--gradient-color) !important;
+}
+.Toastify__toast--dark {
+  background: black !important;
+}
+.Toastify__toast-body  {
+  font-size: 1.6rem !important;
+}

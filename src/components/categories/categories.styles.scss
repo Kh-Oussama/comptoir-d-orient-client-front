@@ -264,3 +264,16 @@ input:checked[type="checkbox"]:after {
   left: 50px;
   box-shadow: 0 0 5px var(--color-primary), 0 0 15px var(--color-primary-dark);
 }
+
+.all-products {
+  margin-left: 1.3rem;
+  cursor: pointer;
+
+  svg {
+    margin-right: .5rem;
+  }
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}

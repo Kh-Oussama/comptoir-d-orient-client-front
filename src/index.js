@@ -9,12 +9,14 @@ import {PersistGate} from "redux-persist/integration/react";
 import {persistor} from "./redux/store";
 import { store } from "./redux/store";
 import {Provider} from "react-redux";
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
                 <PersistGate persistor={persistor}>
+
                         <App/>
                 </PersistGate>
             </BrowserRouter>

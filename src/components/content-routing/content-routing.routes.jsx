@@ -14,9 +14,9 @@ const ContentRoutes = ({currentUser, checkLoading}) => {
             <Switch>
 
                 <Route exact path={`/shop/product/view/:id`} component={ViewProduct}/>
-                <Route exact path={`/shop/products/:id`} component={props => <Products {...props}/>}/>
+                <Route exact path={`/shop/products/:id/:sub?`} component={Products}/>}/>
                 <Route exact path={`/shop`} component={Categories}/>
-                {/*<Redirect to="/shop"/>*/}
+                <Redirect to="/shop"/>
             </Switch>
         </div>
     )

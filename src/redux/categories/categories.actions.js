@@ -29,3 +29,9 @@ export const getCategoryFailure = errorMessage => ({
     type: CategoriesActionsTypes.GET_CATEGORY_FAILURE,
     payload: errorMessage,
 });
+
+export const setSubcategory = category => ({
+    type: CategoriesActionsTypes.GET_CATEGORY_FAILURE,
+    payload: category,
+});
+

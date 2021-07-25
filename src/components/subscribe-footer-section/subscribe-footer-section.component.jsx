@@ -1,8 +1,71 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
+import {setCurrentPage} from "../../redux/design-utilites/design-utilities.actions";
+import {connect} from "react-redux";
+import {createStructuredSelector} from "reselect";
+import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
+import {selectCategories, selectIsFetchingCat} from "../../redux/categories/categories.selectors";
+import {selectAddError, selectAddLoading, selectAddStatus} from "../../redux/clients/clients.selectors";
+import {addClientStart} from "../../redux/clients/cleints.actions";
+import Loader from "../loader-content/loader.compoenent";
 
-const SubscribeFooterSection = () => {
+toast.configure();
+const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatus}) => {
     const [email, setEmail] = useState('');
+    const [notifState, setNotifState] = useState(false);
+
+
+    const addClientHandler = async ()  => {
+        const formData = new FormData();
+        formData.append('email',email);
+        addClientStart({formData});
+        setNotifState(true);
+        setEmail('');
+
+    }
+
+
+    if (addErrors && notifState) {
+        if (addErrors.client) {
+            toast.error(
+                <div><i className="fas fa-exclamation-circle"/> you are already subscribed!!</div>,
+                {
+                    position: toast.POSITION.BOTTOM_CENTER,
+                    autoClose: 5000,
+                    draggable: true,
+                    toastId: 'first_toast',
+                })
+            setNotifState(false)
+        }
+        if (addErrors.email) {
+            toast.error(
+                <div><i className="fas fa-exclamation-circle"/> Please enter valid email address.</div>,
+                {
+                    position: toast.POSITION.BOTTOM_CENTER,
+                    autoClose: 5000,
+                    draggable: true,
+                    toastId: 'first_toast',
+                })
+            setNotifState(false)
+        }
+    }
+
+
+    if (addStatus && notifState)
+    {
+        toast.dark(
+            <div><i className="fas fa-check-circle"/> thank you for subscribing !</div>,
+            {position: toast.POSITION.TOP_LEFT,
+                autoClose: 5000,
+                draggable: true,
+                toastId: 'second_toast',
+            })
+        setNotifState(false)
+    }
+
     return (
         <div className="Sub-footer-container">
                 <div className="subscribe-section">
@@ -15,13 +78,17 @@ const SubscribeFooterSection = () => {
                         type="email"
                         className="formSub__input"
                         placeholder="ENTER YOUR EMAIL"
-                        required
                         value={email}
                         onChange={event => setEmail(event.target.value)}
+                        required
                     />
-                    <button className="formSub__button">
-                        Send
-                    </button>
+                    {
+                        addLoading
+                            ? <div className='btn-loading'><Loader/></div>
+                            : <button className="formSub__button" onClick={addClientHandler}>
+                                envoyer
+                            </button>
+                    }
                     {/*{*/}
                     {/*    addLoading*/}
                     {/*        ? <div className='btn-loading'><Loader/></div>*/}
@@ -109,6 +176,16 @@ const SubscribeFooterSection = () => {
         </div>
     )
 };
+const mapStateToProps = createStructuredSelector({
+    addLoading: selectAddLoading,
+    addStatus: selectAddStatus,
+    addErrors: selectAddError,
+});
 
-export default SubscribeFooterSection;
+const mapDispatchToProps = dispatch => ({
+    addClientStart : clientData => dispatch(addClientStart(clientData)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SubscribeFooterSection));
+
 

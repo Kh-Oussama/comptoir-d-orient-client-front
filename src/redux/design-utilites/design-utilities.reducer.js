@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   current_page : "/",
   search_hidden : true,
   shop_sidebar_hidden : false,
-  current_section : 'header'
+  current_section : 'header',
 };
 
 const designUtilitiesReducer = (state = INITIAL_STATE, action) => {

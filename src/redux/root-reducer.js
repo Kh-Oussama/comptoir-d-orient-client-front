@@ -6,6 +6,7 @@ import designUtilitiesReducer from "./design-utilites/design-utilities.reducer";
 import sliderReducer from "./slliders/slider.reducer";
 import categoriesReducer from "./categories/categories.reducer";
 import productReducer from "./products/product.reducer";
+import clientsReducer from "./clients/clients.reducer";
 
 
 
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     slider : sliderReducer,
     category : categoriesReducer,
     product : productReducer,
+    client : clientsReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

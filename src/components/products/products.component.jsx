@@ -18,15 +18,15 @@ const Products = ({fetchProducts, isFetching, products, currentCategory, updateL
     //fetch products from backend
     useEffect(() => {
         fetchProducts({id: match.params.id});
-    },[fetchProducts,match.params.id]);
+    }, [fetchProducts, match.params.id, match.params.sub]);
 
     //gt the current category
     useEffect(() => {
         getCategoryStart({id: match.params.id});
-    }, [getCategoryStart,match.params.id]);
+    }, [getCategoryStart, match.params.id]);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const [elementsPerPage] = useState(1);
+    const [elementsPerPage] = useState(10);
     const indexOfLastElement = currentPage * elementsPerPage;
     const indexOfFirstElement = indexOfLastElement - elementsPerPage;
     const currentElements = products.slice(indexOfFirstElement, indexOfLastElement);
@@ -53,12 +53,20 @@ const Products = ({fetchProducts, isFetching, products, currentCategory, updateL
                         : currentElements.length > 0
                         ? <React.Fragment>
                             {
-                                currentElements.map(pro => {
-                                    return (
-                                        <ProductItem key={pro.id} productRef={pro.id} imageUrl1={pro.first_image_path}
-                                                     imageUrl2={pro.second_image_path} title={pro.title}/>
-                                    )
-                                })
+                                match.params.sub
+                                    ? currentElements.map(pro => {
+                                        if (match.params.sub == pro.productsSubcategory_id)
+                                        return (
+                                            <ProductItem key={pro.id} productRef={pro.id} imageUrl1={pro.first_image_path}
+                                                         imageUrl2={pro.second_image_path} title={pro.title}/>
+                                        )
+                                    })
+                                    : currentElements.map(pro => {
+                                        return (
+                                            <ProductItem key={pro.id} productRef={pro.id} imageUrl1={pro.first_image_path}
+                                                         imageUrl2={pro.second_image_path} title={pro.title}/>
+                                        )
+                                    })
                             }
                         </React.Fragment>
                         : <img src="/images/empty.png" className="empty-img" alt=""/>
@@ -90,6 +98,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = dispatch => ({
     fetchProducts: category => dispatch(fetchProductsStart(category)),
     getCategoryStart: cat => dispatch(getCategoryStart(cat)),
+
 
 });
 

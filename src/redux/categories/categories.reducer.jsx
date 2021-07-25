@@ -14,6 +14,9 @@ const INITIAL_STATE = {
     updateErrorMessage: null,
     updateStatus: false,
 
+    //currentSub
+    currentSubcategory: null,
+
 
 };
 
@@ -63,6 +66,15 @@ const categoriesReducer = (state = INITIAL_STATE, action) => {
                 getCategoryError: action.payload,
                 currentCategory: null,
             }
+
+        //SUBCATEGORY
+
+        case CategoriesActionsTypes.SET_CURRENT_SUBCATEGORY :
+            return {
+                ...state,
+                currentSubcategory: action.payload,
+            }
+
         default:
             return state;
 

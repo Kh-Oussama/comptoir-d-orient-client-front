@@ -6,17 +6,16 @@ import {Link, withRouter} from "react-router-dom";
 import {createStructuredSelector} from "reselect";
 import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
 import {connect} from "react-redux";
-import Loader from "../loader-content/loader.compoenent";
-import CategoriesCard from "../categories-card/categories-card.component";
 import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
 import {selectCategories, selectIsFetchingCat} from "../../redux/categories/categories.selectors";
 import uuid from 'react-uuid';
+import {setCurrentPage} from "../../redux/design-utilites/design-utilities.actions";
 
-const ShopSidebar = ({ current_sidebar_state, categories,isFetching,fetchCategories,history}) => {
+const ShopSidebar = ({current_sidebar_state, categories, isFetching, fetchCategories, history}) => {
 
     useEffect(() => {
         fetchCategories();
-    },[fetchCategories]);
+    }, [fetchCategories]);
 
     return (
         <>
@@ -42,24 +41,31 @@ const ShopSidebar = ({ current_sidebar_state, categories,isFetching,fetchCategor
                                             return (
                                                 <>
 
-                                                <Menu iconShape="square">
-                                                {
-                                                        cat.products_subcategories.length > 0
-                                                        ?    <SubMenu key={uuid()} title={cat.title} icon={<i className="far fa-dot-circle" />} onClick={() => history.push(`/shop/products/${cat.id}`)}  >
+                                                    <Menu iconShape="square">
+                                                        {
+                                                            cat.products_subcategories.length > 0
+                                                                ? <SubMenu key={uuid()} title={cat.title}
+                                                                           icon={<i className="far fa-dot-circle"/>}>
+                                                                    <h4 onClick={() => history.push(`/shop/products/${cat.id}`)} className="all-products">
+                                                                        <i className="fas fa-th"/> Tous les prodiuits</h4>
 
-                                                                {
-                                                                    cat.products_subcategories.map(subCat => {
-                                                                        return (
-                                                                            <MenuItem key={uuid()}>{subCat.title} </MenuItem>
-                                                                        )
-                                                                    })
-                                                                }
 
-                                                            </SubMenu>
-                                                        :   <MenuItem key={uuid()} icon={<i className="far fa-dot-circle"/>}>{cat.title} <Link to={`/shop/products/${cat.id}`} /></MenuItem>
+                                                                    {
+                                                                        cat.products_subcategories.map(subCat => {
+                                                                            return (
+                                                                                <MenuItem key={uuid()}>{subCat.title} <Link
+                                                                                    to={`/shop/products/${cat.id}/${subCat.id}`}/></MenuItem>
+                                                                            )
+                                                                        })
+                                                                    }
 
-                                                    }
-                                                </Menu>
+                                                                </SubMenu>
+                                                                : <MenuItem key={uuid()} icon={<i
+                                                                    className="far fa-dot-circle"/>}>{cat.title} <Link
+                                                                    to={`/shop/products/${cat.id}`}/></MenuItem>
+
+                                                        }
+                                                    </Menu>
                                                 </>
                                             )
                                         })
@@ -93,7 +99,11 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
     //categories
-    fetchCategories : () => dispatch(fetchCategoriesStart()),
+    fetchCategories: () => dispatch(fetchCategoriesStart()),
+
+    //subcategory
+    setCurrentSubcategory: cat => dispatch(setCurrentPage(cat)),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ShopSidebar));
