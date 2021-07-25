@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 199;
+
 }
 .button {
   background-color: white;
@@ -46,6 +47,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 calc(100vh - 8rem);
+  }
 }
 
 .sidebar-container {

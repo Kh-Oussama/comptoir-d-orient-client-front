@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, withRouter} from "react-router-dom";
 import IcomoonReact, {iconList} from "icomoon-react";
 import iconSet from "../../selection.json";
@@ -64,11 +64,9 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
                             <IcomoonReact iconSet={iconSet} size={33} icon="typing"/> Contact
                         </Link>
                     </div>
-
-                </div>
-                <div className="nav-right">
                     <SideBar/>
                 </div>
+
             </div>
             </VisibilitySensor>
         </React.Fragment>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, withRouter} from "react-router-dom";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Autoplay, EffectFade, Navigation, Pagination} from 'swiper';
@@ -15,6 +15,7 @@ import {selectSliders} from "../../redux/slliders/slider.selectors";
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = ({sliders}) => {
+
     return (
         <header className="header-container">
             {/*<div className="contact-button">*/}
@@ -40,22 +41,46 @@ const Header = ({sliders}) => {
                     }}
 
                 >
-                    {
-                        sliders.map(slider => {
-                            return (
-                                <SwiperSlide>
-                                    <div className="header__item" style={{
-                                        backgroundImage: `url(http://comptoir-d-orient.com/${slider.image_path})`,
-                                    }}>
-                                        <div className="layer"/>
+                    {/*{*/}
+                    {/*    sliders.map(slider => {*/}
+                    {/*        return (*/}
+                    {/*            <SwiperSlide>*/}
+                    {/*                <div className="header__item" style={{*/}
+                    {/*                    backgroundImage: `url(http://comptoir-d-orient.com/${slider.image_path})`,*/}
+                    {/*                }}>*/}
+                    {/*                    <div className="layer"/>*/}
 
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        })
-                    }
+                    {/*                </div>*/}
+                    {/*            </SwiperSlide>*/}
+                    {/*        )*/}
+                    {/*    })*/}
+                    {/*}*/}
 
+                    <SwiperSlide>
+                        <div className="header__item" style={{
+                            backgroundImage: `url(/images/h1.jpg)` ,
+                        }}>
+                            <div className="layer"/>
 
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <div className="header__item" style={{
+                            backgroundImage: `url(/images/h4.jpg)` ,
+                        }}>
+                            <div className="layer"/>
+
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="header__item" style={{
+                            backgroundImage: `url(/images/h5.jpg)` ,
+                        }}>
+                            <div className="layer"/>
+
+                        </div>
+                    </SwiperSlide>
 
                 </Swiper>
                 <div className="content__text">
@@ -79,12 +104,12 @@ const Header = ({sliders}) => {
 
                     <p className="paragraph paragraph-2 ">
                         {/*<Zoom right cascade>*/}
-                        <Fade top cascade>
+                        {/*<Fade top cascade>*/}
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Alias atque eius magnam non quidem quod rem sapiente soluta suscipit ullam! Animi
                             consectetur ea
                             illo laboriosam pariatur quae repudiandae sint veritatis!
-                        </Fade>
+                        {/*</Fade>*/}
                     </p>
 
                     <Bounce bottom cascade>
@@ -114,7 +139,7 @@ const Header = ({sliders}) => {
                 </div>
                 <Zoom cascade>
 
-                    <div className="pages-block">
+                    <div className="pages-block" >
                         <div className="numbers">
                             <div className="page-number"><span>01</span>/06</div>
                             <div className='leftRight'><i className="fas fa-chevron-left"/> <span>|</span> <i

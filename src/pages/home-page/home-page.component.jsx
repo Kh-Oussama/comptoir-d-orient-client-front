@@ -40,12 +40,12 @@ const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides, fetchALL
                     : <div className="home-page">
                         <NavigationBar/>
                         <Header/>
-                        <ProductRelated/>
-                        <AddressSection/>
-                        <Download/>
-                        <StoriesSection/>
-                        <Gallery/>
-                        <SubscribeFooterSection/>
+                        {/*<ProductRelated/>*/}
+                        {/*<AddressSection/>*/}
+                        {/*<Download/>*/}
+                        {/*<StoriesSection/>*/}
+                        {/*<Gallery/>*/}
+                        {/*<SubscribeFooterSection/>*/}
                     </div>
             }
 
