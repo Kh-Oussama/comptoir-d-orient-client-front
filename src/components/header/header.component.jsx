@@ -156,6 +156,9 @@ const Header = ({sliders}) => {
 
                 </div>
             </div>
+            <div className="scroll-btn-container">
+                <div className="icon-scroll"></div>
+            </div>
         </header>
     )
 }

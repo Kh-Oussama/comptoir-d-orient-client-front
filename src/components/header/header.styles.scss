@@ -46,9 +46,7 @@
     }
     @media only screen and (max-width: $bp-small) {
       height: calc(100vh - 11rem);
-      clip-path: polygon(0 0, 100% 0, 100% 87%, 34% 100%, 0 88%);
-    }
-
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);    }
     .layer {
       position: absolute;
       top: 0;
@@ -56,9 +54,9 @@
       width: 100%;
       height: 100%;
       background-image: linear-gradient(
-                      to bottom,
-                      rgba(#000, 0.9),
-                      rgba(#000, 0.2));
+              to bottom,
+                        rgba(0, 0, 0, 0.5) 50%,
+                        rgba(0, 0, 0, 0.8) 100%)
     }
 
 
@@ -223,7 +221,7 @@
   }
 
   @media only screen and (max-width: $bp-small) {
-    padding-top: 8rem;
+    padding-top: 4rem;
     margin-left: 3rem;
   }
 
@@ -251,7 +249,7 @@
       text-transform: lowercase;
       width: 80rem;
       @media only screen and (max-width: $bp-medium-2) {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
       }
 
       @media only screen and (max-width: $bp-small) {
@@ -395,3 +393,88 @@
   }
 }
 
+.scroll-btn-container {
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9rem;
+  background: #61dafb;
+  position: absolute;
+  left: 32.25%;
+  bottom: 1rem;
+  z-index: 1999;
+  //background-image: linear-gradient(
+  //                to bottom,
+  //                rgba(0, 0, 0, 0.5) 50%,
+  //                rgba(0, 0, 0, 0.8) 100%
+  //),
+  //url("https://images.unsplash.com/photo-1524260855046-f743b3cdad07?fit=crop&w=1920&h=1080&q=50");
+  //background-size: cover;
+  @media only screen and (max-width: $bp-small-1) {
+    left: 50%;
+  }
+
+  .icon-scroll,
+  .icon-scroll::before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .icon-scroll {
+    width: 35px;
+    height: 60px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    bottom: 2rem;
+    animation: bounce .7s;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(.5,.05,1,.5);
+    animation-iteration-count: infinite;
+
+
+    @media only screen and (max-width: $bp-small-1) {
+      width: 30px;
+      height: 50px;
+    }
+  }
+
+  .icon-scroll::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    margin-left: -4px;
+    top: 15px;
+    border-radius: 50%;
+    animation: 1.5s scroll cubic-bezier(0.65, -0.55, 0.25, 1.5) infinite;
+  }
+
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.5);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translate(-50%,0) ;
+  }
+  to{
+    transform: translate(-50%,20px) ;
+  }
+}
