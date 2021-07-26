@@ -22,7 +22,12 @@
 
   @media only screen and (max-width: $bp-small) {
     padding-right: 0;
-    height: calc(100vh - 13.5rem);
+    height: calc(100vh - 16rem);
+    margin-top: 8rem;
+    z-index: -1 !important;
+    .swiper-container {
+      z-index: -1 !important;
+    }
 
   }
 
@@ -45,7 +50,7 @@
       height: 57rem;
     }
     @media only screen and (max-width: $bp-small) {
-      height: calc(100vh - 13.5rem);
+      height: calc(100vh - 16rem);
       clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);    }
     .layer {
       position: absolute;
@@ -58,6 +63,7 @@
                         rgba(0, 0, 0, 0.5) 50%,
                         rgba(0, 0, 0, 0.8) 100%)
     }
+    z-index: -1 !important;
 
 
   }
@@ -223,6 +229,7 @@
   @media only screen and (max-width: $bp-small) {
     padding-top: 4rem;
     margin-left: 3rem;
+    z-index: -1 !important;
   }
 
 
@@ -241,7 +248,7 @@
     }
 
     @media only screen and (max-width: $bp-small) {
-      font-size: 1.7rem;
+      font-size: 3.5vw;
     }
 
 
@@ -253,7 +260,9 @@
       }
 
       @media only screen and (max-width: $bp-small) {
-        font-size: 1.8rem;
+        font-size: 4.5vw;
+        width: 100% !important;
+        padding-right: 3rem;
       }
     }
   }
@@ -279,8 +288,9 @@
     }
 
     @media only screen and (max-width: $bp-small) {
-      font-size: 2.9rem;
+      font-size: 7.5vw;
       margin-top: 0;
+      //line-height: 2;
     }
 
   }
@@ -404,7 +414,7 @@
   position: absolute;
   left: 32.25%;
   bottom: 1rem;
-  z-index: 1999;
+  z-index: 1;
   //background-image: linear-gradient(
   //                to bottom,
   //                rgba(0, 0, 0, 0.5) 50%,
@@ -412,8 +422,9 @@
   //),
   //url("https://images.unsplash.com/photo-1524260855046-f743b3cdad07?fit=crop&w=1920&h=1080&q=50");
   //background-size: cover;
-  @media only screen and (max-width: $bp-small-1) {
+  @media only screen and (max-width: $bp-small) {
     left: 50%;
+    z-index: -1;
   }
 
   .icon-scroll,

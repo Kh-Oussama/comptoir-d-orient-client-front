@@ -22,7 +22,7 @@ const Header = ({sliders}) => {
             {/*    <IcomoonReact iconSet={iconSet} size={55} icon="typing"/>*/}
             {/*</div>*/}
 
-            <div className="content">
+            {/*<div className="content">*/}
                 <Swiper
                     slidesPerView={1}
                     navigation={false}
@@ -93,7 +93,7 @@ const Header = ({sliders}) => {
                         <h1 className="title_1">
 
                             We <span>Are</span> the best <br/>
-                            website agency in <br/>
+                            website agency <br/>in
                             the world
 
                         </h1>
@@ -104,12 +104,12 @@ const Header = ({sliders}) => {
 
                     <p className="paragraph paragraph-2 ">
                         {/*<Zoom right cascade>*/}
-                        {/*<Fade top cascade>*/}
+                        <Fade top cascade>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Alias atque eius magnam non quidem quod rem sapiente soluta suscipit ullam! Animi
                             consectetur ea
                             illo laboriosam pariatur quae repudiandae sint veritatis!
-                        {/*</Fade>*/}
+                        </Fade>
                     </p>
 
                     <Bounce bottom cascade>
@@ -155,7 +155,7 @@ const Header = ({sliders}) => {
                 <div className="content__scrolling-indicators">
 
                 </div>
-            </div>
+            {/*</div>*/}
             <div className="scroll-btn-container">
                 <div className="icon-scroll"></div>
             </div>

@@ -9,6 +9,7 @@ import {createStructuredSelector} from "reselect";
 import {selectCurrentPage, selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
 import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
+import NavBarPhone from "../phone-navigation-bar/phone-navigation-bar.component";
 
 
 const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
@@ -66,8 +67,11 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
                     </div>
                     <SideBar/>
                 </div>
-
+                <div className="nav-right">
+                    <NavBarPhone/>
+                </div>
             </div>
+
             </VisibilitySensor>
         </React.Fragment>
     )
