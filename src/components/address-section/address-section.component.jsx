@@ -27,12 +27,12 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                     How do we Work
 
                 </p>
-                <Zoom left >
+                {/*<Zoom left >*/}
 
                 <h2 className="title">
                     Address Social
                 </h2>
-                </Zoom>
+                {/*</Zoom>*/}
 
 
                 <p className="title-description">
@@ -44,6 +44,7 @@ const AddressSection = ({setCurrentSection, current_section}) => {
 
             <div className="map-block">
                 <div className="leaflet-container">
+
                     <MapContainer center={[45.77414, 4.91158]} zoom={13} scrollWheelZoom={false}>
                         <TileLayer
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -60,6 +61,7 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                         </Marker>
                     </MapContainer>
                 </div>
+
             </div>
 
 

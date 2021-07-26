@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
 import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
 import AddressSection from "../../components/address-section/address-section.component";
 import Header from "../../components/header/header.component";
@@ -16,9 +16,24 @@ import {selectIsFetching} from "../../redux/slliders/slider.selectors";
 import {fetchSlidersStart} from "../../redux/slliders/slider.actions";
 import {fetchAllProductsStart} from "../../redux/products/products.actions";
 import {selectAllProducts, selectIsFetchingAllPro} from "../../redux/products/product.selectors";
+import NavigationBarPhone from "../../components/phone-navigation-bar/navigation-phone-container.componnt";
 
 
-const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides, fetchALLProducts, isFetchingAllPro}) => {
+const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides, fetchALLProducts, isFetchingAllPro}) => {
+
+    const [isPhone, setIsPhone] = useState(window.innerWidth <= 600);
+
+    let resizeWindow = () => {
+            setIsPhone(window.innerWidth <= 600);
+        };
+
+    useEffect(() => {
+        resizeWindow();
+        window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
+
+
 
     useEffect(() => {
         setCurrentPage(window.location.pathname)
@@ -38,11 +53,15 @@ const HomePage = ({setCurrentPage, fetchSlidersStart, isFetchingSlides, fetchALL
                 isFetchingSlides || isFetchingAllPro
                     ? <Loader/>
                     : <div className="home-page">
-                        <NavigationBar/>
+                        {
+                            isPhone
+                            ? <NavigationBarPhone/>
+                            : <NavigationBar/>
+                        }
                         <Header/>
-                        {/*<ProductRelated/>*/}
-                        {/*<AddressSection/>*/}
-                        {/*<Download/>*/}
+                        <ProductRelated/>
+                        <AddressSection/>
+                        <Download/>
                         {/*<StoriesSection/>*/}
                         {/*<Gallery/>*/}
                         {/*<SubscribeFooterSection/>*/}

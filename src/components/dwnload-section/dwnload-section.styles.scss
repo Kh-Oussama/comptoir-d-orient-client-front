@@ -2,6 +2,11 @@
     //margin-top: 10rem;
     height: 40rem;
 
+    @media only screen and (max-width: $bp-small) {
+    height: fit-content;
+
+    }
+
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,16 +22,23 @@
     color: white;
     line-height: 1.2;
 
+    @media only screen and (max-width: $bp-small) {
+
+        line-height: 1.8 ;
+
+    }
+
 }
 
 .paragraph_download {
     color: white;
     line-height: 1.4 !important;
-    @media only screen and (max-width: $bp-smallest) {
+    @media only screen and (max-width: $bp-small) {
         width: 90%;
-        line-height: 1.2 !important;
+        line-height: 1.7 !important;
 
     }
+
 }
 
 .content__text--btn-download {
@@ -80,6 +92,8 @@
     color: var(--color-primary);
     font-size: 2.2rem;
     text-transform: capitalize;
+    width: 100%;
+
 }
 
 .red-divider {

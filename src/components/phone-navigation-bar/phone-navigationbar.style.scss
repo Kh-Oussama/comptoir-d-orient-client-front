@@ -1,5 +1,7 @@
 .nav-phone {
 
+  z-index: 99999 !important;
+
 
   &__checkbox {
     outline: none;
@@ -164,4 +166,8 @@
     transform: translateX(1rem);
   }
 
+}
+
+.leaflet-container {
+  z-index: 1;
 }

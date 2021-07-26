@@ -155,7 +155,6 @@
       background-size: cover;
       transform-origin: left;
       transition: 0.5S;
-      z-index: -1;
     }
 
     @media only screen and (max-width: $bp-small-1) {
@@ -424,7 +423,6 @@
   //background-size: cover;
   @media only screen and (max-width: $bp-small) {
     left: 50%;
-    z-index: -1;
   }
 
   .icon-scroll,
