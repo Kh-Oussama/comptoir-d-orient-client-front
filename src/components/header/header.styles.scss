@@ -22,7 +22,7 @@
 
   @media only screen and (max-width: $bp-small) {
     padding-right: 0;
-    height: calc(100vh - 11rem);
+    height: calc(100vh - 13.5rem);
 
   }
 
@@ -45,7 +45,7 @@
       height: 57rem;
     }
     @media only screen and (max-width: $bp-small) {
-      height: calc(100vh - 11rem);
+      height: calc(100vh - 13.5rem);
       clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);    }
     .layer {
       position: absolute;
