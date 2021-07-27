@@ -4,17 +4,14 @@ import './loader.style.scss'
 
 const Loader = () => {
     return (
-        <div className="big-loader-page">
-            <div>
-                <img src="/images/logo-l.png" alt="Logo"/>
-            </div>
-            <div className="big-loader">
-                <div ></div>
-                <div ></div>
-                <div ></div>
-                <div ></div>
-
-            </div>
+        <div className="loading-page">
+        <div className="container-l">
+            <div className="📦"></div>
+            <div className="📦"></div>
+            <div className="📦"></div>
+            <div className="📦"></div>
+            <div className="📦"></div>
+        </div>
         </div>
 
     )

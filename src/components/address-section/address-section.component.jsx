@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import VisibilitySensor from 'react-visibility-sensor';
 import {connect} from "react-redux";
@@ -28,10 +29,13 @@ const AddressSection = ({setCurrentSection, current_section}) => {
 
                 </p>
                 {/*<Zoom left >*/}
-
+                <Zoom left cascade>
                 <h2 className="title">
+
                     Address Social
+
                 </h2>
+                </Zoom>
                 {/*</Zoom>*/}
 
 
