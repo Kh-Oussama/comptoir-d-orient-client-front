@@ -62,9 +62,9 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
                         <ProductRelated/>
                         <AddressSection/>
                         <Download/>
-                        {/*<StoriesSection/>*/}
-                        {/*<Gallery/>*/}
-                        {/*<SubscribeFooterSection/>*/}
+                        <StoriesSection/>
+                        <Gallery/>
+                        <SubscribeFooterSection/>
                     </div>
             }
 

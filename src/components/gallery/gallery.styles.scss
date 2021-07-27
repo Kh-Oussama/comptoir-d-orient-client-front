@@ -8,10 +8,33 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
 
+  @media only screen and (max-width: $bp-medium-2) {
+    padding: 5rem 8rem;
+
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding :5rem 3rem;
+
+  }
 
 
   .partners-section-header {
     margin: 0 9rem;
+
+    .title_1 {
+
+    }
+
+    @media only screen and (max-width: $bp-medium-2) {
+      margin: 0 3rem;
+
+    }
 
   }
 }
@@ -30,6 +53,17 @@
   grid-gap: 1.5rem;
 
   margin-right: 9rem;
+
+  @media only screen and (max-width: $bp-large) {
+    margin: 4rem;
+
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 0;
+    margin-top: 3rem;
+
+  }
 
 
   &__item {

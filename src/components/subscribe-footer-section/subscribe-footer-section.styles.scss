@@ -3,6 +3,15 @@
   display: grid;
   grid-template-columns: repeat(24,1fr);
   grid-template-rows: repeat(19,1fr);
+
+  @media only screen and (max-width: $bp-medium-2) {
+    height: 120rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    height: 180rem;
+  }
+
   .image {
     grid-row: 7/16;
     grid-column: 16/22 ;
@@ -11,16 +20,49 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    z-index: 99;
+    z-index: 98;
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 17/23 ;
+    }
+    @media only screen and (max-width: $bp-medium-2) {
+      grid-row: 7/13;
+      grid-column: 15/23 ;
+      margin-left: 1.6rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+      grid-row: 4/8;
+    }
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 5/8;
+    }
   }
   .subscribe-section {
     grid-column: 6/23;
     grid-row: 4/9;
+    @media only screen and (max-width: $bp-medium-2) {
+      grid-row: 4/9;
+      grid-column: 4/23;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-row: 2/7;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      grid-row: 2/7;
+      margin-top: 4rem;
+    }
+
+
+
     h1 {
       font-size: 10rem;
       font-weight: normal;
       line-height: .8;
       font-family: 'Abhaya Libre', sans-serif;
+      @media only screen and (max-width: $bp-small) {
+        font-size: 5rem;
+      }
     }
     p {
       font-size: 1.8rem;
@@ -34,6 +76,18 @@
     grid-column: 1/25;
     margin-right: 4rem;
     grid-row: 12/19;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-right: 0;
+    }
+
+    @media only screen and (max-width: $bp-medium-2) {
+      grid-row: 12/19;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-row: 7/19;
+    }
   }
 
   .footer-links {
@@ -43,16 +97,59 @@
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
 
-    .links-left {
 
+    @media only screen and (max-width: $bp-large) {
+      grid-column: 3/14;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 2/14;
+    }
+    @media only screen and (max-width: $bp-medium-2) {
+      grid-row: 14/18;
+      grid-column: 3/-1;
+    }
+    @media only screen and (max-width: $bp-small) {
+      grid-row: 9/16;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      grid-column: 3/23;
+
+    }
+
+    .links-left {
+      @media only screen and (max-width: $bp-small) {
+
+        width: 100%;
+        text-align: center;
+        background: rgba(#fff,.2);
+        padding: 2rem;
+      }
       .link-email a {
           width: 30rem !important;
-        padding: 1rem 1.5rem;
+        //padding: 1rem 1.5rem;
+        @media only screen and (max-width: $bp-large) {
+          width: 23rem !important;
+        }
+
+        @media only screen and (max-width: $bp-medium-2) {
+          width: 30rem !important;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+          width: 100% !important;
+        }
+
+
 
       }
 
       .link  a {
-
+        @media only screen and (max-width: $bp-small) {
+          width: 100% !important;
+          text-align: center;
+        }
         width: fit-content;
         text-align: left;
 
@@ -61,6 +158,17 @@
         }
       }
     }
+    .links-center , .links-Right {
+      @media only screen and (max-width: $bp-small) {
+
+        width: 100%;
+        text-align: center;
+        background: rgba(#fff,.2);
+        padding: 2rem;
+      }
+    }
+
+
 
     .link {
       font-size: 1.6rem;
@@ -76,6 +184,8 @@
         //margin-right: 3rem;
         text-align: center;
         transition: all 0.5S;
+
+
 
         svg {
           fill: white
@@ -93,6 +203,10 @@
           transform-origin: left;
           transition: 0.5S;
           z-index: -1;
+          @media only screen and (max-width: $bp-small) {
+          display: none;
+
+          }
         }
 
 
@@ -102,6 +216,11 @@
         &:hover  span {
           color: black;
           z-index: 999;
+
+          @media only screen and (max-width: $bp-small) {
+            color: var(--color-primary);
+
+          }
         }
         &:hover {
           background-color: transparent;
@@ -119,6 +238,12 @@
     grid-template-rows: 1fr;
     color: white;
 
+    @media only screen and (max-width: $bp-medium-2) {
+      grid-column: 2/24;
+
+    }
+
+
     .dev-name {
       margin-left: 1rem;
       color: var(--color-primary);
@@ -130,6 +255,19 @@
       display: flex;
       align-items: center;
       font-family: 'Abhaya Libre', sans-serif;
+      @media only screen and (max-width: $bp-large) {
+        grid-column: 1/8;
+      }
+      @media only screen and (max-width: $bp-medium-2) {
+        grid-column: 1/9;
+
+      }
+      @media only screen and (max-width: $bp-small) {
+        grid-column: 1/-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
     }
     .right {
@@ -138,6 +276,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media only screen and (max-width: $bp-medium-2) {
+        grid-column: 9/18;
+
+      }
+      @media only screen and (max-width: $bp-small) {
+        display: none;
+      }
 
       .link a {
         text-decoration: none;
@@ -153,6 +299,10 @@
         margin-right: 3rem;
         text-align: center;
         transition: all 0.5S;
+        @media only screen and (max-width: $bp-medium-2) {
+          width: 15rem;
+          margin-right: 0;
+        }
 
         svg {
           fill: white
@@ -196,6 +346,26 @@
   grid-template-columns: repeat(13,1fr);
   grid-template-rows: 1fr;
 
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 6/20;
+    margin-right: -1.4rem;
+
+  }
+  @media only screen and (max-width: $bp-medium-2) {
+    grid-row: 7/8;
+    grid-column: 4/19;
+    margin-right: 0;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-row:4/8;
+  }
+  @media only screen and (max-width: $bp-smallest) {
+    grid-column: 4/24;
+  }
+
+
+
   &__input {
     font-family: inherit;
     font-size: 1.8rem;
@@ -206,6 +376,9 @@
     padding: .7rem 2rem;
     transition: all .2s;
     height:5.5rem;
+    @media only screen and (max-width: $bp-smallest) {
+      grid-column: 1/10;
+    }
 
     &:focus {
       outline: none;
@@ -234,8 +407,11 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    z-index: 199;
+    z-index: 99;
     border: none;
+    @media only screen and (max-width: $bp-smallest) {
+      grid-column: 10/14;
+    }
 
     &:before {
       content: "";

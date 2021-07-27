@@ -22,6 +22,21 @@
   transform: skewX(-12deg);
   margin-bottom: 5rem;
 
+  @media only screen and (max-width: $bp-small) {
+    transform: skewX(0);
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    width: 85%;
+    padding: 3rem;
+    padding-left: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+  }
 
 
   &__shape {
@@ -33,6 +48,15 @@
     overflow: hidden;
     border-radius: 50%;
 
+    @media only screen and (max-width: $bp-small) {
+      transform: translateX(-3rem) skewX(0deg);
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      transform: translateX(0rem) skewX(0deg);
+      margin-bottom: 2rem;
+    }
+
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
       -webkit-clip-path: circle(50% at 50% 50%);
       clip-path: circle(50% at 50% 50%);
@@ -42,6 +66,8 @@
     }
 
 
+
+
   }
 
   &__img {
@@ -49,10 +75,27 @@
     transform: translateX(-4rem) scale(1.4);
     backface-visibility: hidden;
     transition: all .5s;
+
   }
 
   &__text {
     transform: skewX(12deg);
+
+    .story-title {
+      margin-bottom: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      transform: skewX(0deg);
+
+
+      p {
+        @media only screen and (max-width: $bp-smallest) {
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+    }
 
   }
 
@@ -104,5 +147,9 @@
 }
 
 .red-divider-stories {
-  margin-top: -9rem;
+  margin-top: -2rem;
+}
+
+.stories-title {
+  margin-bottom: 3rem !important;
 }

@@ -36,15 +36,10 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
                     </p>
                     <Zoom left >
 
-                        <h2 className="title">
+                        <h2 className="title stories-title">
                             We make people genuinely happy
                         </h2>
                     </Zoom>
-
-
-                    <p className="title-description">
-                        21 Avenue Lefèvre, 69120 Vaulx-en-Velin
-                    </p>
                     <div className="red-divider red-divider-stories"/>
                 </div>
     </VisibilitySensor>
@@ -55,7 +50,7 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
                             <figcaption className="story__caption">Mary Smith</figcaption>
                         </figure>
                         <div className="story__text">
-                            <h3 className="heading-tertiary u-margin-bottom-small">I had the best week ever with my
+                            <h3 className="story-title">I had the best week ever with my
                                 family</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur
@@ -74,7 +69,7 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
                             <figcaption className="story__caption">Jack Wilson</figcaption>
                         </figure>
                         <div className="story__text">
-                            <h3 className="heading-tertiary u-margin-bottom-small">WOW! My life is completely different
+                            <h3 className="story-title">WOW! My life is completely different
                                 now</h3>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur
@@ -88,11 +83,11 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
 
 
 
-                <div className="content__text--btn content__text--btn-download">
-                    <Link to=''>
-                        <span><i className="fas fa-file-alt"></i> Explore Now</span>
-                    </Link>
-                </div>
+                {/*<div className="content__text--btn content__text--btn-download">*/}
+                {/*    <Link to=''>*/}
+                {/*        <span><i className="fas fa-file-alt"></i> Explore Now</span>*/}
+                {/*    </Link>*/}
+                {/*</div>*/}
             </section>
 
 
