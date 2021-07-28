@@ -1,6 +1,7 @@
 {
-  "name": "comptoir-dorient-client-frontend",
+  "name": "comptoir-d'orient",
   "version": "0.1.0",
+  "homepage": "https://www.comptoir-d-orient.fr/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",

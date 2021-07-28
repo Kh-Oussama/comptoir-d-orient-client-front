@@ -41,46 +41,20 @@ const Header = ({sliders}) => {
                     }}
 
                 >
-                    {/*{*/}
-                    {/*    sliders.map(slider => {*/}
-                    {/*        return (*/}
-                    {/*            <SwiperSlide>*/}
-                    {/*                <div className="header__item" style={{*/}
-                    {/*                    backgroundImage: `url(http://comptoir-d-orient.com/${slider.image_path})`,*/}
-                    {/*                }}>*/}
-                    {/*                    <div className="layer"/>*/}
+                    {
+                        sliders.map(slider => {
+                            return (
+                                <SwiperSlide>
+                                    <div className="header__item" style={{
+                                        backgroundImage: `url(http://backend.comptoir-d-orient.fr/${slider.image_path})`,
+                                    }}>
+                                        <div className="layer"/>
 
-                    {/*                </div>*/}
-                    {/*            </SwiperSlide>*/}
-                    {/*        )*/}
-                    {/*    })*/}
-                    {/*}*/}
-
-                    <SwiperSlide>
-                        <div className="header__item" style={{
-                            backgroundImage: `url(/images/h1.jpg)` ,
-                        }}>
-                            <div className="layer"/>
-
-                        </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <div className="header__item" style={{
-                            backgroundImage: `url(/images/h4.jpg)` ,
-                        }}>
-                            <div className="layer"/>
-
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="header__item" style={{
-                            backgroundImage: `url(/images/h5.jpg)` ,
-                        }}>
-                            <div className="layer"/>
-
-                        </div>
-                    </SwiperSlide>
+                                    </div>
+                                </SwiperSlide>
+                            )
+                        })
+                    }
 
                 </Swiper>
                 <div className="content__text">

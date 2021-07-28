@@ -13,7 +13,7 @@ const CategoriesCard = ({ backgroundImage, title, subtitle, backgroundColor, his
                 <div className="card-content">
                     <div
                         className="card-image-container"
-                        style={{ backgroundColor:backgroundColor, backgroundImage: 'url(http://comptoir-d-orient.com/'+backgroundImage}}
+                        style={{ backgroundColor:backgroundColor, backgroundImage: 'url(http://backend.comptoir-d-orient.fr/'+backgroundImage}}
                     >
                     </div>
                     <div

@@ -63,14 +63,14 @@ const ViewProduct = ({current_sidebar_state, getProductStart, currentProduct, ma
 
                                         <SwiperSlide>
                                             <div className="item">
-                                                <img src={`http://comptoir-d-orient.com/${currentProduct[0].first_image_path}`} alt="" className="img"
+                                                <img src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].first_image_path}`} alt="" className="img"
                                                      style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
 
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
                                             <div className="item">
-                                                <img src={`http://comptoir-d-orient.com/${currentProduct[0].second_image_path}`} alt="" className="img"
+                                                <img src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].second_image_path}`} alt="" className="img"
                                                      style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
 
                                             </div>

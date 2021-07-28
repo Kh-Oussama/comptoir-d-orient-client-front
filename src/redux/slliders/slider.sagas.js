@@ -6,7 +6,7 @@ import Axios from "axios";
 
 export function* fetchSlidersAsync() {
     try {
-        const response = yield Axios.get("http://comptoir-d-orient.com/api/sliders");
+        const response = yield Axios.get("http://backend.comptoir-d-orient.fr/api/sliders");
         const Sliders = response.data.sliders;
         yield put(fetchSlidersSuccess(Sliders));
     } catch (error) {
