@@ -99,7 +99,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
 
                 </div>
                 <img src="/images/h3.jpg" alt="image" className="image"/>
-                <div className="footer-section"></div>
+                <div className="footer-section" id={"footer"}></div>
                 <div className="footer-links">
                     <div className="links-left">
                         <div className="link">

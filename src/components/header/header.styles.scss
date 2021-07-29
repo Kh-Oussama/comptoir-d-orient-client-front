@@ -155,6 +155,7 @@
       background-size: cover;
       transform-origin: left;
       transition: 0.5S;
+      z-index: -1;
     }
 
     @media only screen and (max-width: $bp-small-1) {

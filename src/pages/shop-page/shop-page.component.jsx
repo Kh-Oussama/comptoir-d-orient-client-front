@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
 import 'semantic-ui-css/components/sidebar.min.css';
 import 'semantic-ui-css/components/button.min.css';
-import {Header} from "../../components/shop-header/Header";
 import 'react-pro-sidebar/dist/css/styles.css';
 import ShopSidebar from "../../components/shop-sidebar/shop-sidebar.component";
 import {createStructuredSelector} from "reselect";
@@ -10,28 +9,47 @@ import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilit
 import {setCurrentPage, togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import Categories from "../../components/categories/categories.component";
 import ContentRoutes from "../../components/content-routing/content-routing.routes";
+import NavigationBarPhone from "../../components/phone-navigation-bar/navigation-phone-container.componnt";
 
 
 const ShopPage = ({toggles_shop_sidebar, current_sidebar_state, setCurrentPage}) => {
+    const [isPhone, setIsPhone] = useState(window.innerWidth <= 600);
+
+    let resizeWindow = () => {
+        setIsPhone(window.innerWidth <= 600);
+    };
+
+    useEffect(() => {
+        resizeWindow();
+        window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
 
     useEffect(() => {
         setCurrentPage(window.location.pathname)
     }, [setCurrentPage]);
 
     return (
+        <>
+            {
+                isPhone
+                    ? <NavigationBarPhone/>
+                    : <NavigationBar/>
+            }
         <div className="sidebar-shop">
-            <NavigationBar/>
+
             <div className="shop-page-content">
                 <ShopSidebar/>
                 <div className="container">
-                    <input type="checkbox" checked={current_sidebar_state} onChange={toggles_shop_sidebar}/>
+                    <input type="checkbox" checked={current_sidebar_state} onChange={() => toggles_shop_sidebar(!current_sidebar_state)}/>
                     <ContentRoutes/>
                 </div>
             </div>
 
         </div>
+
+            </>
     )
 }
 
@@ -40,7 +58,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-    toggles_shop_sidebar: current_section => dispatch(togglesShopSidebar(current_section)),
+    toggles_shop_sidebar: x => dispatch(togglesShopSidebar(x)),
     setCurrentPage: current_page => dispatch(setCurrentPage(current_page)),
 });
 

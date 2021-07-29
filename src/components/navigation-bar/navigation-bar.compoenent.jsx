@@ -16,14 +16,14 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
 
     return (
         <React.Fragment>
-            <VisibilitySensor
-                active={!(current_section === "header")}
-                onChange={isVisible => {
-                    if (isVisible) {
-                        setCurrentSection("header");
-                    }
-                }}
-                delayedCall>
+            {/*<VisibilitySensor*/}
+            {/*    active={!(current_section === "header")}*/}
+            {/*    onChange={isVisible => {*/}
+            {/*        if (isVisible) {*/}
+            {/*            setCurrentSection("header");*/}
+            {/*        }*/}
+            {/*    }}*/}
+            {/*    delayedCall>*/}
             <div className="navigation-container" id='header'>
                 <div className="nav-left">
                     <div className="name-block">
@@ -46,22 +46,22 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
                     </div>
                     <div className={`link-block ${current_page !== '/contact_us' && current_page !== '/' && current_page !== '/events' ? 'link-block-active': null}`}>
                         <Link to='/shop'>
-                            <IcomoonReact iconSet={iconSet} size={33} icon="shopping-cart"/> Produits
+                            <IcomoonReact iconSet={iconSet} size={33} icon="price-tag"/> Produits
                         </Link>
                     </div>
                       <div className="link-block">
                         <Link to='/'>
-                            <IcomoonReact iconSet={iconSet} size={33} icon="users"/> About
+                            <IcomoonReact iconSet={iconSet} size={33} icon="shopping-cart"/> shop now
                         </Link>
                     </div>
 
-                      <div className="link-block">
-                        <Link to='/'>
-                            <IcomoonReact iconSet={iconSet} size={33} icon="sweden"/> Blog
-                        </Link>
-                    </div>
+                    {/*  <div className="link-block">*/}
+                    {/*    <Link to='/'>*/}
+                    {/*        <IcomoonReact iconSet={iconSet} size={33} icon="sweden"/> Blog*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
                     <div className={`link-block ${current_page === '/contact_us' ? 'link-block-active': null}`}>
-                        <Link to='/'>
+                        <Link to='/contact_us'>
                             <IcomoonReact iconSet={iconSet} size={33} icon="typing"/> Contact
                         </Link>
                     </div>
@@ -72,7 +72,7 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
                 </div>
             </div>
 
-            </VisibilitySensor>
+            {/*</VisibilitySensor>*/}
         </React.Fragment>
     )
 }

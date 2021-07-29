@@ -5,7 +5,6 @@ import {Link} from 'react-scroll';
 import styled from "styled-components";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
-import {setCurrentPage} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 
@@ -97,7 +96,7 @@ const SideBar = ({current_section}) => {
 
                         <Link to={'header'} smooth={true} duration={1000}>
 
-                            <Item className={`item ${current_section === 'header' ? 'item-active': null}`}>
+                            <Item className={`item ${current_section === 'header' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">Home</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="home"/>
@@ -108,7 +107,7 @@ const SideBar = ({current_section}) => {
                         </Link>
                         <Link to={'rProducts'} smooth={true} duration={1000}>
 
-                            <Item className={`item ${current_section === 'rProducts' ? 'item-active': null}`}>
+                            <Item className={`item ${current_section === 'rProducts' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">RECOMMANDATIONS</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="price-tag"/>
@@ -117,7 +116,7 @@ const SideBar = ({current_section}) => {
                         </Link>
                         <Link to={'address'} smooth={true} duration={1000}>
 
-                            <Item className={`item ${current_section === 'address' ? 'item-active': null}`}>
+                            <Item className={`item ${current_section === 'address' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">address</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="map"/>
@@ -126,7 +125,7 @@ const SideBar = ({current_section}) => {
                         </Link>
                         <Link to={'offre'} smooth={true} duration={1000}>
 
-                            <Item className={`item ${current_section === 'catalogue' ? 'item-active': null}`}>
+                            <Item className={`item ${current_section === 'catalogue' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">catalogue</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="open-book"/>
@@ -134,7 +133,7 @@ const SideBar = ({current_section}) => {
                             </Item>
                         </Link>
                         <Link to={'stories'} smooth={true} duration={1000}>
-                            <Item className={`item ${current_section === 'stories' ? 'item-active': null}`}>
+                            <Item className={`item ${current_section === 'stories' ? 'item-active' : null}`}>
 
                                 <Text clicked={click} className="text">stories</Text>
                                 <div>
@@ -147,7 +146,7 @@ const SideBar = ({current_section}) => {
 
                         <Link to={'gallery'} smooth={true} duration={1000}>
 
-                            <Item className={`item ${current_section === 'gallery' ? 'item-active': null}`}>
+                            <Item className={`item ${current_section === 'gallery' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">Gallery</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="documents"/>
@@ -188,7 +187,6 @@ const mapStateToProps = createStructuredSelector({
     current_section: selectCurrentSection,
 });
 
-const mapDispatchToProps = dispatch => ({
-    });
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, null)(withRouter(SideBar));

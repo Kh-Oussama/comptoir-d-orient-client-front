@@ -11,7 +11,7 @@ import Axios from "axios";
 
 export function* fetchCategoriesAsync() {
     try {
-        const response = yield Axios.get("http://backend.comptoir-d-orient.fr/api/categories");
+        const response = yield Axios.get("https://backend.comptoir-d-orient.fr/api/categories");
         const Categories = response.data.categories;
         yield put(fetchCategoriesSuccess(Categories));
     } catch (error) {
@@ -22,7 +22,7 @@ export function* fetchCategoriesAsync() {
 
 export function* getCategoriesAsync({payload: {id}}) {
     try {
-        const response = yield Axios.get(`http://backend.comptoir-d-orient.fr/api/categories/${id}`);
+        const response = yield Axios.get(`https://backend.comptoir-d-orient.fr/api/categories/${id}`);
         const Category = response.data.productsCategory;
         yield put(getCategorySuccess(Category));
     } catch (error) {

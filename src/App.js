@@ -3,6 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 
 import HomePage from "./pages/home-page/home-page.component";
 import ShopPage from "./pages/shop-page/shop-page.component";
+import ContactUsPage from "./pages/contact-us/contact-us.component";
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
 
             <Switch>
                 <Route exact path="/" component={HomePage}/>
-                <Route path="/shop/" component={ShopPage}/>
+                <Route exact path="/contact_us" component={ContactUsPage}/>                <Route path="/shop/" component={ShopPage}/>
             </Switch>
         </React.Fragment>
     );

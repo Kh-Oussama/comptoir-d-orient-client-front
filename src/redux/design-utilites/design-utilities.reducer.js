@@ -22,7 +22,7 @@ const designUtilitiesReducer = (state = INITIAL_STATE, action) => {
       case DesignActionTypes.TOGGLE_SHOP_SIDEBAR:
           return {
               ...state,
-              shop_sidebar_hidden: !state.shop_sidebar_hidden,
+              shop_sidebar_hidden: action.payload,
           };
       case DesignActionTypes.TOGGLE_SEARCH_HIDDEN:
           return {

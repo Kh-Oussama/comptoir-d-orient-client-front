@@ -6,13 +6,21 @@ import {withRouter} from "react-router-dom";
 import {selectCategories, selectIsFetchingCat} from "../../redux/categories/categories.selectors";
 import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
 import Loader from "../loader-content/loader.compoenent";
+import {Header} from "../shop-header/Header";
+import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 
-const Categories = ({ fetchCategories, isFetching, categories }) => {
+const Categories = ({ toggles_shop_sidebar, fetchCategories, isFetching, categories }) => {
     useEffect(() => {
         fetchCategories();
     },[fetchCategories]);
 
+    useEffect(() => {
+        toggles_shop_sidebar(false)
+    }, [toggles_shop_sidebar]);
+
     return (
+        <>
+        <Header title={'nos categories'}/>
         <ul className="card-list">
             {
                 isFetching
@@ -43,6 +51,7 @@ const Categories = ({ fetchCategories, isFetching, categories }) => {
 
 
         </ul>
+            </>
     )
 }
 
@@ -53,6 +62,7 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
     fetchCategories : () => dispatch(fetchCategoriesStart()),
+    toggles_shop_sidebar: x => dispatch(togglesShopSidebar(x)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Categories));

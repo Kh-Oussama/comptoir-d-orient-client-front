@@ -13,14 +13,18 @@ import {selectCurrentProduct, selectUpdateLoading} from "../../redux/products/pr
 import {getProductStart} from "../../redux/products/products.actions";
 import Loader from "../loader-content/loader.compoenent";
 import {Header} from "../shop-header/Header";
+import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 
 
 SwiperCore.use([Pagination, Navigation]);
 
-const ViewProduct = ({current_sidebar_state, getProductStart, currentProduct, match, updateLoading, history}) => {
+const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStart, currentProduct, match, updateLoading, history}) => {
     const [isPhone, setIsPhone] = useState(window.innerWidth > 600);
     const [active, setActive] = useState("FirstCard");
 
+    useEffect(() => {
+        toggles_shop_sidebar(false)
+    }, [toggles_shop_sidebar]);
 
     useEffect(() => {
         getProductStart({id: match.params.id});
@@ -140,6 +144,8 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
     getProductStart: pro => dispatch(getProductStart(pro)),
+    toggles_shop_sidebar: x => dispatch(togglesShopSidebar(x)),
+
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ViewProduct));

@@ -23,21 +23,21 @@ const NavBarPhone = ({history , toggleSearchHidden, setCurrentPage, current_page
                     <ul className="nav-phone__list">
                         <li className="nav-phone__item">
                             <div className={`nav-phone__link ${current_page === '/' ? 'nav-phone__link-active': null}`}>
-                                <LinkP to={'/header'} smooth={true} duration={1000}>
+                                <LinkP to={'/'} smooth={true} duration={1000}>
                                     <i className="fas fa-home"/> Accueil
                                 </LinkP>
                             </div>
                         </li>
                         <li className="nav-phone__item">
                             <div className={`nav-phone__link ${current_page !== '/contact_us' && current_page !== '/' && current_page !== '/events' ?  'nav-phone__link-active': null}`}>
-                                <LinkP to={'/categories'} smooth={true} duration={1000}>
-                                    <i className="fas fa-shopping-cart"/> nos produits                                </LinkP>
+                                <LinkP to={'/shop'} smooth={true} duration={1000}>
+                                    <i className="fas fa-tags"/> nos produits                                </LinkP>
                             </div>
                         </li>
                         <li className="nav-phone__item">
                             <div className={`nav-phone__link ${current_page === '/events' ? 'nav-phone__link-active': null}`}>
-                                <LinkP to={'/events'} smooth={true} duration={1000}>
-                                    <i className="fas fa-users"/> qui somme nous
+                                <LinkP to={'#'} smooth={true} duration={1000}>
+                                    <i className="fas fa-shopping-cart"/> Shop now
                                 </LinkP>
                             </div>
                         </li>
@@ -49,13 +49,13 @@ const NavBarPhone = ({history , toggleSearchHidden, setCurrentPage, current_page
                             </div>
                         </li>
 
-                        <li className="nav-phone__item">
-                            <div className={`nav-phone__link ${current_page === '/contact_us' ? 'nav-phone__link-active': null}`}>
-                                <LinkP to={'/contact_us'} smooth={true} duration={1000}>
-                                    <i className="fas fa-th-large"/> Blog
-                                </LinkP>
-                            </div>
-                        </li>
+                        {/*<li className="nav-phone__item">*/}
+                        {/*    <div className={`nav-phone__link ${current_page === '/contact_us' ? 'nav-phone__link-active': null}`}>*/}
+                        {/*        <LinkP to={'/contact_us'} smooth={true} duration={1000}>*/}
+                        {/*            <i className="fas fa-th-large"/> Blog*/}
+                        {/*        </LinkP>*/}
+                        {/*    </div>*/}
+                        {/*</li>*/}
 
                     </ul>
                 </nav>

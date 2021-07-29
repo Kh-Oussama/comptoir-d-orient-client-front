@@ -12,6 +12,7 @@ import Zoom from 'react-reveal/Zoom';
 import {createStructuredSelector} from "reselect";
 import {connect} from "react-redux";
 import {selectSliders} from "../../redux/slliders/slider.selectors";
+import {Link as LinkScroll} from 'react-scroll';
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = ({sliders}) => {
@@ -131,7 +132,9 @@ const Header = ({sliders}) => {
                 </div>
             {/*</div>*/}
             <div className="scroll-btn-container">
-                <div className="icon-scroll"></div>
+                <LinkScroll to={'footer'} smooth={true} duration={1000}>
+                    <div className="icon-scroll"></div>
+                </LinkScroll>
             </div>
         </header>
     )

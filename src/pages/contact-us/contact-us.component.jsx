@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useLocation, withRouter} from "react-router-dom";
-import Footer from "../../components/footer/footer.component";
-import NavigationBar from "../../components/navigation/navigation.component";
 import {setCurrentPage} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
 import {createStructuredSelector} from "reselect";
@@ -9,10 +7,23 @@ import {selectSendMsgError, selectSendMsgLoading, selectSendMsgStatus} from "../
 import {sendMessageStart} from "../../redux/clients/cleints.actions";
 import {toast} from "react-toastify";
 import Loader from "../../components/loader-content/loader.compoenent";
+import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
+import SubscribeFooterSection from "../../components/subscribe-footer-section/subscribe-footer-section.component";
+import NavigationBarPhone from "../../components/phone-navigation-bar/navigation-phone-container.componnt";
 
 
 const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, sendErrors, history}) => {
+    const [isPhone, setIsPhone] = useState(window.innerWidth <= 600);
 
+    let resizeWindow = () => {
+        setIsPhone(window.innerWidth <= 600);
+    };
+
+    useEffect(() => {
+        resizeWindow();
+        window.addEventListener("resize", resizeWindow);
+        return () => window.removeEventListener("resize", resizeWindow);
+    }, []);
     const [messageCredentials, setCredentials] = useState({
         firstName: '',
         lastName: '',
@@ -71,6 +82,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                 position: toast.POSITION.BOTTOM_RIGHT,
                 autoClose: 3000,
                 draggable: true,
+                toastId: 'third_toast',
             })
         await sleep(4000).then( () => {
 
@@ -102,7 +114,11 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
 
     return (
         <React.Fragment>
-            <NavigationBar/>
+            {
+                isPhone
+                    ? <NavigationBarPhone/>
+                    : <NavigationBar/>
+            }
             <div className="contactUs">
                 <div className="content">
                     <div className="home">
@@ -114,15 +130,15 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                         <h1>Contact Info</h1>
                         <div className="info">
                             <i className="fas fa-map-marked-alt"/>
-                            <span>CITÉ CAMPS N° 06 ILOT E LOCAL 02, DAR EL BEIDA-ALGER</span>
+                            <span>21 Avenue Lefèvre, 69120 Vaulx-en-Velin</span>
                         </div>
                         <div className="info">
                             <i className="far fa-envelope"/>
-                            <span>commercial@aqua-vim.com</span>
+                            <span>commercial@comptoir-d-orient.fr</span>
                         </div>
                         <div className="info">
                             <i className="fas fa-phone"/>
-                            <span>05 61 99 43 81 - 05 60 13 88 38 - 05 60 02 67 89 - 05 51 15 45 28 - 05 60 04 82 43</span>
+                            <span>05 61 99 43 81 - 05 60 13 88 38 </span>
                         </div>
                         <div className="info">
                             <i className="fas fa-fax"/>
@@ -212,7 +228,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <SubscribeFooterSection/>
         </React.Fragment>
     )
 }

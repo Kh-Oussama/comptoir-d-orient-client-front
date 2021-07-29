@@ -10,10 +10,15 @@ import Loader from "../loader-content/loader.compoenent";
 import {Header} from "../shop-header/Header";
 import {getCategoryStart} from "../../redux/categories/categories.actions";
 import {selectCurrentCategory, selectUpdateLoading} from "../../redux/categories/categories.selectors";
+import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 
 
-const Products = ({fetchProducts, isFetching, products, currentCategory, updateLoading, getCategoryStart, match, history}) => {
+const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, currentCategory, updateLoading, getCategoryStart, match, history}) => {
     // const [searchField, setSearchField] = useState('');
+
+    useEffect(() => {
+        toggles_shop_sidebar(false)
+    }, [toggles_shop_sidebar,match.params.id, match.params.sub]);
 
     //fetch products from backend
     useEffect(() => {
@@ -99,6 +104,7 @@ const mapDispatchToProps = dispatch => ({
     fetchProducts: category => dispatch(fetchProductsStart(category)),
     getCategoryStart: cat => dispatch(getCategoryStart(cat)),
 
+    toggles_shop_sidebar: x => dispatch(togglesShopSidebar(x)),
 
 });
 

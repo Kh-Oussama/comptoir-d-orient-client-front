@@ -28,15 +28,15 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                     How do we Work
 
                 </p>
-                {/*<Zoom left >*/}
-                <Zoom left cascade>
+                <Zoom left >
+                
                 <h2 className="title">
 
                     Address Social
 
                 </h2>
+             
                 </Zoom>
-                {/*</Zoom>*/}
 
 
                 <p className="title-description">
