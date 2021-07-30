@@ -4,19 +4,7 @@ import SwiperCore, {Pagination} from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
 import ProductItem from "../product-item/product-item.component";
-
-import P_3 from "../../assets/img/pr.jpg";
-import P_4 from "../../assets/img/pr.jpg";
-import P_5 from "../../assets/img/pr.jpg";
-import P_6 from "../../assets/img/pr.jpg";
-import P_7 from "../../assets/img/pr3.jpg";
-import P_8 from "../../assets/img/pr3.jpg";
-import P_9 from "../../assets/img/pr2.jpg";
-import P_10 from "../../assets/img/pr2.jpg";
-import P_11 from "../../assets/img/pr1.jpg";
-import P_12 from "../../assets/img/pr1.jpg";
-import P_13 from "../../assets/img/pr.jpg";
-import P_14 from "../../assets/img/pr.jpg";
+import Fade from 'react-reveal/Fade';
 import VisibilitySensor from "react-visibility-sensor";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
@@ -24,7 +12,7 @@ import {setCurrentSection} from "../../redux/design-utilites/design-utilities.ac
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {selectAllProducts} from "../../redux/products/product.selectors";
-
+import Zoom from 'react-reveal/Zoom';
 
 SwiperCore.use([Pagination]);
 const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
@@ -43,18 +31,23 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
                     }
                 }}
                 delayedCall>
-            <div className="partners-section-header">
-                <h1 className="title_2 title_2_download">pour vous</h1>
-                <h1 className="title_1 ">
-                    Nos RECOMMANDATIONS pour vous
-                </h1>
-                <div className="red-divider"/>
-                <p className="paragraph ">
-                    we are committed to providing our customers with exceptional
-                    service <br/> while offering out employees the best training
-                </p>
-            </div>
+                <div className="partners-section-header">
+                    <h1 className="title_2 title_2_download">pour vous</h1>
+                    <h1 className="title_1 ">
+                        <Fade left big cascade>
+                            Nos RECOMMANDATIONS pour vous
+                        </Fade>
+                    </h1>
+                    <div className="red-divider"/>
+                    <p className="paragraph ">
+                        <Zoom left cascade>
+                        we are committed to providing our customers with exceptional
+                        service <br/> while offering out employees the best training
+                        </Zoom>
+                        </p>
+                </div>
             </VisibilitySensor>
+            <Fade bottom big cascade>
             <div className="product-related--swiper">
                 <Swiper
                     spaceBetween={50}
@@ -80,6 +73,7 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
 
                 </Swiper>
             </div>
+            </Fade>
 
         </div>
 
@@ -88,7 +82,7 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
 
 const mapStateToProps = createStructuredSelector({
     current_section: selectCurrentSection,
-    allProducts : selectAllProducts,
+    allProducts: selectAllProducts,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -7,6 +7,7 @@ import {createStructuredSelector} from "reselect";
 import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
 import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
+import Fade from "react-reveal/Fade";
 
 const StoriesSection = ({setCurrentSection, current_section}) => {
     return (
@@ -43,6 +44,7 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
                     <div className="red-divider red-divider-stories"/>
                 </div>
     </VisibilitySensor>
+                <Fade bottom big>
                 <div className="row">
                     <div className="story">
                         <figure className="story__shape">
@@ -61,7 +63,8 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
                         </div>
                     </div>
                 </div>
-
+                </Fade>
+                <Fade bottom big>
                 <div className="row">
                     <div className="story">
                         <figure className="story__shape">
@@ -80,7 +83,7 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
                         </div>
                     </div>
                 </div>
-
+                </Fade>
 
 
                 {/*<div className="content__text--btn content__text--btn-download">*/}

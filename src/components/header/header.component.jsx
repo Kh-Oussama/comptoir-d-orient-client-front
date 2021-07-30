@@ -47,7 +47,7 @@ const Header = ({sliders}) => {
                             return (
                                 <SwiperSlide>
                                     <div className="header__item" style={{
-                                        backgroundImage: `url(http://backend.comptoir-d-orient.fr/${slider.image_path})`,
+                                        backgroundImage: `url(https://backend.comptoir-d-orient.fr/${slider.image_path})`,
                                     }}>
                                         <div className="layer"/>
 

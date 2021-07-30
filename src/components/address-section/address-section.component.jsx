@@ -25,7 +25,9 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                 delayedCall>
             <div className="section-header">
                 <p className="p-before-title">
+                    <Zoom left cascade>
                     How do we Work
+                    </Zoom>
 
                 </p>
                 <Zoom left >
@@ -40,12 +42,14 @@ const AddressSection = ({setCurrentSection, current_section}) => {
 
 
                 <p className="title-description">
+                    <Zoom left cascade>
                     21 Avenue Lefèvre, 69120 Vaulx-en-Velin
+                    </Zoom>
                 </p>
                 <div className="red-divider"/>
             </div>
             </VisibilitySensor>
-
+            <Fade bottom big>
             <div className="map-block">
                 <div className="leaflet-container">
 
@@ -67,7 +71,7 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                 </div>
 
             </div>
-
+            </Fade>
 
 
         </div>

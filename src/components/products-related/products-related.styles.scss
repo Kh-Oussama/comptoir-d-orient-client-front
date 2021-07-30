@@ -13,6 +13,10 @@
     @media only screen and (max-width: $bp-large) {
       height: 48rem;
     }
+
+    @media only screen and (max-width: $bp-small) {
+      height: 52rem;
+    }
   }
 }
 
@@ -26,7 +30,7 @@
 .product-related--swiper .swiper-container {
   height: 48rem;
   @media only screen and (max-width: $bp-large) {
-    height: 51rem;
+    height: 55rem;
   }
 }
 

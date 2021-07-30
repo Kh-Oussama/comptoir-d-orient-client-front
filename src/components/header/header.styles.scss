@@ -24,10 +24,7 @@
     padding-right: 0;
     height: calc(100vh - 16rem);
     margin-top: 8rem;
-    z-index: -1 !important;
-    .swiper-container {
-      z-index: -1 !important;
-    }
+
 
   }
 
@@ -214,7 +211,7 @@
   left: 0;
   padding-top: 10rem;
   margin-left: 15rem;
-  z-index: 999;
+  z-index: 95;
   text-align: left;
 
   @media only screen and (max-width: $bp-largest) {
@@ -229,7 +226,6 @@
   @media only screen and (max-width: $bp-small) {
     padding-top: 4rem;
     margin-left: 3rem;
-    z-index: -1 !important;
   }
 
 
