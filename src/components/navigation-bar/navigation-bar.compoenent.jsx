@@ -65,7 +65,12 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
                             <IcomoonReact iconSet={iconSet} size={33} icon="typing"/> Contact
                         </Link>
                     </div>
-                    <SideBar/>
+                    {
+                        current_page === '/'
+                        ?  <SideBar/>
+                        :null
+                    }
+
                 </div>
                 <div className="nav-right">
                     <NavBarPhone/>

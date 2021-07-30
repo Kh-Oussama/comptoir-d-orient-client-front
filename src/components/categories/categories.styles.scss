@@ -21,7 +21,8 @@ body {
   flex: 1 1 100%;
   padding: 4.5rem 2.5rem;
   padding-top: 1.5rem;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
 .h1 {
@@ -216,6 +217,7 @@ li {
 }
 .shop-page-content {
   display: flex;
+  height: fit-content !important;
 
   @media only screen and (max-width: $bp-small) {
     margin-top: 10rem;
