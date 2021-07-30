@@ -24,6 +24,9 @@
 
   @media only screen and (max-width: $bp-small) {
     transform: skewX(0);
+    .empty-img {
+      height: 10rem !important;
+    }
   }
 
   @media only screen and (max-width: $bp-smallest) {

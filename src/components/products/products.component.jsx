@@ -3,7 +3,7 @@ import Pagination from "../Pagination/pagination.compoenent";
 import ProductItem from "../product-item/product-item.component";
 import {createStructuredSelector} from "reselect";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
+import {useLocation, withRouter} from "react-router-dom";
 import {fetchProductsStart} from "../../redux/products/products.actions";
 import {selectIsFetchingPro, selectProducts} from "../../redux/products/product.selectors";
 import Loader from "../loader-content/loader.compoenent";
@@ -15,7 +15,11 @@ import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.a
 
 const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, currentCategory, updateLoading, getCategoryStart, match, history}) => {
     // const [searchField, setSearchField] = useState('');
+    const {pathname} = useLocation();
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     useEffect(() => {
         toggles_shop_sidebar(false)
     }, [toggles_shop_sidebar,match.params.id, match.params.sub]);

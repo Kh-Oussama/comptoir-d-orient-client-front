@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import CategoriesCard from "../categories-card/categories-card.component";
 import {createStructuredSelector} from "reselect";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
+import {useLocation, withRouter} from "react-router-dom";
 import {selectCategories, selectIsFetchingCat} from "../../redux/categories/categories.selectors";
 import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
 import Loader from "../loader-content/loader.compoenent";
@@ -17,6 +17,12 @@ const Categories = ({ toggles_shop_sidebar, fetchCategories, isFetching, categor
     useEffect(() => {
         toggles_shop_sidebar(false)
     }, [toggles_shop_sidebar]);
+
+    const {pathname} = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <>

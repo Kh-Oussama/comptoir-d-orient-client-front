@@ -8,7 +8,7 @@ import {createStructuredSelector} from "reselect";
 import {selectShopSidebarHidden} from "../../redux/design-utilites/design-utilities.selectors";
 import {setCurrentPage, togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
+import {withRouter,useLocation} from "react-router-dom";
 import ContentRoutes from "../../components/content-routing/content-routing.routes";
 import NavigationBarPhone from "../../components/phone-navigation-bar/navigation-phone-container.componnt";
 
@@ -29,6 +29,12 @@ const ShopPage = ({toggles_shop_sidebar, current_sidebar_state, setCurrentPage})
     useEffect(() => {
         setCurrentPage(window.location.pathname)
     }, [setCurrentPage]);
+
+    // const {pathname} = useLocation();
+    //
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, [pathname]);
 
     return (
         <>

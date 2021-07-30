@@ -5,7 +5,7 @@ import P_3 from "../../assets/img/pr.jpg";
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
-import {withRouter} from "react-router-dom";
+import {useLocation, withRouter} from "react-router-dom";
 import DescriptionCard from "../description-product-card/description-product-card.component";
 import {createStructuredSelector} from "reselect";
 import {connect} from "react-redux";
@@ -21,7 +21,11 @@ SwiperCore.use([Pagination, Navigation]);
 const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStart, currentProduct, match, updateLoading, history}) => {
     const [isPhone, setIsPhone] = useState(window.innerWidth > 600);
     const [active, setActive] = useState("FirstCard");
+    const {pathname} = useLocation();
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     useEffect(() => {
         toggles_shop_sidebar(false)
     }, [toggles_shop_sidebar]);
