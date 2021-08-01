@@ -43,30 +43,19 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
         fetchSlidersStart();
     }, [fetchSlidersStart]);
 
-    useEffect(() => {
-        fetchALLProducts();
-    }, [fetchALLProducts]);
+
+    // useEffect(() => {
+    //     fetchALLProducts();
+    // }, [fetchALLProducts]);
 
     return (
         <React.Fragment>
-            {
-                isFetchingSlides || isFetchingAllPro
-                    ? <Loader/>
-                    : <div className="home-page">
-                        {
-                            isPhone
-                            ? <NavigationBarPhone/>
-                            : <NavigationBar/>
-                        }
-                        <Header/>
-                        <ProductRelated/>
+
                         <AddressSection/>
                         <Download/>
                         <StoriesSection/>
                         <Gallery/>
                         <SubscribeFooterSection/>
-                    </div>
-            }
 
 
         </React.Fragment>

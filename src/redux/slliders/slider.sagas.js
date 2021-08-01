@@ -8,8 +8,11 @@ export function* fetchSlidersAsync() {
     try {
         const response = yield Axios.get("https://backend.comptoir-d-orient.fr/api/sliders");
         const Sliders = response.data.sliders;
+
+
         yield put(fetchSlidersSuccess(Sliders));
     } catch (error) {
+        console.log(error)
         yield put(fetchSlidersFailure(error.message));
     }
 }
