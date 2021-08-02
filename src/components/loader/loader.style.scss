@@ -6,14 +6,20 @@
   --box-border-radius: 15%;
 }
 .loading-page {
-
+  padding-top: 20vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  //justify-content: center;
+  flex-direction: column;
   height: 100vh;
+
+  img {
+    height: 30rem;
+  }
 }
 .container-l
 {
+  margin-top: -1rem;
   width: var(--container-size);
   display: flex;
   justify-content: space-between;

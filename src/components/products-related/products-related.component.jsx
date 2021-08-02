@@ -58,8 +58,10 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
 
                 >
 
+
                     {
                         allProducts.map(pro => {
+                            if(pro.is_recommended === 1)
                             return (
                                 <SwiperSlide>
                                     <div className="product-container">
@@ -68,6 +70,7 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
                                     </div>
                                 </SwiperSlide>
                             )
+                            else return null;
                         })
                     }
 

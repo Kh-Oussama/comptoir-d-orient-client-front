@@ -14,8 +14,8 @@ const ProductItem = ({title, history,  imageUrl1, imageUrl2, productRef, linkUrl
                        Promo
                     </span>
             <div className="product-image">
-                <img className="pic-1" src={"http://backend.comptoir-d-orient.fr/"+imageUrl1} alt={""}/>
-                <img className="pic-2" src={"http://backend.comptoir-d-orient.fr/"+imageUrl2} alt={""}/>
+                <img className="pic-1" src={"http://localhost:8000/"+imageUrl1} alt={""}/>
+                <img className="pic-2" src={"http://localhost:8000/"+imageUrl2} alt={""}/>
                 {/*<img className="pic-1" src={imageUrl1} alt={""}/>*/}
                 {/*<img className="pic-2" src={imageUrl2} alt={""}/>*/}
 
