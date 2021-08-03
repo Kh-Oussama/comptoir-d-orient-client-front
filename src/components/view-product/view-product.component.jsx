@@ -15,12 +15,12 @@ import Loader from "../loader-content/loader.compoenent";
 import {Header} from "../shop-header/Header";
 import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 import Helmet from "react-helmet";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 SwiperCore.use([Pagination, Navigation]);
 
-const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStart, currentProduct, match, updateLoading, history}) => {
+const ViewProduct = ({toggles_shop_sidebar, current_sidebar_state, getProductStart, currentProduct, match, updateLoading, history}) => {
     const [isPhone, setIsPhone] = useState(window.innerWidth > 600);
     const [active, setActive] = useState("FirstCard");
     const {pathname} = useLocation();
@@ -114,14 +114,14 @@ const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStar
                             ? <div className="detail detail-loading">
                                 <Loader/>
                             </div>
-                            :  <div className="detail">
+                            : <div className="detail">
                                 <h1 className="detail-title">
                                     {currentProduct[0].title}
                                 </h1>
                                 <p className="detail-p">
                                     {currentProduct[0].subtitle}
                                 </p>
-                                <div className="detail-product-number">Product Number :  {currentProduct[0].id}</div>
+                                <div className="detail-product-number">Product Number : {currentProduct[0].id}</div>
                                 <div className="detail-stars">
                                     <i className="fas fa-star"/>
                                     <i className="fas fa-star"/>
@@ -135,7 +135,7 @@ const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStar
                                 </div>
 
                                 {
-                                    active === "FirstCard" && <DescriptionCard content= {currentProduct[0].description} />
+                                    active === "FirstCard" && <DescriptionCard content={currentProduct[0].description}/>
                                 }
 
 
@@ -155,7 +155,7 @@ const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStar
 
                 </div>
             </div>
-            </>
+        </>
 
     )
 }

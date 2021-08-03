@@ -14,8 +14,7 @@ import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.a
 import Helmet from "react-helmet";
 
 
-const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, currentCategory, updateLoading, getCategoryStart, match, history}) => {
-    // const [searchField, setSearchField] = useState('');
+const Products = ({toggles_shop_sidebar, fetchProducts, isFetching, products, currentCategory, updateLoading, getCategoryStart, match, history}) => {
     const {pathname} = useLocation();
 
     useEffect(() => {
@@ -23,7 +22,7 @@ const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, cu
     }, [pathname]);
     useEffect(() => {
         toggles_shop_sidebar(false)
-    }, [toggles_shop_sidebar,match.params.id, match.params.sub]);
+    }, [toggles_shop_sidebar, match.params.id, match.params.sub]);
 
     //fetch products from backend
     useEffect(() => {
@@ -72,10 +71,11 @@ const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, cu
                                 match.params.sub
                                     ? currentElements.map(pro => {
                                         if (match.params.sub == pro.productsSubcategory_id)
-                                        return (
-                                            <ProductItem key={pro.id} productRef={pro.id} imageUrl1={pro.first_image_path}
-                                                         imageUrl2={pro.second_image_path} title={pro.title}/>
-                                        )
+                                            return (
+                                                <ProductItem key={pro.id} productRef={pro.id}
+                                                             imageUrl1={pro.first_image_path}
+                                                             imageUrl2={pro.second_image_path} title={pro.title}/>
+                                            )
                                     })
                                     : currentElements.map(pro => {
                                         return (

@@ -25,28 +25,28 @@ const Header = ({sliders}) => {
             {/*</div>*/}
 
             {/*<div className="content">*/}
-                <Swiper
-                    slidesPerView={1}
-                    navigation={false}
-                    speed={1000}
-                    // loop
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false
-                    }}
-                    effect="fade"
-                    pagination={{
-                        clickable: true,
-                    }}
-                    onSlideChange={() => {
+            <Swiper
+                slidesPerView={1}
+                navigation={false}
+                speed={1000}
+                // loop
+                autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false
+                }}
+                effect="fade"
+                pagination={{
+                    clickable: true,
+                }}
+                onSlideChange={() => {
 
-                    }}
+                }}
 
-                >
-                    {
-                        sliders.map(slider => {
-                            return (
-                                <LazyLoad once offset={100}>
+            >
+                {
+                    sliders.map(slider => {
+                        return (
+                            <LazyLoad once offset={100}>
                                 <SwiperSlide>
 
                                     <div className="header__item" style={{
@@ -57,40 +57,40 @@ const Header = ({sliders}) => {
                                     </div>
 
                                 </SwiperSlide>
-                                </LazyLoad>
+                            </LazyLoad>
 
-                            )
-                        })
-                    }
+                        )
+                    })
+                }
 
-                </Swiper>
+            </Swiper>
             <Fade left>
                 <div className="content__text">
                     <p className="paragraph">
 
-                            welcome to smart web agency
+                        welcome to smart web agency
 
                     </p>
                     {/*<Fade left>*/}
-                        <h1 className="title_1">
+                    <h1 className="title_1">
 
-                            We <span>Are</span> the best <br/>
-                            website agency <br/>in
-                            the world
+                        We <span>Are</span> the best <br/>
+                        website agency <br/>in
+                        the world
 
-                        </h1>
+                    </h1>
                     {/*</Fade>*/}
                     {/*<Bounce cascade>*/}
-                        <div className="text-div"/>
+                    <div className="text-div"/>
                     {/*</Bounce>*/}
 
                     <p className="paragraph paragraph-2 ">
                         {/*<Zoom right cascade>*/}
                         {/*<Fade top cascade>*/}
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Alias atque eius magnam non quidem quod rem sapiente soluta suscipit ullam! Animi
-                            consectetur ea
-                            illo laboriosam pariatur quae repudiandae sint veritatis!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Alias atque eius magnam non quidem quod rem sapiente soluta suscipit ullam! Animi
+                        consectetur ea
+                        illo laboriosam pariatur quae repudiandae sint veritatis!
                         {/*</Fade>*/}
                     </p>
 
@@ -107,37 +107,37 @@ const Header = ({sliders}) => {
 
                 </div>
             </Fade>
-                <div className="content__social-media">
-                    <div className="social-mediaBigBlock">
-                        <div className="social-block">
-                            <i className="fab fa-instagram"/> instagram
-                        </div>
-                        <div className="social-block">
-                            <i className="fab fa-facebook-f"/> facebook
-                        </div>
-                        <div className="social-block">
-                            <i className="fab fa-twitter"/> twitter
-                        </div>
+            <div className="content__social-media">
+                <div className="social-mediaBigBlock">
+                    <div className="social-block">
+                        <i className="fab fa-instagram"/> instagram
+                    </div>
+                    <div className="social-block">
+                        <i className="fab fa-facebook-f"/> facebook
+                    </div>
+                    <div className="social-block">
+                        <i className="fab fa-twitter"/> twitter
                     </div>
                 </div>
+            </div>
             <Fade top>
 
-            <div className="pages-block" >
-                        <div className="numbers">
-                            <div className="page-number"><span>01</span>/06</div>
-                            <div className='leftRight'><i className="fas fa-chevron-left"/> <span>|</span> <i
-                                className="fas fa-chevron-right"/></div>
-                        </div>
-                        <div className="white-div">
-                            <div className="line"/>
-                        </div>
-                        <h1 className="page-name">view profile</h1>
+                <div className="pages-block">
+                    <div className="numbers">
+                        <div className="page-number"><span>01</span>/06</div>
+                        <div className='leftRight'><i className="fas fa-chevron-left"/> <span>|</span> <i
+                            className="fas fa-chevron-right"/></div>
                     </div>
+                    <div className="white-div">
+                        <div className="line"/>
+                    </div>
+                    <h1 className="page-name">view profile</h1>
+                </div>
             </Fade>
 
-                <div className="content__scrolling-indicators">
+            <div className="content__scrolling-indicators">
 
-                </div>
+            </div>
             {/*</div>*/}
             <div className="scroll-btn-container">
                 <LinkScroll to={'footer'} smooth={true} duration={1000}>

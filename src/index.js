@@ -6,22 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import '@fortawesome/fontawesome-free/js/all';
 import {PersistGate} from "redux-persist/integration/react";
-import {persistor} from "./redux/store";
-import { store } from "./redux/store";
+import {persistor, store} from "./redux/store";
 import {Provider} from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
-import Helmet from "react-helmet";
+
 axios.defaults.withCredentials = true;
-axios.get( "https://backend.comptoir-d-orient.fr/sanctum/csrf-cookie");
+axios.get("https://backend.comptoir-d-orient.fr/sanctum/csrf-cookie");
 
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
                 <PersistGate persistor={persistor}>
-
-                        <App/>
+                    <App/>
                 </PersistGate>
             </BrowserRouter>
         </Provider>

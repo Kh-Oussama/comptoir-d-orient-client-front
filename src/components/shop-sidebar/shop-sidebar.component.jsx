@@ -46,7 +46,8 @@ const ShopSidebar = ({current_sidebar_state, categories, isFetching, fetchCatego
                                                             cat.products_subcategories.length > 0
                                                                 ? <SubMenu key={uuid()} title={cat.title}
                                                                            icon={<i className="far fa-dot-circle"/>}>
-                                                                    <h4 onClick={() => history.push(`/shop/products/${cat.id}`)} className="all-products">
+                                                                    <h4 onClick={() => history.push(`/shop/products/${cat.id}`)}
+                                                                        className="all-products">
                                                                         <i className="fas fa-th"/> Tous les prodiuits</h4>
 
 

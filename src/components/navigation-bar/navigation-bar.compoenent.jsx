@@ -13,7 +13,7 @@ import NavBarPhone from "../phone-navigation-bar/phone-navigation-bar.component"
 import Fade from "react-reveal/Fade";
 
 
-const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
+const NavigationBar = ({setCurrentSection, current_section, current_page}) => {
 
     return (
         <React.Fragment>
@@ -40,17 +40,18 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
 
                 </div>
                 <div className="nav-center">
-                    <div  className={`link-block ${current_page === '/' ? 'link-block-active': null}`}>
-                        <Link to='/' >
+                    <div className={`link-block ${current_page === '/' ? 'link-block-active' : null}`}>
+                        <Link to='/'>
                             <IcomoonReact iconSet={iconSet} size={33} icon="home"/>home
                         </Link>
                     </div>
-                    <div className={`link-block ${current_page !== '/contact_us' && current_page !== '/' && current_page !== '/events' ? 'link-block-active': null}`}>
+                    <div
+                        className={`link-block ${current_page !== '/contact_us' && current_page !== '/' && current_page !== '/events' ? 'link-block-active' : null}`}>
                         <Link to='/shop'>
                             <IcomoonReact iconSet={iconSet} size={33} icon="price-tag"/> Produits
                         </Link>
                     </div>
-                      <div className="link-block">
+                    <div className="link-block">
                         <Link to='/'>
                             <IcomoonReact iconSet={iconSet} size={33} icon="shopping-cart"/> shop now
                         </Link>
@@ -61,15 +62,15 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
                     {/*        <IcomoonReact iconSet={iconSet} size={33} icon="sweden"/> Blog*/}
                     {/*    </Link>*/}
                     {/*</div>*/}
-                    <div className={`link-block ${current_page === '/contact_us' ? 'link-block-active': null}`}>
+                    <div className={`link-block ${current_page === '/contact_us' ? 'link-block-active' : null}`}>
                         <Link to='/contact_us'>
                             <IcomoonReact iconSet={iconSet} size={33} icon="typing"/> Contact
                         </Link>
                     </div>
                     {
                         current_page === '/'
-                        ?  <SideBar/>
-                        :null
+                            ? <SideBar/>
+                            : null
                     }
 
                 </div>

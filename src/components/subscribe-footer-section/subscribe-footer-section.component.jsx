@@ -68,13 +68,15 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
     return (
         <div className="Sub-footer-container">
             <div className="subscribe-section">
-                <h1>
-                    <Zoom left cascade>
+                <Fade left>
+                    <h1>
+
                         Stay in touch
-                    </Zoom>
-                </h1>
-                <p><Fade left big cascade>Be the first to find out new products. <br/> upcoming stories, and our
-                    community</Fade></p>
+
+                    </h1>
+                    <p>Be the first to find out new products. <br/> upcoming stories, and our
+                        community</p>
+                </Fade>
 
             </div>
             <div className="formSub">

@@ -10,6 +10,7 @@
   z-index: 199;
 
 }
+
 .button {
   background-color: white;
   border: none;
@@ -19,7 +20,7 @@
   border-radius: 1rem;
   margin: 0.5rem 0 0 0.5rem;
   cursor: pointer;
-  box-shadow: -3px -3px 7px rgba(94,104,121, .288), 5px 3px 5px rgba(94,104,121, .288);
+  box-shadow: -3px -3px 7px rgba(94, 104, 121, .288), 5px 3px 5px rgba(94, 104, 121, .288);
 
 
   top: 1rem;
@@ -41,6 +42,7 @@
   }
 
 }
+
 .sidebar-content {
   flex: 0 0 calc(100vh - 5rem);
   display: flex;
@@ -56,7 +58,7 @@
 .sidebar-container {
   background-color: rgba(#000, 0.7);
 
-  box-shadow: -3px -3px 7px rgba(94,104,121, .288), 5px 3px 5px rgba(94,104,121, .288);
+  box-shadow: -3px -3px 7px rgba(94, 104, 121, .288), 5px 3px 5px rgba(94, 104, 121, .288);
 
   width: 7rem;
   height: 55rem;
@@ -80,9 +82,8 @@
   }
 
   .slickBar {
-     color: white;
+    color: white;
     list-style: none;
-
 
 
     padding: 3rem 0;
@@ -111,7 +112,6 @@
       min-width: 7rem;
 
 
-
     }
 
     .item {
@@ -123,7 +123,7 @@
       align-items: center;
       color: var(--color-grey-light-1);
 
-      width: 100% ;
+      width: 100%;
       border-left: 5px solid transparent;
 
       &:hover {
@@ -147,9 +147,10 @@
 
       &:hover {
         border-left: 5px solid;
-        border-image-source: linear-gradient(to  bottom, var(--color-primary), var(--color-primary-dark));
+        border-image-source: linear-gradient(to bottom, var(--color-primary), var(--color-primary-dark));
         border-image-slice: 1;
       }
+
       svg {
         font-size: 1.6rem !important;
         width: 2.5rem !important;
@@ -171,9 +172,7 @@
     justify-content: center;
 
 
-
-    transition: width,margin .3s ease;
-
+    transition: width, margin .3s ease;
 
 
     img {
@@ -207,12 +206,14 @@
           display: inline-block;
         }
 
-        a{
+        a {
           font-size: 1.28rem;
           text-decoration: none;
-          color: var(--color-grey-light-4) ;
+          color: var(--color-grey-light-4);
 
-          &:hover {text-decoration: underline}
+          &:hover {
+            text-decoration: underline
+          }
         }
 
       }
@@ -238,7 +239,7 @@
 
 .item-active {
   border-left: 5px solid;
-  border-image-source: linear-gradient(to  bottom, var(--color-primary), var(--color-primary-dark));
+  border-image-source: linear-gradient(to bottom, var(--color-primary), var(--color-primary-dark));
   border-image-slice: 1;
   color: white;
 
@@ -259,14 +260,14 @@
   align-items: center;
   justify-content: center;
 
-.btn {
-  padding: 1.2rem;
-  border-radius: .5rem;
-  background-color: transparent;
-  //box-shadow: -1px -1px 4px rgba(94,104,121, .288), 3px 1px 3px rgba(94,104,121, .288);
+  .btn {
+    padding: 1.2rem;
+    border-radius: .5rem;
+    background-color: transparent;
+    //box-shadow: -1px -1px 4px rgba(94,104,121, .288), 3px 1px 3px rgba(94,104,121, .288);
 
-  svg {
-    fill: white;
+    svg {
+      fill: white;
+    }
   }
-}
 }

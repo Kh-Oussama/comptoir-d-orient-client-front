@@ -1,19 +1,11 @@
 import React from 'react';
 import G_1 from "../../assets/img/g1.jpg";
-import G_2 from "../../assets/img/g2.jpg";
-import G_3 from "../../assets/img/g3.jpg";
-import G_4 from "../../assets/img/g4.jpg";
-import G_5 from "../../assets/img/g5.jpg";
 import G_6 from "../../assets/img/g6.jpg";
 import G_7 from "../../assets/img/g7.jpg";
 import G_8 from "../../assets/img/g8.jpg";
 import G_9 from "../../assets/img/g9.jpg";
 import G_10 from "../../assets/img/g10.jpg";
-import G_11 from "../../assets/img/g11.jpg";
 import G_12 from "../../assets/img/g12.jpg";
-import G_13 from "../../assets/img/g13.jpg";
-import G_14 from "../../assets/img/g14.jpg";
-import G_15 from "../../assets/img/g16.jpg";
 import G_16 from "../../assets/img/g15.jpg";
 import G_17 from "../../assets/img/g17.jpg";
 import VisibilitySensor from "react-visibility-sensor";
@@ -23,7 +15,6 @@ import {setCurrentSection} from "../../redux/design-utilites/design-utilities.ac
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import Fade from "react-reveal/Fade";
-import Zoom from "react-reveal/Zoom";
 import LazyLoad from "react-lazyload";
 
 
@@ -46,15 +37,15 @@ const Gallery = ({setCurrentSection, current_section}) => {
                     <Fade left>
                         <h1 className="title_1 title_1_download">
 
-                                WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
+                            WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
                         </h1>
                     </Fade>
-                        <div className="red-divider"/>
+                    <div className="red-divider"/>
                     <Fade left>
                         <p className="paragraph paragraph_download">
 
-                                we are committed to providing our customers with exceptional
-                                service <br/> while offering out employees the best training
+                            we are committed to providing our customers with exceptional
+                            service <br/> while offering out employees the best training
 
                         </p>
                     </Fade>
@@ -62,7 +53,7 @@ const Gallery = ({setCurrentSection, current_section}) => {
             </VisibilitySensor>
             <Fade bottom big>
                 <LazyLoad once offset={100}>
-                <section className="gallery">
+                    <section className="gallery">
                         <figure className="gallery__item gallery__item--1"><img src={G_1} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
                         <figure className="gallery__item gallery__item--2"><img src={G_9} alt="Gallery img"
@@ -81,22 +72,10 @@ const Gallery = ({setCurrentSection, current_section}) => {
                                                                                 className="gallery__img"/></figure>
                         <figure className="gallery__item gallery__item--9"><img src={G_10} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        {/*<figure className="gallery__item gallery__item--10"><img src={G_10} alt="Gallery img"*/}
-                        {/*                                                         className="gallery__img"/></figure>*/}
-                        {/*<figure className="gallery__item gallery__item--11"><img src={G_11} alt="Gallery img"*/}
-                        {/*                                                         className="gallery__img"/></figure>*/}
-                        {/*<figure className="gallery__item gallery__item--12"><img src={G_12} alt="Gallery img"*/}
-                        {/*                                                         className="gallery__img"/></figure>*/}
-                        {/*<figure className="gallery__item gallery__item--13"><img src={G_13} alt="Gallery img"*/}
-                        {/*                                                         className="gallery__img"/></figure>*/}
-                        {/*<figure className="gallery__item gallery__item--14"><img src={G_14} alt="Gallery img"*/}
-                        {/*                                                         className="gallery__img"/></figure>*/}
-
-                </section>
+                    </section>
                 </LazyLoad>
             </Fade>
         </div>
-
 
 
     )

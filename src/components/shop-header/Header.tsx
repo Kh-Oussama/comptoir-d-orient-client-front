@@ -1,6 +1,6 @@
 import * as React from "react";
-import {Avatar} from "react-lorem-ipsum";
 import {useState} from "react";
+import {Avatar} from "react-lorem-ipsum";
 
 export const Header = ({title}) => {
     const date = new Date();

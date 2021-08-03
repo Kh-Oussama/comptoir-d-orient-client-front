@@ -64,11 +64,13 @@ li {
   padding: 0;
   margin: 0;
 }
+
 .card-image {
   height: 100%;
   width: 100%;
 
 }
+
 .empty-img {
   height: 50rem;
   @media only screen and (max-width: $bp-small) {
@@ -76,6 +78,7 @@ li {
 
   }
 }
+
 .product-grid-loading {
   height: 36rem;
   display: flex;
@@ -131,8 +134,6 @@ li {
   height: 100%;
   margin: 0 auto;
 }
-
-
 
 
 .card-image-container {
@@ -215,6 +216,7 @@ li {
     padding: 0;
   }
 }
+
 .shop-page-content {
   display: flex;
   height: fit-content !important;
@@ -233,7 +235,7 @@ input[type="checkbox"] {
   background: linear-gradient(0deg, #333, #000);
   outline: none;
   border-radius: 2rem;
-  box-shadow: 0 0 0 .4rem #353535, 0 0 0 .5rem #3e3e3e, inset 0 0 1rem rgba(0,0,0,1), 0 .5rem 2rem rgba(0,0,0,.5), inset 0 0 1.5rem rgba(0,0,0,0.2);
+  box-shadow: 0 0 0 .4rem #353535, 0 0 0 .5rem #3e3e3e, inset 0 0 1rem rgba(0, 0, 0, 1), 0 .5rem 2rem rgba(0, 0, 0, .5), inset 0 0 1.5rem rgba(0, 0, 0, 0.2);
   margin-bottom: 2rem;
   cursor: pointer;
 }
@@ -242,19 +244,21 @@ input[type="checkbox"]:before {
   content: "";
   position: absolute;
   top: 0;
-  left:0;
+  left: 0;
   width: 4rem;
   height: 2rem;
   background: linear-gradient(0deg, #000, #6b6b6b);
   border-radius: 2rem;
   box-shadow: 0 0 0 1px #232323;
-  transform: scale(.98,.96);
+  transform: scale(.98, .96);
   transition: .5s;
 
 }
+
 input:checked[type="checkbox"] {
-  background: linear-gradient(0deg, var(--color-primary-dark), var(--color-primary)) ;
+  background: linear-gradient(0deg, var(--color-primary-dark), var(--color-primary));
 }
+
 input:checked[type="checkbox"]:before {
   left: 2rem;
 

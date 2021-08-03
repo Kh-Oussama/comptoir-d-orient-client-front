@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
 import AddressSection from "../../components/address-section/address-section.component";
 import Header from "../../components/header/header.component";
@@ -25,15 +25,14 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
     const [isPhone, setIsPhone] = useState(window.innerWidth <= 600);
 
     let resizeWindow = () => {
-            setIsPhone(window.innerWidth <= 600);
-        };
+        setIsPhone(window.innerWidth <= 600);
+    };
 
     useEffect(() => {
         resizeWindow();
         window.addEventListener("resize", resizeWindow);
         return () => window.removeEventListener("resize", resizeWindow);
     }, []);
-
 
 
     useEffect(() => {
@@ -59,8 +58,8 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
                     : <div className="home-page">
                         {
                             isPhone
-                            ? <NavigationBarPhone/>
-                            : <NavigationBar/>
+                                ? <NavigationBarPhone/>
+                                : <NavigationBar/>
                         }
                         <Header/>
                         <ProductRelated/>
@@ -81,7 +80,7 @@ const mapStateToProps = createStructuredSelector({
     isFetchingSlides: selectIsFetching,
 
     //products
-    allProducts : selectAllProducts,
+    allProducts: selectAllProducts,
     isFetchingAllPro: selectIsFetchingAllPro,
 });
 

@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import Zoom from 'react-reveal/Zoom';
+import React from 'react';
 import {Link, withRouter} from "react-router-dom";
 import VisibilitySensor from "react-visibility-sensor";
 import {createStructuredSelector} from "reselect";
@@ -19,38 +18,38 @@ const Download = ({setCurrentSection, current_section}) => {
                 }
             }}
             delayedCall>
-        <section className="partners-section download-section" id="offre">
+            <section className="partners-section download-section" id="offre">
 
-            <div className="partners-section-header">
-                <Fade bottom big>
-                <h1 className="title_2 title_2_download">offre de service</h1>
-                </Fade>
-                <Fade left>
-                <h1 className="title_1 title_1_download">
+                <div className="partners-section-header">
+                    <Fade bottom big>
+                        <h1 className="title_2 title_2_download">offre de service</h1>
+                    </Fade>
+                    <Fade left>
+                        <h1 className="title_1 title_1_download">
 
-                    WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
+                            WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
 
-                    </h1>
-                </Fade>
-                <div className="red-divider"/>
-                <Fade left>
-                <p className="paragraph paragraph_download">
+                        </h1>
+                    </Fade>
+                    <div className="red-divider"/>
+                    <Fade left>
+                        <p className="paragraph paragraph_download">
 
-                    we are committed to providing our customers with exceptional
-                    service <br/> while offering out employees the best training
+                            we are committed to providing our customers with exceptional
+                            service <br/> while offering out employees the best training
 
-               </p>
-                </Fade>
-            </div>
+                        </p>
+                    </Fade>
+                </div>
 
-            <div className="content__text--btn content__text--btn-download">
-                <Link  target="_blank"
-                       to={{ pathname: `http://aqua-vim.com/pdf` }}
-                >
-                    <i className="fas fa-download"/> Download
-                </Link>
-            </div>
-        </section>
+                <div className="content__text--btn content__text--btn-download">
+                    <Link target="_blank"
+                          to={{pathname: `http://aqua-vim.com/pdf`}}
+                    >
+                        <i className="fas fa-download"/> Download
+                    </Link>
+                </div>
+            </section>
         </VisibilitySensor>
     );
 }

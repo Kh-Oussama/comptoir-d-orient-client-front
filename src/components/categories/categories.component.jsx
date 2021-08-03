@@ -10,10 +10,10 @@ import {Header} from "../shop-header/Header";
 import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
 import Helmet from "react-helmet";
 
-const Categories = ({ toggles_shop_sidebar, fetchCategories, isFetching, categories }) => {
+const Categories = ({toggles_shop_sidebar, fetchCategories, isFetching, categories}) => {
     useEffect(() => {
         fetchCategories();
-    },[fetchCategories]);
+    }, [fetchCategories]);
 
     useEffect(() => {
         toggles_shop_sidebar(false)
@@ -28,40 +28,39 @@ const Categories = ({ toggles_shop_sidebar, fetchCategories, isFetching, categor
     return (
         <>
             <Helmet>
-                <title>Comptoir d'orient  Grossiste alimentaire pour professionnels, vente en gros</title>
+                <title>Comptoir d'orient Grossiste alimentaire pour professionnels, vente en gros</title>
             </Helmet>
-        <Header title={'nos categories'}/>
-        <ul className="card-list">
-            {
-                isFetching
-                    ? <React.Fragment>
-                        <div className="card loader-container"><Loader/></div>
-                        <div className="card loader-container"><Loader/></div>
-                        <div className="card loader-container"><Loader/></div>
-                        <div className="card loader-container"><Loader/></div>
-
-
-                    </React.Fragment>
-                    :
-                    categories.length > 0
+            <Header title={'nos categories'}/>
+            <ul className="card-list">
+                {
+                    isFetching
                         ? <React.Fragment>
-                            {
-                                categories.map(cat => {
-                                    return (
-                                        <CategoriesCard key={cat.id} categoryRef={cat.id} backgroundColor={"#814A0E"} backgroundImage={cat.image_path} title={cat.title}
-                                                        subtitle={cat.subtitle}/>
-                                    )
-                                })
-                            }
+                            <div className="card loader-container"><Loader/></div>
+                            <div className="card loader-container"><Loader/></div>
+                            <div className="card loader-container"><Loader/></div>
+                            <div className="card loader-container"><Loader/></div>
+
+
                         </React.Fragment>
-                        : <img src="/images/empty.png" className="empty-img" alt=""/>
-            }
+                        :
+                        categories.length > 0
+                            ? <React.Fragment>
+                                {
+                                    categories.map(cat => {
+                                        return (
+                                            <CategoriesCard key={cat.id} categoryRef={cat.id} backgroundColor={"#814A0E"}
+                                                            backgroundImage={cat.image_path} title={cat.title}
+                                                            subtitle={cat.subtitle}/>
+                                        )
+                                    })
+                                }
+                            </React.Fragment>
+                            : <img src="/images/empty.png" className="empty-img" alt=""/>
+                }
 
 
-
-
-        </ul>
-            </>
+            </ul>
+        </>
     )
 }
 
@@ -71,7 +70,7 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchCategories : () => dispatch(fetchCategoriesStart()),
+    fetchCategories: () => dispatch(fetchCategoriesStart()),
     toggles_shop_sidebar: x => dispatch(togglesShopSidebar(x)),
 });
 

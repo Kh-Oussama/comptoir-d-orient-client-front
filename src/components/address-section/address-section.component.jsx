@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import React from 'react';
+import {MapContainer, Marker, Popup, TileLayer} from 'react-leaflet'
 import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
 import VisibilitySensor from 'react-visibility-sensor';
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
@@ -23,57 +22,57 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                     }
                 }}
                 delayedCall>
-            <div className="section-header">
-                {/*<p className="p-before-title">*/}
-                {/*    <Zoom left cascade>*/}
-                {/*    How do we Work*/}
-                {/*    </Zoom>*/}
+                <div className="section-header">
+                    {/*<p className="p-before-title">*/}
+                    {/*    <Zoom left cascade>*/}
+                    {/*    How do we Work*/}
+                    {/*    </Zoom>*/}
 
-                {/*</p>*/}
-                <Fade left>
-                
-                <h2 className="title">
+                    {/*</p>*/}
+                    <Fade left>
 
-                    Address Social
+                        <h2 className="title">
 
-                </h2>
-             
-                </Fade>
+                            Address Social
 
-                <Fade left>
-                <p className="title-description">
+                        </h2>
 
-                    21 Avenue Lefèvre, 69120 Vaulx-en-Velin
+                    </Fade>
 
-                </p>
-                </Fade>
-                <Fade bottom>
-                <div className="red-divider"/>
-                </Fade>
-            </div>
+                    <Fade left>
+                        <p className="title-description">
+
+                            21 Avenue Lefèvre, 69120 Vaulx-en-Velin
+
+                        </p>
+                    </Fade>
+                    <Fade bottom>
+                        <div className="red-divider"/>
+                    </Fade>
+                </div>
             </VisibilitySensor>
             <Fade bottom big>
-            <div className="map-block">
-                <div className="leaflet-container">
+                <div className="map-block">
+                    <div className="leaflet-container">
 
-                    <MapContainer center={[45.77414, 4.91158]} zoom={13} scrollWheelZoom={false}>
-                        <TileLayer
-                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
-                        <Marker position={[45.77414, 4.91158]}>
-                            <Popup>
-                                <div className="markerBlock">
-                                    <img src="/images/f4.jpg" alt="image" className="marker-image"/>
-                                    <p>A21 Avenue Lefèvre, 69120 Vaulx-en-Velin</p>
-                                </div>
+                        <MapContainer center={[45.77414, 4.91158]} zoom={13} scrollWheelZoom={false}>
+                            <TileLayer
+                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            <Marker position={[45.77414, 4.91158]}>
+                                <Popup>
+                                    <div className="markerBlock">
+                                        <img src="/images/f4.jpg" alt="image" className="marker-image"/>
+                                        <p>A21 Avenue Lefèvre, 69120 Vaulx-en-Velin</p>
+                                    </div>
 
-                            </Popup>
-                        </Marker>
-                    </MapContainer>
+                                </Popup>
+                            </Marker>
+                        </MapContainer>
+                    </div>
+
                 </div>
-
-            </div>
             </Fade>
 
 
