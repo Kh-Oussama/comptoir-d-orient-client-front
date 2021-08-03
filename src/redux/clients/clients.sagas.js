@@ -6,7 +6,7 @@ import {addClientFailure, addClientSuccess, sendMessageFailure, sendMessageSucce
 
 export function* addClientAsync({payload: {formData}}) {
     try {
-        const response = yield Axios.post("http://localhost:8000/api/clients", formData);
+        const response = yield Axios.post("https://backend.comptoir-d-orient.fr/api/clients", formData);
         // console.log(response);
         yield put(addClientSuccess());
     } catch (error) {
@@ -17,7 +17,7 @@ export function* addClientAsync({payload: {formData}}) {
 
 export function* sendMsgStartAsync({payload: {formData}}) {
     try {
-        const response = yield Axios.post("http://localhost:8000/api/messages", formData);
+        const response = yield Axios.post("https://backend.comptoir-d-orient.fr/api/messages", formData);
         yield put(sendMessageSuccess());
     } catch (error) {
         yield put(sendMessageFailure(error.response.data));

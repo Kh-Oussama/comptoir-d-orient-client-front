@@ -22,19 +22,25 @@ const Download = ({setCurrentSection, current_section}) => {
         <section className="partners-section download-section" id="offre">
 
             <div className="partners-section-header">
+                <Fade bottom big>
                 <h1 className="title_2 title_2_download">offre de service</h1>
+                </Fade>
+                <Fade left>
                 <h1 className="title_1 title_1_download">
-                    <Fade left big cascade>
+
                     WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
-                    </Fade>
+
                     </h1>
+                </Fade>
                 <div className="red-divider"/>
+                <Fade left>
                 <p className="paragraph paragraph_download">
-                    <Zoom left cascade>
+
                     we are committed to providing our customers with exceptional
                     service <br/> while offering out employees the best training
 
-                    </Zoom> </p>
+               </p>
+                </Fade>
             </div>
 
             <div className="content__text--btn content__text--btn-download">

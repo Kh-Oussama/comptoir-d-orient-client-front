@@ -11,6 +11,7 @@ import {Header} from "../shop-header/Header";
 import {getCategoryStart} from "../../redux/categories/categories.actions";
 import {selectCurrentCategory, selectUpdateLoading} from "../../redux/categories/categories.selectors";
 import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
+import Helmet from "react-helmet";
 
 
 const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, currentCategory, updateLoading, getCategoryStart, match, history}) => {
@@ -47,7 +48,13 @@ const Products = ({ toggles_shop_sidebar,fetchProducts, isFetching, products, cu
             {
                 updateLoading
                     ? <div className="shop-header loader-header"><Loader/></div>
-                    : <Header title={currentCategory ? currentCategory.title : 'la categories n\'est plus disponible'}/>
+                    : <>
+                        <Helmet>
+                            <title>{currentCategory ? currentCategory.title : 'la categories n\'est plus disponible'}</title>
+                        </Helmet>
+                        <Header title={currentCategory ? currentCategory.title : 'la categories n\'est plus disponible'}/>
+
+                    </>
 
             }
             <div className="Collection-Preview">

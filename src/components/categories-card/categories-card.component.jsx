@@ -1,6 +1,7 @@
 import React from 'react';
 import {motion} from "framer-motion";
 import {withRouter} from "react-router-dom";
+import LazyLoad from "react-lazyload";
 
 const CategoriesCard = ({ backgroundImage, title, subtitle, backgroundColor, history, categoryRef}) => {
     return (
@@ -9,7 +10,8 @@ const CategoriesCard = ({ backgroundImage, title, subtitle, backgroundColor, his
                    whileHover={{scale: 1.03, originX: 0}}
             transition={{type: 'spring', stiffness: 300}}
             whileTap={{scale: 0.9}} onClick={() => history.push(`shop/products/${categoryRef}`)}>
-            <div className="card-content-container">
+
+            <LazyLoad className="card-content-container" once offset={100}>
                 <div className="card-content">
                     <div
                         className="card-image-container"
@@ -23,7 +25,7 @@ const CategoriesCard = ({ backgroundImage, title, subtitle, backgroundColor, his
                         <h2 className="category-Subtitle">{subtitle}</h2>
                     </div>
                 </div>
-            </div>
+            </LazyLoad>
         </motion.li>
     )
 }

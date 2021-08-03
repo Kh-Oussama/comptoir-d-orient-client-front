@@ -8,6 +8,7 @@ import {fetchCategoriesStart} from "../../redux/categories/categories.actions";
 import Loader from "../loader-content/loader.compoenent";
 import {Header} from "../shop-header/Header";
 import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
+import Helmet from "react-helmet";
 
 const Categories = ({ toggles_shop_sidebar, fetchCategories, isFetching, categories }) => {
     useEffect(() => {
@@ -26,6 +27,9 @@ const Categories = ({ toggles_shop_sidebar, fetchCategories, isFetching, categor
 
     return (
         <>
+            <Helmet>
+                <title>Comptoir d'orient  Grossiste alimentaire pour professionnels, vente en gros</title>
+            </Helmet>
         <Header title={'nos categories'}/>
         <ul className="card-list">
             {

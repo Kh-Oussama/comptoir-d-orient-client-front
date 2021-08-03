@@ -11,9 +11,9 @@ import { store } from "./redux/store";
 import {Provider} from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
+import Helmet from "react-helmet";
 axios.defaults.withCredentials = true;
 axios.get( "https://backend.comptoir-d-orient.fr/sanctum/csrf-cookie");
-
 
 ReactDOM.render(
     <React.StrictMode>

@@ -1,10 +1,12 @@
 import React from "react";
 import {Link, withRouter} from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 
 const ProductItem = ({title, history,  imageUrl1, imageUrl2, productRef, linkUrl = 'shop', match}) => {
 
     return (
+        <LazyLoad once offset={100}>
         <div className="product-grid">
             <Link to={`/shop/product/view/${productRef}`}>
             <span className="product-trend-label">
@@ -14,8 +16,8 @@ const ProductItem = ({title, history,  imageUrl1, imageUrl2, productRef, linkUrl
                        Promo
                     </span>
             <div className="product-image">
-                <img className="pic-1" src={"http://localhost:8000/"+imageUrl1} alt={""}/>
-                <img className="pic-2" src={"http://localhost:8000/"+imageUrl2} alt={""}/>
+                <img className="pic-1" src={"https://backend.comptoir-d-orient.fr/"+imageUrl1} alt={""}/>
+                <img className="pic-2" src={"https://backend.comptoir-d-orient.fr/"+imageUrl2} alt={""}/>
                 {/*<img className="pic-1" src={imageUrl1} alt={""}/>*/}
                 {/*<img className="pic-2" src={imageUrl2} alt={""}/>*/}
 
@@ -48,6 +50,7 @@ const ProductItem = ({title, history,  imageUrl1, imageUrl2, productRef, linkUrl
             </div>
             </Link>
         </div>
+        </LazyLoad>
     );
 };
 

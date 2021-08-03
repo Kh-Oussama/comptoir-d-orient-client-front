@@ -13,6 +13,7 @@ import {createStructuredSelector} from "reselect";
 import {connect} from "react-redux";
 import {selectSliders} from "../../redux/slliders/slider.selectors";
 import {Link as LinkScroll} from 'react-scroll';
+import LazyLoad from 'react-lazyload';
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = ({sliders}) => {
@@ -45,26 +46,32 @@ const Header = ({sliders}) => {
                     {
                         sliders.map(slider => {
                             return (
+                                <LazyLoad once offset={100}>
                                 <SwiperSlide>
+
                                     <div className="header__item" style={{
                                         backgroundImage: `url(https://backend.comptoir-d-orient.fr/${slider.image_path})`,
                                     }}>
                                         <div className="layer"/>
 
                                     </div>
+
                                 </SwiperSlide>
+                                </LazyLoad>
+
                             )
                         })
                     }
 
                 </Swiper>
+            <Fade left>
                 <div className="content__text">
                     <p className="paragraph">
-                        <Bounce top cascade>
+
                             welcome to smart web agency
-                        </Bounce>
+
                     </p>
-                    <Fade left>
+                    {/*<Fade left>*/}
                         <h1 className="title_1">
 
                             We <span>Are</span> the best <br/>
@@ -72,22 +79,22 @@ const Header = ({sliders}) => {
                             the world
 
                         </h1>
-                    </Fade>
-                    <Bounce cascade>
+                    {/*</Fade>*/}
+                    {/*<Bounce cascade>*/}
                         <div className="text-div"/>
-                    </Bounce>
+                    {/*</Bounce>*/}
 
                     <p className="paragraph paragraph-2 ">
                         {/*<Zoom right cascade>*/}
-                        <Fade top cascade>
+                        {/*<Fade top cascade>*/}
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Alias atque eius magnam non quidem quod rem sapiente soluta suscipit ullam! Animi
                             consectetur ea
                             illo laboriosam pariatur quae repudiandae sint veritatis!
-                        </Fade>
+                        {/*</Fade>*/}
                     </p>
 
-                    <Bounce bottom cascade>
+                    <Fade bottom>
                         <div className="content__text--btn">
                             <Link to=''>
                                 <span><i className="fas fa-file-alt"></i> Explore Now</span>
@@ -96,9 +103,10 @@ const Header = ({sliders}) => {
                                 <span><i className="fas fa-layer-group"/> More Service</span>
                             </Link>
                         </div>
-                    </Bounce>
+                    </Fade>
 
                 </div>
+            </Fade>
                 <div className="content__social-media">
                     <div className="social-mediaBigBlock">
                         <div className="social-block">
@@ -112,9 +120,9 @@ const Header = ({sliders}) => {
                         </div>
                     </div>
                 </div>
-                <Zoom cascade>
+            <Fade top>
 
-                    <div className="pages-block" >
+            <div className="pages-block" >
                         <div className="numbers">
                             <div className="page-number"><span>01</span>/06</div>
                             <div className='leftRight'><i className="fas fa-chevron-left"/> <span>|</span> <i
@@ -125,7 +133,7 @@ const Header = ({sliders}) => {
                         </div>
                         <h1 className="page-name">view profile</h1>
                     </div>
-                </Zoom>
+            </Fade>
 
                 <div className="content__scrolling-indicators">
 

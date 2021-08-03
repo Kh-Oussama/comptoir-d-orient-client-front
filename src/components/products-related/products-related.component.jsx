@@ -32,19 +32,24 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
                 }}
                 delayedCall>
                 <div className="partners-section-header">
+                    <Fade bottom>
                     <h1 className="title_2 title_2_download">pour vous</h1>
+                    </Fade>
+                    <Fade left>
                     <h1 className="title_1 ">
-                        <Fade left big cascade>
                             Nos RECOMMANDATIONS pour vous
-                        </Fade>
                     </h1>
+                    </Fade>
                     <div className="red-divider"/>
+
+                    <Fade left>
                     <p className="paragraph ">
-                        <Zoom left cascade>
+
                         we are committed to providing our customers with exceptional
                         service <br/> while offering out employees the best training
-                        </Zoom>
+
                         </p>
+                    </Fade>
                 </div>
             </VisibilitySensor>
             <Fade bottom big cascade>

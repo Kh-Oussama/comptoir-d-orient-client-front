@@ -24,6 +24,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
+import LazyLoad from "react-lazyload";
 
 
 const Gallery = ({setCurrentSection, current_section}) => {
@@ -39,22 +40,28 @@ const Gallery = ({setCurrentSection, current_section}) => {
                 }}
                 delayedCall>
                 <div className="partners-section-header">
+                    <Fade bottom big>
                         <h1 className="title_2 title_2_download">Galllery</h1>
+                    </Fade>
+                    <Fade left>
                         <h1 className="title_1 title_1_download">
-                            <Fade left big cascade>
+
                                 WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
-                            </Fade>
                         </h1>
+                    </Fade>
                         <div className="red-divider"/>
+                    <Fade left>
                         <p className="paragraph paragraph_download">
-                            <Zoom left cascade>
+
                                 we are committed to providing our customers with exceptional
                                 service <br/> while offering out employees the best training
-                            </Zoom>
+
                         </p>
+                    </Fade>
                 </div>
             </VisibilitySensor>
-            <Zoom bottom cascade>
+            <Fade bottom big>
+                <LazyLoad once offset={100}>
                 <section className="gallery">
                         <figure className="gallery__item gallery__item--1"><img src={G_1} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
@@ -86,7 +93,8 @@ const Gallery = ({setCurrentSection, current_section}) => {
                         {/*                                                         className="gallery__img"/></figure>*/}
 
                 </section>
-            </Zoom>
+                </LazyLoad>
+            </Fade>
         </div>
 
 

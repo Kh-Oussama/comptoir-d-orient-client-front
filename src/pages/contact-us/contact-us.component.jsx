@@ -10,6 +10,7 @@ import Loader from "../../components/loader-content/loader.compoenent";
 import NavigationBar from "../../components/navigation-bar/navigation-bar.compoenent";
 import SubscribeFooterSection from "../../components/subscribe-footer-section/subscribe-footer-section.component";
 import NavigationBarPhone from "../../components/phone-navigation-bar/navigation-phone-container.componnt";
+import Helmet from "react-helmet";
 
 
 const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, sendErrors, history}) => {
@@ -114,6 +115,9 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
 
     return (
         <React.Fragment>
+            <Helmet>
+                <title>Comptoir d'orient - Contactez nous</title>
+            </Helmet>
             {
                 isPhone
                     ? <NavigationBarPhone/>

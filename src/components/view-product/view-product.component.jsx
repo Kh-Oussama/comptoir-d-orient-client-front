@@ -14,7 +14,9 @@ import {getProductStart} from "../../redux/products/products.actions";
 import Loader from "../loader-content/loader.compoenent";
 import {Header} from "../shop-header/Header";
 import {togglesShopSidebar} from "../../redux/design-utilites/design-utilities.actions";
-
+import Helmet from "react-helmet";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 SwiperCore.use([Pagination, Navigation]);
 
@@ -37,10 +39,16 @@ const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStar
     return (
 
         <>
+
             {
                 updateLoading
                     ? <div className="shop-header loader-header"><Loader/></div>
-                    : <Header title={currentProduct[0] ? currentProduct[0].title : 'le produit n\'est plus disponible'}/>
+                    : <>
+                        <Helmet>
+                            <title>{currentProduct[0] ? currentProduct[0].title : 'le produit n\'est plus disponible'}</title>
+                        </Helmet>
+                        <Header title={currentProduct[0] ? currentProduct[0].title : 'le produit n\'est plus disponible'}/>
+                    </>
 
             }
             <div className="view-product">
@@ -71,15 +79,26 @@ const ViewProduct = ({toggles_shop_sidebar,current_sidebar_state, getProductStar
 
                                         <SwiperSlide>
                                             <div className="item">
-                                                <img src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].first_image_path}`} alt="" className="img"
-                                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
+                                                <LazyLoadImage
+                                                    alt={'image'}
+                                                    effect="blur"
+                                                    className="img"
+                                                    style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}
+                                                    src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].first_image_path}`}
+                                                />
 
                                             </div>
                                         </SwiperSlide>
                                         <SwiperSlide>
                                             <div className="item">
-                                                <img src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].second_image_path}`} alt="" className="img"
-                                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}/>
+                                                <LazyLoadImage
+                                                    alt={'image'}
+                                                    effect="blur"
+                                                    className="img"
+                                                    style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}
+                                                    src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].second_image_path}`}
+                                                />
+
 
                                             </div>
                                         </SwiperSlide>

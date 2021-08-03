@@ -17,6 +17,7 @@ import {fetchSlidersStart} from "../../redux/slliders/slider.actions";
 import {fetchAllProductsStart} from "../../redux/products/products.actions";
 import {selectAllProducts, selectIsFetchingAllPro} from "../../redux/products/product.selectors";
 import NavigationBarPhone from "../../components/phone-navigation-bar/navigation-phone-container.componnt";
+import Helmet from "react-helmet";
 
 
 const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides, fetchALLProducts, isFetchingAllPro}) => {
@@ -49,6 +50,9 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
 
     return (
         <React.Fragment>
+            <Helmet>
+                <title>Comptoir d'orient</title>
+            </Helmet>
             {
                 isFetchingSlides || isFetchingAllPro
                     ? <Loader/>

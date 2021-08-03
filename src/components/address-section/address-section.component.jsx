@@ -24,13 +24,13 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                 }}
                 delayedCall>
             <div className="section-header">
-                <p className="p-before-title">
-                    <Zoom left cascade>
-                    How do we Work
-                    </Zoom>
+                {/*<p className="p-before-title">*/}
+                {/*    <Zoom left cascade>*/}
+                {/*    How do we Work*/}
+                {/*    </Zoom>*/}
 
-                </p>
-                <Zoom left >
+                {/*</p>*/}
+                <Fade left>
                 
                 <h2 className="title">
 
@@ -38,15 +38,18 @@ const AddressSection = ({setCurrentSection, current_section}) => {
 
                 </h2>
              
-                </Zoom>
+                </Fade>
 
-
+                <Fade left>
                 <p className="title-description">
-                    <Zoom left cascade>
+
                     21 Avenue Lefèvre, 69120 Vaulx-en-Velin
-                    </Zoom>
+
                 </p>
+                </Fade>
+                <Fade bottom>
                 <div className="red-divider"/>
+                </Fade>
             </div>
             </VisibilitySensor>
             <Fade bottom big>

@@ -10,6 +10,7 @@ import {selectCurrentPage, selectCurrentSection} from "../../redux/design-utilit
 import {setCurrentSection} from "../../redux/design-utilites/design-utilities.actions";
 import {connect} from "react-redux";
 import NavBarPhone from "../phone-navigation-bar/phone-navigation-bar.component";
+import Fade from "react-reveal/Fade";
 
 
 const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
@@ -73,7 +74,9 @@ const NavigationBar = ({setCurrentSection, current_section,current_page}) => {
 
                 </div>
                 <div className="nav-right">
+
                     <NavBarPhone/>
+
                 </div>
             </div>
 

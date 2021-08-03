@@ -16,7 +16,7 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
             <section className="section-stories" id={"stories"}>
 
                 <div className="bg-video">
-                    <video className="bg-video__content" autoPlay muted loop>
+                    <video className="bg-video__content" autoPlay muted loop  poster="/images/v.PNG">
                         <source src="/images/v2.mp4" type="video/mp4"/>
                         <source src="/images/video.webm" type="video/webm"/>
                         Your browser is not supported!
@@ -31,16 +31,16 @@ const StoriesSection = ({setCurrentSection, current_section}) => {
         }}
         delayedCall>
                 <div className="section-header section-header-stories">
-                    <p className="p-before-title">
-                        How do we Work
+                    {/*<p className="p-before-title">*/}
+                    {/*    How do we Work*/}
 
-                    </p>
-                    <Zoom left >
+                    {/*</p>*/}
+                    <Fade left>
 
                         <h2 className="title stories-title">
                             We make people genuinely happy
                         </h2>
-                    </Zoom>
+                    </Fade>
                     <div className="red-divider red-divider-stories"/>
                 </div>
     </VisibilitySensor>
