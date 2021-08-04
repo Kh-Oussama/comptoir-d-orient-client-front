@@ -74,13 +74,13 @@ const Products = ({toggles_shop_sidebar, fetchProducts, isFetching, products, cu
                                             return (
                                                 <ProductItem key={pro.id} productRef={pro.id}
                                                              imageUrl1={pro.first_image_path}
-                                                             imageUrl2={pro.second_image_path} title={pro.title}/>
+                                                             imageUrl2={pro.second_image_path} title={pro.title} />
                                             )
                                     })
                                     : currentElements.map(pro => {
                                         return (
                                             <ProductItem key={pro.id} productRef={pro.id} imageUrl1={pro.first_image_path}
-                                                         imageUrl2={pro.second_image_path} title={pro.title}/>
+                                                         imageUrl2={pro.second_image_path} title={pro.title} />
                                         )
                                     })
                             }

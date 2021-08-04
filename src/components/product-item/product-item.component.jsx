@@ -3,11 +3,11 @@ import {Link, withRouter} from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
 
-const ProductItem = ({title, history, imageUrl1, imageUrl2, productRef, linkUrl = 'shop', match}) => {
+const ProductItem = ({title, history, isHome, imageUrl1, imageUrl2, productRef, linkUrl = 'shop', match}) => {
 
     return (
         <LazyLoad once offset={100}>
-            <div className="product-grid">
+            <div className="product-grid" style={{width: !isHome ? null : '25rem'}}>
                 <Link to={`/shop/product/view/${productRef}`}>
             <span className="product-trend-label">
                         Nouveau

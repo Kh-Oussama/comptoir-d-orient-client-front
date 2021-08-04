@@ -71,7 +71,7 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
                                             <div className="product-container">
                                                 <ProductItem key={pro.id} productRef={pro.id}
                                                              imageUrl1={pro.first_image_path}
-                                                             imageUrl2={pro.second_image_path} title={pro.title}/>
+                                                             imageUrl2={pro.second_image_path} title={pro.title} isHome={true}/>
                                             </div>
                                         </SwiperSlide>
                                     )
