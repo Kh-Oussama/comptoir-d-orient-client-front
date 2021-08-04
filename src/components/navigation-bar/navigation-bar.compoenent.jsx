@@ -17,14 +17,14 @@ const NavigationBar = ({setCurrentSection, current_section, current_page}) => {
 
     return (
         <React.Fragment>
-            {/*<VisibilitySensor*/}
-            {/*    active={!(current_section === "header")}*/}
-            {/*    onChange={isVisible => {*/}
-            {/*        if (isVisible) {*/}
-            {/*            setCurrentSection("header");*/}
-            {/*        }*/}
-            {/*    }}*/}
-            {/*    delayedCall>*/}
+            <VisibilitySensor
+                active={!(current_section === "header")}
+                onChange={isVisible => {
+                    if (isVisible) {
+                        setCurrentSection("header");
+                    }
+                }}
+                delayedCall>
             <div className="navigation-container" id='header'>
                 <div className="nav-left">
                     <div className="name-block">
@@ -81,7 +81,7 @@ const NavigationBar = ({setCurrentSection, current_section, current_page}) => {
                 </div>
             </div>
 
-            {/*</VisibilitySensor>*/}
+            </VisibilitySensor>
         </React.Fragment>
     )
 }
