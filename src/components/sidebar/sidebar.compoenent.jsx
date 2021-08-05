@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import iconSet from "../../selection.json";
 import IcomoonReact from "icomoon-react";
-import {Link} from 'react-scroll';
+import {Link as LinkScroll} from 'react-scroll';
 import styled from "styled-components";
 import {createStructuredSelector} from "reselect";
 import {selectCurrentSection} from "../../redux/design-utilites/design-utilities.selectors";
 import {connect} from "react-redux";
-import {withRouter} from "react-router-dom";
+import {withRouter ,Link} from "react-router-dom";
+
 
 const Button = styled.button`
   &::before {
@@ -66,13 +67,16 @@ const Logout = styled.button`
 
 `;
 
-const SideBar = ({current_section}) => {
+const SideBar = ({current_section,history}) => {
 
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
 
     const [profileClick, setProfileClick] = useState(false);
-    const handleProfileClick = () => setProfileClick(!profileClick);
+    const handleProfileClick = () => {
+        setProfileClick(!profileClick);
+
+    };
 
     return (
         <div className="sidebar-block">
@@ -94,7 +98,7 @@ const SideBar = ({current_section}) => {
 
                     <SlickBar clicked={click} className="slickBar">
 
-                        <Link to={'header'} smooth={true} duration={1000}>
+                        <LinkScroll to={'header'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'header' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">Home</Text>
@@ -104,8 +108,8 @@ const SideBar = ({current_section}) => {
 
 
                             </Item>
-                        </Link>
-                        <Link to={'rProducts'} smooth={true} duration={1000}>
+                        </LinkScroll>
+                        <LinkScroll to={'rProducts'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'rProducts' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">RECOMMANDATIONS</Text>
@@ -113,8 +117,8 @@ const SideBar = ({current_section}) => {
                                     <IcomoonReact iconSet={iconSet} size={16} icon="price-tag"/>
                                 </div>
                             </Item>
-                        </Link>
-                        <Link to={'address'} smooth={true} duration={1000}>
+                        </LinkScroll>
+                        <LinkScroll to={'address'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'address' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">address</Text>
@@ -122,8 +126,8 @@ const SideBar = ({current_section}) => {
                                     <IcomoonReact iconSet={iconSet} size={16} icon="map"/>
                                 </div>
                             </Item>
-                        </Link>
-                        <Link to={'offre'} smooth={true} duration={1000}>
+                        </LinkScroll>
+                        <LinkScroll to={'offre'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'catalogue' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">catalogue</Text>
@@ -131,8 +135,8 @@ const SideBar = ({current_section}) => {
                                     <IcomoonReact iconSet={iconSet} size={16} icon="open-book"/>
                                 </div>
                             </Item>
-                        </Link>
-                        <Link to={'stories'} smooth={true} duration={1000}>
+                        </LinkScroll>
+                        <LinkScroll to={'stories'} smooth={true} duration={1000}>
                             <Item className={`item ${current_section === 'stories' ? 'item-active' : null}`}>
 
                                 <Text clicked={click} className="text">stories</Text>
@@ -141,10 +145,10 @@ const SideBar = ({current_section}) => {
                                 </div>
 
                             </Item>
-                        </Link>
+                        </LinkScroll>
 
 
-                        <Link to={'gallery'} smooth={true} duration={1000}>
+                        <LinkScroll to={'gallery'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'gallery' ? 'item-active' : null}`}>
                                 <Text clicked={click} className="text">Gallery</Text>
@@ -152,7 +156,7 @@ const SideBar = ({current_section}) => {
                                     <IcomoonReact iconSet={iconSet} size={16} icon="documents"/>
                                 </div>
                             </Item>
-                        </Link>
+                        </LinkScroll>
 
                     </SlickBar>
 
@@ -160,12 +164,12 @@ const SideBar = ({current_section}) => {
                         <div>
                             <Details className='details' clicked={profileClick}>
                                 <Logout className="logout">
-                                    <IcomoonReact iconSet={iconSet} onClick={() => handleProfileClick()} size={33}
+                                    <IcomoonReact iconSet={iconSet} onClick={() => history.push("/contact_us")} size={33}
                                                   icon="paper-plane"/>
                                 </Logout>
                                 <div className="name">
                                     <h4>Contact Nous</h4>
-                                    <Link to={''}>
+                                    <Link to={'/contact_us'}>
                                         Maintenant
                                     </Link>
                                 </div>

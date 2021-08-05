@@ -201,6 +201,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: white;
 
         h4 {
           display: inline-block;
@@ -210,6 +211,7 @@
           font-size: 1.28rem;
           text-decoration: none;
           color: var(--color-grey-light-4);
+          cursor: pointer;
 
           &:hover {
             text-decoration: underline
@@ -228,6 +230,11 @@
           width: 100%;
           height: 100%;
           fill: var(--color-primary);
+          cursor: pointer;
+
+          &:hover {
+            fill: var(--color-primary-dark);
+          }
         }
 
       }
