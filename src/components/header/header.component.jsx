@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 import {selectSliders} from "../../redux/slliders/slider.selectors";
 import {Link as LinkScroll} from 'react-scroll';
 import LazyLoad from 'react-lazyload';
+import Particles from "react-particles-js";
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const Header = ({sliders}) => {
@@ -52,7 +53,60 @@ const Header = ({sliders}) => {
                                     <div className="header__item" style={{
                                         backgroundImage: `url(https://backend.comptoir-d-orient.fr/${slider.image_path})`,
                                     }}>
-                                        <div className="layer"/>
+                                        <div className="layer">
+                                            <Particles
+                                                params={{
+                                                    "particles": {
+                                                        "number": {
+                                                            "value": 300,
+                                                            "density": {
+                                                                "enable": false
+                                                            }
+                                                        },
+                                                        "size": {
+                                                            "value": 3,
+                                                            "random": true,
+                                                            "anim": {
+                                                                "speed": 4,
+                                                                "size_min": 0.3
+                                                            }
+                                                        },
+                                                        "line_linked": {
+                                                            "enable": false
+                                                        },
+                                                        "move": {
+                                                            "random": true,
+                                                            "speed": 1,
+                                                            "direction": "top",
+                                                            "out_mode": "out"
+                                                        }
+                                                    },
+                                                    "interactivity": {
+                                                        "events": {
+                                                            "onhover": {
+                                                                "enable": true,
+                                                                "mode": "bubble"
+                                                            },
+                                                            "onclick": {
+                                                                "enable": true,
+                                                                "mode": "repulse"
+                                                            }
+                                                        },
+                                                        "modes": {
+                                                            "bubble": {
+                                                                "distance": 250,
+                                                                "duration": 2,
+                                                                "size": 0,
+                                                                "opacity": 0
+                                                            },
+                                                            "repulse": {
+                                                                "distance": 400,
+                                                                "duration": 4
+                                                            }
+                                                        }
+                                                    }
+                                                }} />
+                                        </div>
 
                                     </div>
 
