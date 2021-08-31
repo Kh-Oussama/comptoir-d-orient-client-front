@@ -71,11 +71,10 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <Fade left>
                     <h1>
 
-                        Stay in touch
+                        Abonnez-vous !
 
                     </h1>
-                    <p>Be the first to find out new products. <br/> upcoming stories, and our
-                        community</p>
+                    <p>Ne manquez aucune de nos actualité.</p>
                 </Fade>
 
             </div>
@@ -83,7 +82,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <input
                     type="email"
                     className="formSub__input"
-                    placeholder="ENTER YOUR EMAIL"
+                    placeholder="exemple@gmail.com"
                     value={email}
                     onChange={event => setEmail(event.target.value)}
                     required
@@ -95,13 +94,6 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                             envoyer
                         </button>
                 }
-                {/*{*/}
-                {/*    addLoading*/}
-                {/*        ? <div className='btn-loading'><Loader/></div>*/}
-                {/*        : <button className="formSub__button" onClick={addClientHandler}>*/}
-                {/*            Subscribe Now*/}
-                {/*        </button>*/}
-                {/*}*/}
 
             </div>
             <img src="/images/h3.jpg" alt="image" className="image"/>
@@ -110,54 +102,54 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <div className="links-left">
                     <div className="link">
                         <Link to=''>
-                            <span><i className="fas fa-phone-volume"/> +213 54-06-37-874</span>
+                            <span><i className="fab fa-whatsapp"/>+33 7-82-39-29-34</span>
                         </Link>
                     </div>
 
                     <div className="link">
                         <Link to=''>
-                            <span><i className="fas fa-fax"/>+1 323 555 1234  </span>
+                            <span><i className="fab fa-whatsapp"/>+33 7-66-88-82-38  </span>
                         </Link>
                     </div>
                     <div className="link link-email">
                         <Link to=''>
-                            <span><i className="far fa-envelope-open"/> comptoir-dorient@gmail.com</span>
+                            <span><i className="far fa-envelope-open"/> commercial@comptoir-d-orient.fr</span>
                         </Link>
                     </div>
                 </div>
                 <div className="links-center">
                     <div className="link">
                         <Link to=''>
-                            <span>Delivery</span>
+                            <span>Livraison a partir de 200 euros</span>
                         </Link>
                     </div>
                     <div className="link">
-                        <Link to=''>
-                            <span>About Us</span>
+                        <Link to='/'>
+                            <span>Acceuil</span>
                         </Link>
                     </div>
                     <div className="link">
-                        <Link to=''>
-                            <span>Returns</span>
+                        <Link to='/shop'>
+                            <span>Nos Produits</span>
                         </Link>
                     </div>
                 </div>
                 <div className="links-Right">
                     <div className="link">
                         <Link to=''>
-                            <span>Careers</span>
+                            <span>Shop now</span>
                         </Link>
                     </div>
                     <div className="link">
-                        <Link to=''>
-                            <span>Payment</span>
+                        <Link to='/contact_us'>
+                            <span>Contact</span>
                         </Link>
                     </div>
-                    <div className="link">
-                        <Link to=''>
-                            <span>Gift Card</span>
-                        </Link>
-                    </div>
+                    {/*<div className="link">*/}
+                    {/*    <Link to=''>*/}
+                    {/*        <span>Gift Card</span>*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
                 </div>
             </div>
             <div className="footer-bottom">
@@ -168,14 +160,14 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <div className="right">
                     <div className="link">
                         <Link to=''>
-                            <span> privacy policy</span>
+                            <span> Adresse:21 Avenue Lefèvre, 69120 Vaulx-en-Velin - France</span>
                         </Link>
                     </div>
-                    <div className="link">
-                        <Link to=''>
-                            <span>Terms & Condition</span>
-                        </Link>
-                    </div>
+                    {/*<div className="link">*/}
+                    {/*    <Link to=''>*/}
+                    {/*        <span>Terms & Condition</span>*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
 
                 </div>
             </div>

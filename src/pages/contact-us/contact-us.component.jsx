@@ -25,6 +25,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
         window.addEventListener("resize", resizeWindow);
         return () => window.removeEventListener("resize", resizeWindow);
     }, []);
+
     const [messageCredentials, setCredentials] = useState({
         firstName: '',
         lastName: '',

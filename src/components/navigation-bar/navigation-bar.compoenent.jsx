@@ -42,7 +42,7 @@ const NavigationBar = ({setCurrentSection, current_section, current_page}) => {
                 <div className="nav-center">
                     <div className={`link-block ${current_page === '/' ? 'link-block-active' : null}`}>
                         <Link to='/'>
-                            <IcomoonReact iconSet={iconSet} size={33} icon="home"/>home
+                            <IcomoonReact iconSet={iconSet} size={33} icon="home"/>Accueil
                         </Link>
                     </div>
                     <div

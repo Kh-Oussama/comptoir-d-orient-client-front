@@ -232,7 +232,7 @@
 
 
   .paragraph {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: white;
     text-transform: capitalize;
     font-weight: 700;
@@ -253,6 +253,10 @@
     &-2 {
       text-transform: lowercase;
       width: 80rem;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
       @media only screen and (max-width: $bp-medium-2) {
         margin-bottom: 3rem;
       }

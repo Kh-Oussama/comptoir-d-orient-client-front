@@ -21,11 +21,7 @@ const Header = ({sliders}) => {
 
     return (
         <header className="header-container">
-            {/*<div className="contact-button">*/}
-            {/*    <IcomoonReact iconSet={iconSet} size={55} icon="typing"/>*/}
-            {/*</div>*/}
 
-            {/*<div className="content">*/}
             <Swiper
                 slidesPerView={1}
                 navigation={false}
@@ -121,43 +117,28 @@ const Header = ({sliders}) => {
             <Fade left>
                 <div className="content__text">
                     <p className="paragraph">
-
-                        welcome to smart web agency
-
+                        bienvenu sur comptoir d orient
                     </p>
-                    {/*<Fade left>*/}
                     <h1 className="title_1">
-
-                        We <span>Are</span> the best <br/>
-                        website agency <br/>in
-                        the world
+                        Produit  <span>Maghreb </span> <br/>et
+                        de l'orient <br/>a votre porte
 
                     </h1>
-                    {/*</Fade>*/}
-                    {/*<Bounce cascade>*/}
                     <div className="text-div"/>
-                    {/*</Bounce>*/}
-
                     <p className="paragraph paragraph-2 ">
-                        {/*<Zoom right cascade>*/}
-                        {/*<Fade top cascade>*/}
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Alias atque eius magnam non quidem quod rem sapiente soluta suscipit ullam! Animi
-                        consectetur ea
-                        illo laboriosam pariatur quae repudiandae sint veritatis!
-                        {/*</Fade>*/}
+                        A votre disposition touts nos produits alimentaire originaire du Maghreb et d'orient tels que condiment , epices , boissons , fruits sec ainsi que notre specialité es dattes fraiche deglet nour sous toutes ces forme : regime , branché , bouquet , ravier etc
                     </p>
 
-                    <Fade bottom>
-                        <div className="content__text--btn">
-                            <Link to=''>
-                                <span><i className="fas fa-file-alt"></i> Explore Now</span>
-                            </Link>
-                            <Link to=''>
-                                <span><i className="fas fa-layer-group"/> More Service</span>
-                            </Link>
-                        </div>
-                    </Fade>
+                    {/*<Fade bottom>*/}
+                    {/*    <div className="content__text--btn">*/}
+                    {/*        <Link to=''>*/}
+                    {/*            <span><i className="fas fa-file-alt"></i> Explore Now</span>*/}
+                    {/*        </Link>*/}
+                    {/*        <Link to=''>*/}
+                    {/*            <span><i className="fas fa-layer-group"/> More Service</span>*/}
+                    {/*        </Link>*/}
+                    {/*    </div>*/}
+                    {/*</Fade>*/}
 
                 </div>
             </Fade>
@@ -185,17 +166,17 @@ const Header = ({sliders}) => {
                     <div className="white-div">
                         <div className="line"/>
                     </div>
-                    <h1 className="page-name">view profile</h1>
+                    <h1 className="page-name">Page d'accueil</h1>
                 </div>
             </Fade>
 
             <div className="content__scrolling-indicators">
 
             </div>
-            {/*</div>*/}
+
             <div className="scroll-btn-container">
                 <LinkScroll to={'footer'} smooth={true} duration={1000}>
-                    <div className="icon-scroll"></div>
+                    <div className="icon-scroll"/>
                 </LinkScroll>
             </div>
         </header>

@@ -32,20 +32,18 @@ const Gallery = ({setCurrentSection, current_section}) => {
                 delayedCall>
                 <div className="partners-section-header">
                     <Fade bottom big>
-                        <h1 className="title_2 title_2_download">Galllery</h1>
+                        <h1 className="title_2 title_2_download">Galerie</h1>
                     </Fade>
                     <Fade left>
                         <h1 className="title_1 title_1_download">
-
-                            WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESSES
+                            Nous vous présentons aussi notre large gamme de dattes d’Algérie et du moyen orient
                         </h1>
                     </Fade>
                     <div className="red-divider"/>
                     <Fade left>
                         <p className="paragraph paragraph_download">
+                            Spécialiste de la dattes fraîches sous tout c’est formes <br/> deglaet nour , sukary , medjool etc…
 
-                            we are committed to providing our customers with exceptional
-                            service <br/> while offering out employees the best training
 
                         </p>
                     </Fade>

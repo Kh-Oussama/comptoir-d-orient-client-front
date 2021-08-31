@@ -1,5 +1,5 @@
 import React, {lazy, Suspense} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import  {Redirect, Route, Switch} from 'react-router-dom';
 import Loader from "./components/loader-content/loader.compoenent";
 import HomePage from "./pages/home-page/home-page.component";
 import ShopPage from "./pages/shop-page/shop-page.component";
@@ -19,6 +19,7 @@ const App = () => {
                     <Route exact path="/" component={HomePage}/>
                     <Route path="/shop/" component={ShopPage}/>
                     <Route exact path="/contact_us" component={ContactUsPage}/>
+                        <Redirect to="/"/>
                 {/*</Suspense>*/}
             </Switch>
         </React.Fragment>

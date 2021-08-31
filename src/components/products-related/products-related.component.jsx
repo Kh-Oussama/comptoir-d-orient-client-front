@@ -41,14 +41,14 @@ const ProductRelated = ({setCurrentSection, current_section, allProducts}) => {
                     </Fade>
                     <div className="red-divider"/>
 
-                    <Fade left>
-                        <p className="paragraph ">
+                    {/*<Fade left>*/}
+                    {/*    <p className="paragraph ">*/}
 
-                            we are committed to providing our customers with exceptional
-                            service <br/> while offering out employees the best training
+                    {/*        we are committed to providing our customers with exceptional*/}
+                    {/*        service <br/> while offering out employees the best training*/}
 
-                        </p>
-                    </Fade>
+                    {/*    </p>*/}
+                    {/*</Fade>*/}
                 </div>
             </VisibilitySensor>
             <Fade bottom big cascade>

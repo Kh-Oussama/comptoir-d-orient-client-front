@@ -33,7 +33,7 @@ const AddressSection = ({setCurrentSection, current_section}) => {
 
                         <h2 className="title">
 
-                            Address Social
+                            Adresse social
 
                         </h2>
 

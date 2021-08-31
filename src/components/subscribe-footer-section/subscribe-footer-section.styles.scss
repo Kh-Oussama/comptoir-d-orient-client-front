@@ -283,13 +283,13 @@
 
     .right {
       margin-left: 3.5rem;
-      grid-column: 12/18;
+      grid-column: 13/19;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       @media only screen and (max-width: $bp-medium-2) {
-        grid-column: 9/18;
+        grid-column: 12/18 ;
 
       }
       @media only screen and (max-width: $bp-small) {
@@ -304,14 +304,14 @@
         padding: 1rem 0;
         position: relative;
         display: inline-block;
-        width: 19rem;
+        width: fit-content;
         overflow: hidden;
         z-index: 1;
         margin-right: 3rem;
         text-align: center;
         transition: all 0.5S;
         @media only screen and (max-width: $bp-medium-2) {
-          width: 15rem;
+          //width: 15rem;
           margin-right: 0;
         }
 

@@ -101,7 +101,7 @@ const SideBar = ({current_section,history}) => {
                         <LinkScroll to={'header'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'header' ? 'item-active' : null}`}>
-                                <Text clicked={click} className="text">Home</Text>
+                                <Text clicked={click} className="text">Accueil</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="home"/>
                                 </div>
@@ -112,51 +112,54 @@ const SideBar = ({current_section,history}) => {
                         <LinkScroll to={'rProducts'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'rProducts' ? 'item-active' : null}`}>
-                                <Text clicked={click} className="text">RECOMMANDATIONS</Text>
+                                <Text clicked={click} className="text">Recommandations</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="price-tag"/>
                                 </div>
                             </Item>
                         </LinkScroll>
-                        <LinkScroll to={'address'} smooth={true} duration={1000}>
-
-                            <Item className={`item ${current_section === 'address' ? 'item-active' : null}`}>
-                                <Text clicked={click} className="text">address</Text>
-                                <div>
-                                    <IcomoonReact iconSet={iconSet} size={16} icon="map"/>
-                                </div>
-                            </Item>
-                        </LinkScroll>
-                        <LinkScroll to={'offre'} smooth={true} duration={1000}>
-
-                            <Item className={`item ${current_section === 'catalogue' ? 'item-active' : null}`}>
-                                <Text clicked={click} className="text">catalogue</Text>
-                                <div>
-                                    <IcomoonReact iconSet={iconSet} size={16} icon="open-book"/>
-                                </div>
-                            </Item>
-                        </LinkScroll>
-                        <LinkScroll to={'stories'} smooth={true} duration={1000}>
-                            <Item className={`item ${current_section === 'stories' ? 'item-active' : null}`}>
-
-                                <Text clicked={click} className="text">stories</Text>
-                                <div>
-                                    <IcomoonReact iconSet={iconSet} size={16} icon="shield"/>
-                                </div>
-
-                            </Item>
-                        </LinkScroll>
-
 
                         <LinkScroll to={'gallery'} smooth={true} duration={1000}>
 
                             <Item className={`item ${current_section === 'gallery' ? 'item-active' : null}`}>
-                                <Text clicked={click} className="text">Gallery</Text>
+                                <Text clicked={click} className="text">Galerie</Text>
                                 <div>
                                     <IcomoonReact iconSet={iconSet} size={16} icon="documents"/>
                                 </div>
                             </Item>
                         </LinkScroll>
+
+                        <LinkScroll to={'address'} smooth={true} duration={1000}>
+
+                            <Item className={`item ${current_section === 'address' ? 'item-active' : null}`}>
+                                <Text clicked={click} className="text">Adresse Social</Text>
+                                <div>
+                                    <IcomoonReact iconSet={iconSet} size={16} icon="map"/>
+                                </div>
+                            </Item>
+                        </LinkScroll>
+                        {/*<LinkScroll to={'offre'} smooth={true} duration={1000}>*/}
+
+                        {/*    <Item className={`item ${current_section === 'catalogue' ? 'item-active' : null}`}>*/}
+                        {/*        <Text clicked={click} className="text">catalogue</Text>*/}
+                        {/*        <div>*/}
+                        {/*            <IcomoonReact iconSet={iconSet} size={16} icon="open-book"/>*/}
+                        {/*        </div>*/}
+                        {/*    </Item>*/}
+                        {/*</LinkScroll>*/}
+                        {/*<LinkScroll to={'stories'} smooth={true} duration={1000}>*/}
+                        {/*    <Item className={`item ${current_section === 'stories' ? 'item-active' : null}`}>*/}
+
+                        {/*        <Text clicked={click} className="text">stories</Text>*/}
+                        {/*        <div>*/}
+                        {/*            <IcomoonReact iconSet={iconSet} size={16} icon="shield"/>*/}
+                        {/*        </div>*/}
+
+                        {/*    </Item>*/}
+                        {/*</LinkScroll>*/}
+
+
+
 
                     </SlickBar>
 
