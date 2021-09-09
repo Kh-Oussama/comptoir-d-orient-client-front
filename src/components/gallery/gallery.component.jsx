@@ -52,23 +52,23 @@ const Gallery = ({setCurrentSection, current_section}) => {
             <Fade bottom big>
                 <LazyLoad once offset={100}>
                     <section className="gallery">
-                        <figure className="gallery__item gallery__item--1"><img src={G_1} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--1"><img src={'/images/gallery/g1.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--2"><img src={G_9} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--2"><img src={'/images/gallery/g6.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--3"><img src={G_17} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--3"><img src={'/images/gallery/g9.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--4"><img src={G_8} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--4"><img src={'/images/gallery/g3.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--5"><img src={G_16} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--5"><img src={'/images/gallery/g5.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--6"><img src={G_6} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--6"><img src={'/images/gallery/g7.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--7"><img src={G_12} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--7"><img src={'/images/gallery/g8.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--8"><img src={G_7} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--8"><img src={'/images/gallery/g4.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
-                        <figure className="gallery__item gallery__item--9"><img src={G_10} alt="Gallery img"
+                        <figure className="gallery__item gallery__item--9"><img src={'/images/gallery/g2.jpg'} alt="Gallery img"
                                                                                 className="gallery__img"/></figure>
                     </section>
                 </LazyLoad>

@@ -132,7 +132,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                         </Link>
                     </div>
                     <div className="content-contactInfo">
-                        <h1>Contact Info</h1>
+                        <h1>Coordonnées</h1>
                         <div className="info">
                             <i className="fas fa-map-marked-alt"/>
                             <span>21 Avenue Lefèvre, 69120 Vaulx-en-Velin</span>
@@ -163,7 +163,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                     </div>
                     <div className="content-contactForm">
 
-                        <h1>Send a Message</h1>
+                        <h1>Contactez Nous</h1>
                         <div className="formBlock">
                             <div className="form-group">
                                 <input
@@ -173,7 +173,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                                     onChange={handleChange}
                                     required
                                 />
-                                <div className="in-label">First Name <span className="etoile">*</span>:</div>
+                                <div className="in-label">Nom <span className="etoile">*</span>:</div>
                             </div>
                             <div className="form-group">
                                 <input
@@ -182,7 +182,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                                     value={lastName}
                                     onChange={handleChange}
                                     required/>
-                                <div className="in-label">Last Name <span className="etoile">*</span>:</div>
+                                <div className="in-label">Prénom <span className="etoile">*</span>:</div>
                             </div>
                             <div className="form-group">
                                 <input
@@ -191,7 +191,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                                     value={email}
                                     onChange={handleChange}
                                     required/>
-                                <div className="in-label">Email Address <span className="etoile">*</span>:</div>
+                                <div className="in-label">Email<span className="etoile">*</span>:</div>
                             </div>
                             <div className="form-group">
                                 <input
@@ -201,7 +201,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                                     onChange={handleChange}
                                     required
                                 />
-                                <div className="in-label">Phone Number <span className="etoile">*</span>:</div>
+                                <div className="in-label">Numero de telephone <span className="etoile">*</span>:</div>
                             </div>
                             <div className="form-group textarea">
                                 <input
@@ -210,7 +210,7 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                                     onChange={handleChange}
                                     required
                                 />
-                                <div className="in-label">Subject <span className="etoile">*</span>:</div>
+                                <div className="in-label">Sujet <span className="etoile">*</span>:</div>
                             </div>
                             <div className="form-group textarea">
                                 <textarea
@@ -220,13 +220,13 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                                     required
                                     rows={3}
                                 />
-                                <div className="in-label">write your message here <span className="etoile">*</span>:
+                                <div className="in-label">Message <span className="etoile">*</span>:
                                 </div>
                             </div>
                             {
                                 sendLoading
                                     ? <div style={{width: '10rem'}}><Loader/></div>
-                                    : <button onClick={sendMsgHandler}><i className="fas fa-paper-plane"/> Send</button>
+                                    : <button onClick={sendMsgHandler}><i className="fas fa-paper-plane"/> Envoyer</button>
 
                             }
                         </div>

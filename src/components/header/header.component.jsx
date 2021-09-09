@@ -50,7 +50,7 @@ const Header = ({sliders}) => {
                                         backgroundImage: `url(https://backend.comptoir-d-orient.fr/${slider.image_path})`,
                                     }}>
                                         <div className="layer">
-                                            <Particles
+                                            <Particles height={"100vh"}
                                                 params={{
                                                     "particles": {
                                                         "number": {

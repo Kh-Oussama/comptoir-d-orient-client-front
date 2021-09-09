@@ -3,18 +3,22 @@ import {Link, withRouter} from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 
 
-const ProductItem = ({title, history, isHome, imageUrl1, imageUrl2, productRef, linkUrl = 'shop', match}) => {
+const ProductItem = ({title, history, isHome, imageUrl1, imageUrl2, productRef, linkUrl = 'shop', match, promo, new_p}) => {
 
     return (
         <LazyLoad once offset={100}>
             <div className="product-grid" style={{width: !isHome ? null : '25rem'}}>
                 <Link to={`/shop/product/view/${productRef}`}>
-            <span className="product-trend-label">
-                        Nouveau
-                    </span>
-                    <span className="product-discount-label">
-                       Promo
-                    </span>
+                    {
+                        new_p
+                        ?  <span className="product-trend-label">Nouveau</span>
+                            : null
+                    }
+                    {
+                        promo
+                            ? <span className="product-discount-label">Promo</span>
+                            : null
+                    }
                     <div className="product-image">
                         <img className="pic-1" src={"https://backend.comptoir-d-orient.fr/" + imageUrl1} alt={""}/>
                         <img className="pic-2" src={"https://backend.comptoir-d-orient.fr/" + imageUrl2} alt={""}/>

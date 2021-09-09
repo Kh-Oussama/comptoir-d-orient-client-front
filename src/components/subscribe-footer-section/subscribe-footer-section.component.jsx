@@ -30,7 +30,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
     if (addErrors && notifState) {
         if (addErrors.client) {
             toast.error(
-                <div><i className="fas fa-exclamation-circle"/> you are already subscribed!!</div>,
+                <div><i className="fas fa-exclamation-circle"/> Vous êtes déjà abonné !!</div>,
                 {
                     position: toast.POSITION.BOTTOM_CENTER,
                     autoClose: 5000,
@@ -41,7 +41,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
         }
         if (addErrors.email) {
             toast.error(
-                <div><i className="fas fa-exclamation-circle"/> Please enter valid email address.</div>,
+                <div><i className="fas fa-exclamation-circle"/>Veuillez entrer une adresse email valide</div>,
                 {
                     position: toast.POSITION.BOTTOM_CENTER,
                     autoClose: 5000,
@@ -55,7 +55,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
 
     if (addStatus && notifState) {
         toast.dark(
-            <div><i className="fas fa-check-circle"/> thank you for subscribing !</div>,
+            <div><i className="fas fa-check-circle"/> Merci de vous être abonné</div>,
             {
                 position: toast.POSITION.TOP_LEFT,
                 autoClose: 5000,

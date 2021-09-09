@@ -9,10 +9,10 @@ import {PersistGate} from "redux-persist/integration/react";
 import {persistor, store} from "./redux/store";
 import {Provider} from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
-import axios from "axios";
+// import axios from "axios";
 
-axios.defaults.withCredentials = true;
-axios.get("https://backend.comptoir-d-orient.fr/sanctum/csrf-cookie");
+// axios.defaults.withCredentials = true;
+// axios.get("https://backend.comptoir-d-orient.fr/sanctum/csrf-cookie");
 
 ReactDOM.render(
     <React.StrictMode>
