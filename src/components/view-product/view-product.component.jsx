@@ -84,7 +84,7 @@ const ViewProduct = ({toggles_shop_sidebar, current_sidebar_state, getProductSta
                                                     effect="blur"
                                                     className="img"
                                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}
-                                                    src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].first_image_path}`}
+                                                    src={`https://backend.agro-dz.com/${currentProduct[0].first_image_path}`}
                                                 />
 
                                             </div>
@@ -96,7 +96,7 @@ const ViewProduct = ({toggles_shop_sidebar, current_sidebar_state, getProductSta
                                                     effect="blur"
                                                     className="img"
                                                     style={{marginRight: `${current_sidebar_state ? '8rem' : '0'} `}}
-                                                    src={`http://backend.comptoir-d-orient.fr/${currentProduct[0].second_image_path}`}
+                                                    src={`https://backend.agro-dz.com/${currentProduct[0].second_image_path}`}
                                                 />
 
 

@@ -17,7 +17,7 @@ const CategoriesCard = ({backgroundImage, title, subtitle, backgroundColor, hist
                         className="card-image-container"
                         style={{
                             backgroundColor: backgroundColor,
-                            backgroundImage: 'url(http://backend.comptoir-d-orient.fr/' + backgroundImage
+                            backgroundImage: 'url(https://backend.agro-dz.com/' + backgroundImage
                         }}
                     >
                     </div>

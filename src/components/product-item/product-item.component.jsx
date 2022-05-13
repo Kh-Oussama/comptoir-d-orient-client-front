@@ -20,8 +20,8 @@ const ProductItem = ({title, history, isHome, imageUrl1, imageUrl2, productRef, 
                             : null
                     }
                     <div className="product-image">
-                        <img className="pic-1" src={"https://backend.comptoir-d-orient.fr/" + imageUrl1} alt={""}/>
-                        <img className="pic-2" src={"https://backend.comptoir-d-orient.fr/" + imageUrl2} alt={""}/>
+                        <img className="pic-1" src={"https://backend.agro-dz.com/" + imageUrl1} alt={""}/>
+                        <img className="pic-2" src={"https://backend.agro-dz.com/" + imageUrl2} alt={""}/>
                         {/*<img className="pic-1" src={imageUrl1} alt={""}/>*/}
                         {/*<img className="pic-2" src={imageUrl2} alt={""}/>*/}
 
