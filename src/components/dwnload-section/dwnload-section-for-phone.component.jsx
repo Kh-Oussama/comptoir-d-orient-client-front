@@ -44,9 +44,9 @@ const Download = ({setCurrentSection, current_section}) => {
 
                 <div className="content__text--btn content__text--btn-download">
                     <Link target="_blank"
-                          to={{pathname: ``}}
+                          to={{pathname: `https://backend.agro-dz.com/catalogue.pdf`}}
                     >
-                        <i className="fas fa-download"/> télécharger
+                        <i className="fas fa-download"/> Télécharger
                     </Link>
                 </div>
             </section>
