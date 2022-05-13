@@ -102,18 +102,18 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <div className="links-left">
                     <div className="link">
                         <Link to=''>
-                            <span><i className="fab fa-whatsapp"/>+33 7-82-39-29-34</span>
+                            <span><i className="fab fa-whatsapp"/>+33 04 74 71 63 74</span>
                         </Link>
                     </div>
 
                     <div className="link">
                         <Link to=''>
-                            <span><i className="fab fa-whatsapp"/>+33 7-66-88-82-38  </span>
+                            <span><i className="fab fa-whatsapp"/>+33 07-66-88-82-38  </span>
                         </Link>
                     </div>
                     <div className="link link-email">
                         <Link to=''>
-                            <span><i className="far fa-envelope-open"/> commercial@comptoir-d-orient.fr</span>
+                            <span><i className="far fa-envelope-open"/> comercial@agro-dz.com</span>
                         </Link>
                     </div>
                 </div>
@@ -160,7 +160,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <div className="right">
                     <div className="link">
                         <Link to=''>
-                            <span> Adresse:21 Avenue Lefèvre, 69120 Vaulx-en-Velin - France</span>
+                            <span> Adresse:35 Bis, Rue Joliot CURIE 69780, Mions, Franece </span>
                         </Link>
                     </div>
                     {/*<div className="link">*/}
