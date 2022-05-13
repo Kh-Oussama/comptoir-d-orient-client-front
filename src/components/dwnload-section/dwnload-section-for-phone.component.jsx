@@ -22,7 +22,7 @@ const Download = ({setCurrentSection, current_section}) => {
 
                 <div className="partners-section-header">
                     <Fade bottom big>
-                        <h1 className="title_2 title_2_download">offre de service</h1>
+                        <h1 className="title_2 title_2_download">Catalogue</h1>
                     </Fade>
                     <Fade left>
                         <h1 className="title_1 title_1_download">
@@ -44,9 +44,9 @@ const Download = ({setCurrentSection, current_section}) => {
 
                 <div className="content__text--btn content__text--btn-download">
                     <Link target="_blank"
-                          to={{pathname: `http://aqua-vim.com/pdf`}}
+                          to={{pathname: ``}}
                     >
-                        <i className="fas fa-download"/> Download
+                        <i className="fas fa-download"/> télécharger
                     </Link>
                 </div>
             </section>

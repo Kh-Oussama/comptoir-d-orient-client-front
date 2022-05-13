@@ -6,7 +6,7 @@ import Axios from "axios";
 
 export function* fetchSlidersAsync() {
     try {
-        const response = yield Axios.get("https://backend.comptoir-d-orient.fr/api/sliders");
+        const response = yield Axios.get("https://backend.agro-dz.com/api/sliders");
         const Sliders = response.data.sliders;
 
 

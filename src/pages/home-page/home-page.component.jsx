@@ -50,7 +50,7 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
     return (
         <React.Fragment>
             <Helmet>
-                <title>Comptoir d'orient</title>
+                <title>Agro Dz</title>
             </Helmet>
             {
                 isFetchingSlides || isFetchingAllPro
@@ -62,8 +62,11 @@ const HomePage = ({setCurrentPage, history, fetchSlidersStart, isFetchingSlides,
                                 : <NavigationBar/>
                         }
                         <Header/>
+
                         <ProductRelated/>
+                        <Download/>
                         <Gallery/>
+
                         <AddressSection/>
                         <SubscribeFooterSection/>
                     </div>

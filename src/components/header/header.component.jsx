@@ -47,7 +47,7 @@ const Header = ({sliders}) => {
                                 <SwiperSlide>
 
                                     <div className="header__item" style={{
-                                        backgroundImage: `url(https://backend.comptoir-d-orient.fr/${slider.image_path})`,
+                                        backgroundImage: `url(https://backend.agro-dz.com/${slider.image_path})`,
                                     }}>
                                         <div className="layer">
                                             <Particles height={"100vh"}
@@ -117,7 +117,7 @@ const Header = ({sliders}) => {
             <Fade left>
                 <div className="content__text">
                     <p className="paragraph">
-                        bienvenu sur comptoir d orient
+                        bienvenu sur Agro Dz
                     </p>
                     <h1 className="title_1">
                         Produit  <span>Maghreb </span> <br/>et

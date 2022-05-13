@@ -46,9 +46,9 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: var(--color-primary);
+    background-color: #266c3b;
     border-radius: var(--box-border-radius);
-    box-shadow: 0px 0px 10px 0px rgba(#ee3764, 0.4);
+    box-shadow: 0px 0px 10px 0px rgba(#47be69, 0.4);
   }
 
   &:nth-child(1)
@@ -66,10 +66,10 @@
     }
   }
 
-  &:nth-child(2):after{ background-color: var(--color-primary); }
-  &:nth-child(3):after{ background-color: #eb1c4f; }
-  &:nth-child(4):after{ background-color: #ee3764; }
-  &:nth-child(5):after{ background-color: #ee3764 }
+  &:nth-child(2):after{ background-color: #2c7c44; }
+  &:nth-child(3):after{ background-color: #33904f; }
+  &:nth-child(4):after{ background-color: #379c55; }
+  &:nth-child(5):after{ background-color: #41ba66; }
 }
 
 @keyframes slide
@@ -80,8 +80,8 @@
 
 @keyframes color-change
 {
-  0% { background-color: #c3113d; }
-  100% { background-color: #ee3764; }
+  0% { background-color: #2d7f45; }
+  100% { background-color: #6dcb88; }
 }
 
 @for $i from 1 to 5

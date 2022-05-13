@@ -28,7 +28,7 @@ const Categories = ({toggles_shop_sidebar, fetchCategories, isFetching, categori
     return (
         <>
             <Helmet>
-                <title>Comptoir d'orient Grossiste alimentaire pour professionnels, vente en gros</title>
+                <title>Agro Dz Grossiste alimentaire pour professionnels, vente en gros</title>
             </Helmet>
             <Header title={'nos categories'}/>
             <ul className="card-list">

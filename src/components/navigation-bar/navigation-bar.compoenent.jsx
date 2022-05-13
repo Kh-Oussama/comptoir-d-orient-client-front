@@ -30,7 +30,7 @@ const NavigationBar = ({setCurrentSection, current_section, current_page}) => {
                     <div className="name-block">
                         <Link to='/'>
                             <Typical
-                                steps={['  Comptoir d\'orient', 1000]}
+                                steps={['  Agro Dz', 1000]}
                                 loop={1}
                                 wrapper="span"
                             />

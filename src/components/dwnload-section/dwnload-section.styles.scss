@@ -1,6 +1,8 @@
 .download-section {
   //margin-top: 10rem;
   height: 40rem;
+  margin-top: 25rem;
+  margin-right: 8rem;
 
   @media only screen and (max-width: $bp-small) {
     height: fit-content;
@@ -186,6 +188,9 @@
     background-size: cover;
     transform-origin: left;
     transition: 0.5S;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
 
     &:before {
       display: none;

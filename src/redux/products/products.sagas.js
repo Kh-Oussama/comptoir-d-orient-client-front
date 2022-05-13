@@ -14,7 +14,7 @@ import {
 
 export function* fetchProductsAsync({payload: {id}}) {
     try {
-        const response = yield Axios.get(`https://backend.comptoir-d-orient.fr/api/products/${id}/edit`);
+        const response = yield Axios.get(`https://backend.agro-dz.com/api/products/${id}/edit`);
         const Products = response.data.products
         yield put(fetchProductsSuccess(Products));
     } catch (error) {
@@ -24,7 +24,7 @@ export function* fetchProductsAsync({payload: {id}}) {
 
 export function* fetchAllProductsAsync() {
     try {
-        const response = yield Axios.get(`https://backend.comptoir-d-orient.fr/api/products`);
+        const response = yield Axios.get(`https://backend.agro-dz.com/api/products`);
         const Products = response.data.products
         yield put(fetchAllProductsSuccess(Products));
     } catch (error) {
@@ -35,7 +35,7 @@ export function* fetchAllProductsAsync() {
 
 export function* getProductAsync({payload: {id}}) {
     try {
-        const response = yield Axios.get(`https://backend.comptoir-d-orient.fr/api/products/${id}`);
+        const response = yield Axios.get(`https://backend.agro-dz.com/api/products/${id}`);
         const Product = response.data.product;
         yield put(getProductSuccess(Product));
     } catch (error) {
