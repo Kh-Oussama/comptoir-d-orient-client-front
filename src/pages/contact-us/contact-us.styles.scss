@@ -48,14 +48,14 @@
       margin-bottom: 2rem;
     }
     &-contactInfo {
-      width: 30rem;
+      width: 32rem;
       height: 40rem;
       position: absolute;
       top: 5rem;
       left: -15rem;
       background: var(--gradient-color);
       box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
-      padding: 2rem 0 2rem 2rem;
+      padding: 2rem;
       animation: slide-info-left 2s cubic-bezier(.33, .64, .67, .65) both;
 
       @media only screen and (max-width: $bp-small) {

@@ -160,7 +160,7 @@ const SubscribeFooterSection = ({addClientStart, addLoading, addErrors, addStatu
                 <div className="right">
                     <div className="link">
                         <Link to=''>
-                            <span> Adresse:35 Bis, Rue Joliot CURIE 69780, Mions, Franece </span>
+                            <span> 35 Bis, Rue Joliot CURIE 69780, Mions, Franece </span>
                         </Link>
                     </div>
                     {/*<div className="link">*/}

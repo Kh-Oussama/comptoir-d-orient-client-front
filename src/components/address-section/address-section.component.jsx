@@ -42,7 +42,7 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                     <Fade left>
                         <p className="title-description">
 
-                            21 Avenue Lefèvre, 69120 Vaulx-en-Velin
+                            35 Bis, Rue Joliot CURIE 69780, Mions, France
 
                         </p>
                     </Fade>
@@ -55,16 +55,16 @@ const AddressSection = ({setCurrentSection, current_section}) => {
                 <div className="map-block">
                     <div className="leaflet-container">
 
-                        <MapContainer center={[45.77414, 4.91158]} zoom={13} scrollWheelZoom={false}>
+                        <MapContainer center={[45.68, 4.93]} zoom={12} scrollWheelZoom={false}>
                             <TileLayer
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
-                            <Marker position={[45.77414, 4.91158]}>
+                            <Marker position={[45.68195404690148, 4.939116957527735]}>
                                 <Popup>
                                     <div className="markerBlock">
-                                        <img src="/images/f4.jpg" alt="image" className="marker-image"/>
-                                        <p>A21 Avenue Lefèvre, 69120 Vaulx-en-Velin</p>
+                                        <img src="/images/agro-dz.png" alt="image" className="marker-image"/>
+                                        <p>35 Bis, Rue Joliot CURIE 69780, Mions, France</p>
                                     </div>
 
                                 </Popup>

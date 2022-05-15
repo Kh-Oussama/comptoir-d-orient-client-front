@@ -135,19 +135,19 @@ const ContactUsPage = ({setCurrentPage, sendMsgStart, sendLoading, sendStatus, s
                         <h1>Coordonnées</h1>
                         <div className="info">
                             <i className="fas fa-map-marked-alt"/>
-                            <span>21 Avenue Lefèvre, 69120 Vaulx-en-Velin</span>
+                            <span>35 Bis, Rue Joliot CURIE 69780, Mions, France</span>
                         </div>
                         <div className="info">
                             <i className="far fa-envelope"/>
-                            <span>commercial@comptoir-d-orient.fr</span>
+                            <span>comercial@agro-dz.com</span>
                         </div>
                         <div className="info">
                             <i className="fas fa-phone"/>
-                            <span>05 61 99 43 81 - 05 60 13 88 38 </span>
+                            <span>+33 07-66-88-82-38  </span>
                         </div>
                         <div className="info">
-                            <i className="fas fa-fax"/>
-                            <span>023 80 06 43</span>
+                            <i className="fas fa-phone"/>
+                            <span>+33 04 74 71 63 74</span>
                         </div>
                         <div className="social-Media">
                             <Link to="/">
